@@ -12,6 +12,7 @@
 }
 header {
   position: fixed;
+  top: 0;
   z-index: 1;
   width: 100vw;
   height: 68px;
@@ -19,6 +20,11 @@ header {
   font-size: 0.9rem;
   @include flex-align;
   justify-content: space-between;
+  background: linear-gradient(
+    180deg,
+    rgba(20, 20, 20, 0.5) 0%,
+    rgba(20, 20, 20, 0) 100%
+  );
 
   nav {
     @include flex-align;
