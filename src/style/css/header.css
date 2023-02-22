@@ -4,7 +4,7 @@ header {
   z-index: 1;
   width: 100vw;
   height: 68px;
-  padding: 0 3vw;
+  padding: 0 52px;
   font-size: 0.9rem;
   display: flex;
   align-items: center;
@@ -19,7 +19,7 @@ header nav img {
   cursor: pointer;
 }
 header nav ul {
-  margin: 0 30px;
+  margin: 0 27px;
 }
 header nav li {
   display: inline-block;
@@ -31,6 +31,9 @@ header nav li a {
 }
 header nav li a:visited {
   color: #ffffff;
+}
+header nav li a:hover {
+  color: #a9a8a8;
 }
 header .secondary-navigation {
   display: flex;
