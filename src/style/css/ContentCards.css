@@ -1,14 +1,18 @@
+.movies {
+  margin-top: 50px;
+}
 .movies h2 {
   font-size: 26px;
   color: #e5e5e5;
-  margin: 150px 0 0 60px;
+  margin-left: 60px;
 }
 .movies img {
   width: 190px;
   border-radius: 6px;
+  z-index: 1;
 }
 .movies__cards {
   display: flex;
-  gap: 7px;
+  gap: 10px;
   margin: 13px 0 0 60px;
 }

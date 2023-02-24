@@ -1,16 +1,16 @@
-import "./style/css/app.css";
+import "./style/css/App.css";
 import Header from "./components/Header";
 import MainImage from "./components/MainImage";
-import MovieInfo from "./components/MovieInfo";
-import MoviesCards from "./components/MoviesCards";
+import ContentInfo from "./components/ContentInfo";
+import ContentCards from "./components/ContentCards";
 
 function App() {
   return (
-    <div className="app-container">
+    <div className="app">
       <Header />
       <MainImage />
-      <MovieInfo />
-      <MoviesCards />
+      <ContentInfo />
+      <ContentCards />
     </div>
   );
 }

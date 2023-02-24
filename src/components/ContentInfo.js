@@ -1,5 +1,5 @@
 import React from "react";
-import "../style/css/movieInfo.css";
+import "../style/css/ContentInfo.css";
 import TitleLogo from "../images/titleLogo.webp";
 import { AiFillCaretRight } from "react-icons/ai";
 import { AiOutlineInfoCircle } from "react-icons/ai";

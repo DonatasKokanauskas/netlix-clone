@@ -1,5 +1,5 @@
 .movie-info {
-  margin: 270px 0 0 60px;
+  margin: 270px 0 150px 60px;
   width: 547px;
 }
 .movie-info p {
@@ -37,7 +37,7 @@
   border: none;
   font-size: 21px;
   cursor: pointer;
-  background: rgba(88, 84, 81, 0.5);
+  background: rgba(88, 84, 81, 0.6);
   color: #ffffff;
   width: 150px;
   gap: 7px;

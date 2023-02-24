@@ -1,5 +1,5 @@
 import React from "react";
-import "../style/css/mainImage.css";
+import "../style/css/MainImage.css";
 import TestImg from "../images/testImage.webp";
 
 const MainImage = () => {
