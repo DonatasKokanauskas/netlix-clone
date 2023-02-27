@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "../style/css/Header.css";
 import Logo from "../images/logo.png";
 import Search from "../images/search.png";
@@ -7,8 +7,33 @@ import User from "../images/user.png";
 import Vector from "../images/vector.png";
 
 const Header = () => {
+  const [scroll, setScroll] = useState(0);
+  useEffect(() => {
+    const handleScroll = (event) => {
+      setScroll(window.scrollY);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
-    <header>
+    <header
+      style={
+        scroll > 0
+          ? {
+              background:
+                "linear-gradient(180deg, rgba(6,6,6,1) 0%, rgba(20,20,20,1) 100%)",
+            }
+          : {
+              background:
+                "linear-gradient(180deg,rgba(0,0,0,0.7) 0%,rgba(20, 20, 20, 0) 100%)",
+            }
+      }
+    >
       <nav>
         <img src={Logo} alt="Netflix logo" />
         <ul>

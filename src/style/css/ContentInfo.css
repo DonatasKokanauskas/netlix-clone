@@ -2,15 +2,17 @@
   margin: 270px 0 150px 60px;
   width: 547px;
 }
+.movie-info h1 {
+  color: #ffffff;
+  font-size: 5rem;
+}
 .movie-info p {
   margin: 22px 0;
   color: #ffffff;
   font-size: 22px;
 }
-.movie-info img {
-  width: 100%;
-}
 .movie-info div {
+  margin-top: 28px;
   display: flex;
   gap: 10px;
 }

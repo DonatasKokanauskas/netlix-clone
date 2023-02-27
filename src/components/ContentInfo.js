@@ -1,17 +1,26 @@
 import React from "react";
 import "../style/css/ContentInfo.css";
-import TitleLogo from "../images/titleLogo.webp";
 import { AiFillCaretRight } from "react-icons/ai";
 import { AiOutlineInfoCircle } from "react-icons/ai";
 
-const MovieInfo = () => {
+const MovieInfo = ({ trending, randomNumber }) => {
+  const randomTitle = trending.map((movie) => {
+    return movie.title;
+  });
+  const randomName = trending.map((movie) => {
+    return movie.original_name;
+  });
+  const randomOverview = trending.map((movie) => {
+    return movie.overview;
+  });
   return (
     <div className="movie-info">
-      <img src={TitleLogo} alt="title logo" />
-      <p>
-        Feeling spurned after being cut from the national team, newly single
-        softball player Lisa finds herself in a heated love triangle.
-      </p>
+      {randomTitle[randomNumber] ? (
+        <h1>{randomTitle[randomNumber]}</h1>
+      ) : (
+        <h1>{randomName[randomNumber]}</h1>
+      )}
+      <p>{randomOverview[randomNumber]}</p>
       <div>
         <button>
           <AiFillCaretRight />

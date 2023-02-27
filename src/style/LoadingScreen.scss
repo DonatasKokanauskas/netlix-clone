@@ -1,0 +1,17 @@
+.loading-screen {
+  background-color: rgb(20, 20, 20);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+
+  img {
+    height: 120px;
+    margin-top: 150px;
+    animation: spinner 1.1s linear infinite;
+  }
+}
+@keyframes spinner {
+  100% {
+    transform: rotate(360deg);
+  }
+}

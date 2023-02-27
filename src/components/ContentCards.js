@@ -13,6 +13,7 @@ const Movies = ({ title, state, alt }) => {
             <img
               src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`}
               alt={alt}
+              key={movie.id}
             />
           );
         })}
@@ -21,8 +22,7 @@ const Movies = ({ title, state, alt }) => {
   );
 };
 
-const MoviesCards = () => {
-  const [trending, setTrending] = useState([]);
+const MoviesCards = ({ trending, setTrending, setIsLoaded }) => {
   const [topRatedMovies, setTopRatedMovies] = useState([]);
   const [newMovies, setNewMovies] = useState([]);
   const [topRatedShows, setTopRatedShows] = useState([]);
@@ -30,13 +30,17 @@ const MoviesCards = () => {
   const fetchData = async (url, state) => {
     try {
       const response = await axios.get(url);
-      const data = response.data;
-      state(data.results);
+      const data = await response.data;
+      if (response.status === 200) {
+        state(data.results);
+        setTimeout(() => {
+          setIsLoaded(false);
+        }, 500);
+      }
     } catch (error) {
       console.error(error);
     }
   };
-
   useEffect(() => {
     fetchData(
       "https://api.themoviedb.org/3/trending/all/day?api_key=7c21ca4ec675f18602bfd1f831746fab",

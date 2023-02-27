@@ -12,16 +12,17 @@
 .movie-info {
   margin: 270px 0 150px 60px;
   width: 547px;
+  h1 {
+    color: #ffffff;
+    font-size: 5rem;
+  }
   p {
     margin: 22px 0;
     color: #ffffff;
     font-size: 22px;
   }
-
-  img {
-    width: 100%;
-  }
   div {
+    margin-top: 28px;
     display: flex;
     gap: 10px;
     button:nth-of-type(1) {
