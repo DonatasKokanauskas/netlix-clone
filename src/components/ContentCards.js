@@ -2,23 +2,38 @@ import React, { useEffect } from "react";
 import { useState } from "react";
 import axios from "axios";
 import "../style/css/ContentCards.css";
+import { IoIosArrowBack } from "react-icons/io";
+import { IoIosArrowForward } from "react-icons/io";
+import useTranslate from "../custom-hooks/useTranslate";
 
-const Movies = ({ title, state, alt }) => {
+const Movies = ({ title, state, alt, handleClick, translate }) => {
   return (
-    <div className="movies">
+    <React.Fragment>
       <h2>{title}</h2>
-      <div className="movies__cards">
-        {state.map((movie) => {
-          return (
-            <img
-              src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`}
-              alt={alt}
-              key={movie.id}
-            />
-          );
-        })}
+      <div className="movies">
+        <button className="handle left-handle" onClick={handleClick}>
+          <span>
+            <IoIosArrowBack />
+          </span>
+        </button>
+        <div className="movies__cards" style={translate}>
+          {state.map((movie) => {
+            return (
+              <img
+                src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`}
+                alt={alt}
+                key={movie.id}
+              />
+            );
+          })}
+        </div>
+        <button className="handle right-handle" onClick={handleClick}>
+          <span>
+            <IoIosArrowForward />
+          </span>
+        </button>
       </div>
-    </div>
+    </React.Fragment>
   );
 };
 
@@ -59,15 +74,41 @@ const MoviesCards = ({ trending, setTrending, setIsLoaded }) => {
       setTopRatedShows
     );
   }, []);
+
+  const [translateTrending, handleClickTrending] = useTranslate();
+  const [translateTopRated, handleClickTopRated] = useTranslate();
+  const [translateNewMovies, handleClickNewMovies] = useTranslate();
+  const [translateTVShows, handleClickTVShows] = useTranslate();
+
   return (
     <>
-      <Movies title="Trending Now" state={trending} alt="trending" />
-      <Movies title="Top Rated Movies" state={topRatedMovies} alt="top rated" />
-      <Movies title="New Movies" state={newMovies} alt="new rmovies" />
+      <Movies
+        title="Trending Now"
+        state={trending}
+        alt="trending"
+        handleClick={handleClickTrending}
+        translate={translateTrending}
+      />
+      <Movies
+        title="Top Rated Movies"
+        state={topRatedMovies}
+        alt="top rated"
+        handleClick={handleClickTopRated}
+        translate={translateTopRated}
+      />
+      <Movies
+        title="New Movies"
+        state={newMovies}
+        alt="new rmovies"
+        handleClick={handleClickNewMovies}
+        translate={translateNewMovies}
+      />
       <Movies
         title="Top Rated TV Shows"
         state={topRatedShows}
         alt="top rated TV shows"
+        handleClick={handleClickTVShows}
+        translate={translateTVShows}
       />
     </>
   );

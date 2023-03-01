@@ -1,18 +1,31 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "../style/css/ContentInfo.css";
 import { AiFillCaretRight } from "react-icons/ai";
 import { AiOutlineInfoCircle } from "react-icons/ai";
 
 const MovieInfo = ({ trending, randomNumber }) => {
-  const randomTitle = trending.map((movie) => {
-    return movie.title;
-  });
-  const randomName = trending.map((movie) => {
-    return movie.original_name;
-  });
-  const randomOverview = trending.map((movie) => {
-    return movie.overview;
-  });
+  const [randomTitle, setRandomTitle] = useState([]);
+  const [randomName, setRandomName] = useState([]);
+  const [randomOverview, setRandomOverview] = useState([]);
+
+  useEffect(() => {
+    setRandomTitle(
+      trending.map((movie) => {
+        return movie.title;
+      })
+    );
+    setRandomName(
+      trending.map((movie) => {
+        return movie.original_name;
+      })
+    );
+    setRandomOverview(
+      trending.map((movie) => {
+        return movie.overview;
+      })
+    );
+  }, [trending]);
+
   return (
     <div className="movie-info">
       {randomTitle[randomNumber] ? (

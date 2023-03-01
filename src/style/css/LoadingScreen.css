@@ -1,10 +1,15 @@
 .loading-screen {
   background-color: rgb(20, 20, 20);
-  height: 100vh;
-  display: flex;
-  justify-content: center;
+  height: 300vh;
+  width: 100vw;
+  position: absolute;
+  top: 0;
+  z-index: 2;
 }
 .loading-screen img {
+  position: fixed;
+  top: 25%;
+  left: 50%;
   height: 120px;
   margin-top: 150px;
   animation: spinner 1.1s linear infinite;
