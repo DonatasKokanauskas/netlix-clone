@@ -14,10 +14,7 @@ export const MoviesDataProvider = ({ children }) => {
   const [randomTitle, setRandomTitle] = useState([]);
   const [randomName, setRandomName] = useState([]);
   const [randomOverview, setRandomOverview] = useState([]);
-
-  const randomMovie = trending.map((movie) => {
-    return movie.backdrop_path;
-  });
+  const [randomMovieImage, setRandomMovieImage] = useState([]);
 
   return (
     <MoviesDataContext.Provider
@@ -31,7 +28,8 @@ export const MoviesDataProvider = ({ children }) => {
         setRandomName,
         randomOverview,
         setRandomOverview,
-        randomMovie,
+        setRandomMovieImage,
+        randomMovieImage,
       }}
     >
       {children}

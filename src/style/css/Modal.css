@@ -39,17 +39,86 @@
 }
 .modal__movie-info .modal-buttons {
   margin-left: 40px;
+  display: flex;
+  gap: 8px;
 }
-.modal__movie-info .modal-buttons button {
+.modal__movie-info .modal-buttons button:nth-of-type(1) {
   display: flex;
   justify-content: center;
   align-items: center;
+  gap: 5px;
   height: 35px;
+  width: 130px;
   background: #ffffff;
   border-radius: 4px;
   border: none;
   font-size: 21px;
   cursor: pointer;
-  width: 130px;
-  gap: 5px;
+}
+.modal__movie-info .modal-buttons .add {
+  height: 34px;
+  width: 34px;
+  border: 1px solid white;
+  border-radius: 50%;
+}
+.modal__movie-info .modal-buttons .add span {
+  color: #ffffff;
+  font-size: 2rem;
+}
+.modal__movie-info .modal-buttons .thumb {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 34px;
+  width: 34px;
+  border: 1px solid white;
+  border-radius: 50%;
+}
+.modal__movie-info .modal-buttons .thumb span {
+  color: #ffffff;
+  font-size: 1.2rem;
+}
+.modal__movie-info__info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 50px;
+  margin-left: 40px;
+}
+.modal__movie-info__info p {
+  color: #ffffff;
+  font-size: 0.9rem;
+}
+.modal__movie-info__info .date {
+  text-align: center;
+}
+.modal__movie-info__info label {
+  color: #ffffff;
+  font-size: 0.9rem;
+}
+.modal__movie-info__info .age-check {
+  border: 1px solid rgb(116, 116, 116);
+  padding: 0 4px;
+}
+.modal__movie-info__info .vote {
+  border: 1px solid rgb(116, 116, 116);
+  padding: 0 4px;
+  border-radius: 2px;
+}
+.modal__movie-info__info .media-type {
+  border: 1px solid rgb(116, 116, 116);
+  padding: 0 4px;
+}
+.modal__movie-info__info span {
+  color: #ffffff;
+  line-height: 0;
+}
+.modal__movie-info .genres label:nth-of-type(1) {
+  color: #777777;
+  font-size: 0.9rem;
+}
+.modal__movie-info .genres label {
+  color: #ffffff;
+  font-size: 0.9rem;
+  margin: 0 3px;
 }

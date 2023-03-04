@@ -1,8 +1,8 @@
 import { useState } from "react";
 import "./style/css/App.css";
 import Header from "./components/Header";
-import MainImage from "./components/MainImage";
-import ContentInfo from "./components/ContentInfo";
+import RandomMovieImage from "./components/RandomMovieImage";
+import RandomMovieInfo from "./components/RandomMovieInfo";
 import ContentCards from "./components/ContentCards";
 import LoadingScreen from "./components/LoadingScreen";
 import Modal from "./components/Modal";
@@ -20,8 +20,8 @@ function App() {
       {isLoaded && <LoadingScreen />}
       <MoviesDataProvider>
         <Modal open={isOpen} CloseModal={() => setIsOpen(false)} />
-        <MainImage />
-        <ContentInfo />
+        <RandomMovieImage />
+        <RandomMovieInfo />
         <ContentCards setIsLoaded={setIsLoaded} />
       </MoviesDataProvider>
     </div>

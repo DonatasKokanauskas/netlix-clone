@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import "../style/css/ContentInfo.css";
+import "../style/css/RandomMovieInfo.css";
 import { AiFillCaretRight } from "react-icons/ai";
 import { AiOutlineInfoCircle } from "react-icons/ai";
 import { useMoviesData } from "../context/Context";
@@ -14,42 +14,45 @@ const ContentInfo = () => {
     setRandomName,
     randomOverview,
     setRandomOverview,
+    setRandomMovieImage,
   } = useMoviesData();
 
-  // const [randomTitle, setRandomTitle] = useState([]);
-  // const [randomName, setRandomName] = useState([]);
-  // const [randomOverview, setRandomOverview] = useState([]);
-
   useEffect(() => {
-    setRandomTitle(
-      trending.map((movie) => {
+    setRandomTitle(() => {
+      const title = trending.map((movie) => {
         return movie.title;
-      })
-    );
-    setRandomName(
-      trending.map((movie) => {
+      });
+      return title[randomNumber];
+    });
+    setRandomName(() => {
+      const name = trending.map((movie) => {
         return movie.original_name;
-      })
-    );
-    setRandomOverview(
-      trending.map((movie) => {
+      });
+      return name[randomNumber];
+    });
+    setRandomOverview(() => {
+      const overview = trending.map((movie) => {
         if (movie.overview.length < 350) {
           return movie.overview;
         } else {
           return movie.overview.slice(0, 350) + "...";
         }
-      })
-    );
+      });
+      return overview[randomNumber];
+    });
+
+    setRandomMovieImage(() => {
+      const image = trending.map((movie) => {
+        return movie.backdrop_path;
+      });
+      return image[randomNumber];
+    });
   }, [trending]);
 
   return (
     <div className="movie-info">
-      {randomTitle[randomNumber] ? (
-        <h1>{randomTitle[randomNumber]}</h1>
-      ) : (
-        <h1>{randomName[randomNumber]}</h1>
-      )}
-      <p>{randomOverview[randomNumber]}</p>
+      {randomTitle ? <h1>{randomTitle}</h1> : <h1>{randomName}</h1>}
+      <p>{randomOverview}</p>
       <div>
         <button>
           <AiFillCaretRight />
