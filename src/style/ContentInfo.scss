@@ -10,7 +10,9 @@
   cursor: pointer;
 }
 .movie-info {
-  margin: 270px 0 150px 60px;
+  position: absolute;
+  top: 200px;
+  left: 60px;
   width: 547px;
   h1 {
     color: #ffffff;

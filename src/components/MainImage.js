@@ -1,9 +1,11 @@
 import "../style/css/MainImage.css";
+import { useMoviesData } from "../context/Context";
 
-const MainImage = ({ trending, randomNumber }) => {
-  const randomMovie = trending.map((movie) => {
-    return movie.backdrop_path;
-  });
+const MainImage = () => {
+  const { randomMovie, randomNumber } = useMoviesData();
+  // const randomMovie = trending.map((movie) => {
+  //   return movie.backdrop_path;
+  // });
   return (
     <div
       className="image-container"

@@ -5,10 +5,11 @@ import "../style/css/ContentCards.css";
 import { IoIosArrowBack } from "react-icons/io";
 import { IoIosArrowForward } from "react-icons/io";
 import useTranslate from "../custom-hooks/useTranslate";
+import { useMoviesData } from "../context/Context";
 
 const Movies = ({ title, state, alt, handleClick, translate }) => {
   return (
-    <React.Fragment>
+    <div className="movies-container">
       <h2>{title}</h2>
       <div className="movies">
         <button className="handle left-handle" onClick={handleClick}>
@@ -33,11 +34,12 @@ const Movies = ({ title, state, alt, handleClick, translate }) => {
           </span>
         </button>
       </div>
-    </React.Fragment>
+    </div>
   );
 };
 
-const MoviesCards = ({ trending, setTrending, setIsLoaded }) => {
+const ContentCards = ({ setIsLoaded }) => {
+  const { trending, setTrending } = useMoviesData();
   const [topRatedMovies, setTopRatedMovies] = useState([]);
   const [newMovies, setNewMovies] = useState([]);
   const [topRatedShows, setTopRatedShows] = useState([]);
@@ -75,10 +77,16 @@ const MoviesCards = ({ trending, setTrending, setIsLoaded }) => {
     );
   }, []);
 
-  const [translateTrending, handleClickTrending] = useTranslate();
-  const [translateTopRated, handleClickTopRated] = useTranslate();
-  const [translateNewMovies, handleClickNewMovies] = useTranslate();
-  const [translateTVShows, handleClickTVShows] = useTranslate();
+  const [initialValue, setInitialValue] = useState();
+
+  useEffect(() => {
+    setInitialValue(trending.length);
+  }, [trending]);
+
+  const [translateTrending, handleClickTrending] = useTranslate(initialValue);
+  const [translateTopRated, handleClickTopRated] = useTranslate(initialValue);
+  const [translateNewMovies, handleClickNewMovies] = useTranslate(initialValue);
+  const [translateTVShows, handleClickTVShows] = useTranslate(initialValue);
 
   return (
     <>
@@ -114,7 +122,7 @@ const MoviesCards = ({ trending, setTrending, setIsLoaded }) => {
   );
 };
 
-export default MoviesCards;
+export default ContentCards;
 
 // api key: 7c21ca4ec675f18602bfd1f831746fab
 // trending now https://api.themoviedb.org/3/trending/all/day?api_key=7c21ca4ec675f18602bfd1f831746fab

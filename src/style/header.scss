@@ -4,6 +4,7 @@
 }
 @mixin a {
   a {
+    transition: color 0.4s;
     text-decoration: none;
   }
   a:visited {
@@ -43,18 +44,26 @@ header {
   .secondary-navigation {
     @include flex-align;
     display: flex;
-    gap: 12px;
+    gap: 18px;
+    margin-right: 15px;
     @include a;
     img {
       cursor: pointer;
     }
-    img:nth-of-type(4) {
-      width: 13px;
-      height: auto;
+    .user-container {
+      @include flex-align;
+      gap: 8px;
+      img:nth-of-type(2) {
+        width: 13px;
+        height: auto;
+      }
     }
-    img:nth-of-type(4):hover {
-      transform: rotate(180deg);
-      transition: transform 367ms ease;
+
+    .user-container:hover {
+      img:nth-of-type(2) {
+        transform: rotate(180deg);
+        transition: transform 367ms ease;
+      }
     }
   }
 }

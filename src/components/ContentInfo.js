@@ -2,11 +2,23 @@ import React, { useEffect, useState } from "react";
 import "../style/css/ContentInfo.css";
 import { AiFillCaretRight } from "react-icons/ai";
 import { AiOutlineInfoCircle } from "react-icons/ai";
+import { useMoviesData } from "../context/Context";
 
-const MovieInfo = ({ trending, randomNumber }) => {
-  const [randomTitle, setRandomTitle] = useState([]);
-  const [randomName, setRandomName] = useState([]);
-  const [randomOverview, setRandomOverview] = useState([]);
+const ContentInfo = () => {
+  const {
+    trending,
+    randomNumber,
+    randomTitle,
+    setRandomTitle,
+    randomName,
+    setRandomName,
+    randomOverview,
+    setRandomOverview,
+  } = useMoviesData();
+
+  // const [randomTitle, setRandomTitle] = useState([]);
+  // const [randomName, setRandomName] = useState([]);
+  // const [randomOverview, setRandomOverview] = useState([]);
 
   useEffect(() => {
     setRandomTitle(
@@ -21,7 +33,11 @@ const MovieInfo = ({ trending, randomNumber }) => {
     );
     setRandomOverview(
       trending.map((movie) => {
-        return movie.overview;
+        if (movie.overview.length < 350) {
+          return movie.overview;
+        } else {
+          return movie.overview.slice(0, 350) + "...";
+        }
       })
     );
   }, [trending]);
@@ -48,4 +64,4 @@ const MovieInfo = ({ trending, randomNumber }) => {
   );
 };
 
-export default MovieInfo;
+export default ContentInfo;

@@ -61,8 +61,10 @@ const Header = () => {
         <img src={Search} alt="Search image" />
         <a href="">Kids</a>
         <img src={Bell} alt="Bell image" />
-        <img src={User} alt="User's image" />
-        <img src={Vector} alt="Vector" />
+        <div className="user-container">
+          <img src={User} alt="User's image" />
+          <img src={Vector} alt="Vector" />
+        </div>
       </div>
     </header>
   );
