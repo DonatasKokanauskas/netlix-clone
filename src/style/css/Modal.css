@@ -8,18 +8,25 @@
   display: flex;
   justify-content: center;
 }
-.modal__movie-info {
+.modal__container {
   position: relative;
-  width: 850px;
-  margin: 28px;
+  width: 750px;
+  margin-top: 28px;
   border-radius: 6px;
   background-color: rgb(20, 20, 20);
 }
-.modal__movie-info img {
+.modal__container .trailer {
+  display: flex;
+  justify-content: center;
+}
+.modal__container .trailer .youtube {
+  margin-top: 15px;
+}
+.modal__container .trailer img {
   width: 100%;
   border-radius: 6px 6px 0 0;
 }
-.modal__movie-info .close {
+.modal__container .close {
   position: absolute;
   top: 15px;
   right: 15px;
@@ -31,18 +38,19 @@
   justify-content: center;
   align-items: center;
 }
-.modal__movie-info .close span {
+.modal__container .close span {
   color: #ffffff;
   font-size: 1.2rem;
   line-height: 0.8;
   cursor: pointer;
 }
-.modal__movie-info .modal-buttons {
-  margin-left: 40px;
+.modal__container .modal-buttons {
+  margin-top: 20px;
+  margin-left: 55px;
   display: flex;
   gap: 8px;
 }
-.modal__movie-info .modal-buttons button:nth-of-type(1) {
+.modal__container .modal-buttons button:nth-of-type(1) {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -55,17 +63,17 @@
   font-size: 21px;
   cursor: pointer;
 }
-.modal__movie-info .modal-buttons .add {
+.modal__container .modal-buttons .add {
   height: 34px;
   width: 34px;
   border: 1px solid white;
   border-radius: 50%;
 }
-.modal__movie-info .modal-buttons .add span {
+.modal__container .modal-buttons .add span {
   color: #ffffff;
   font-size: 2rem;
 }
-.modal__movie-info .modal-buttons .thumb {
+.modal__container .modal-buttons .thumb {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -74,51 +82,61 @@
   border: 1px solid white;
   border-radius: 50%;
 }
-.modal__movie-info .modal-buttons .thumb span {
+.modal__container .modal-buttons .thumb span {
   color: #ffffff;
   font-size: 1.2rem;
 }
-.modal__movie-info__info {
+.modal__container__info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 50px 40px 0 55px;
+}
+.modal__container__info p {
+  color: #ffffff;
+  font-size: 0.9rem;
+}
+.modal__container__info .info {
   display: flex;
   align-items: center;
   gap: 10px;
-  margin-top: 50px;
-  margin-left: 40px;
 }
-.modal__movie-info__info p {
-  color: #ffffff;
-  font-size: 0.9rem;
-}
-.modal__movie-info__info .date {
+.modal__container__info .info .date {
   text-align: center;
 }
-.modal__movie-info__info label {
+.modal__container__info .info label {
   color: #ffffff;
   font-size: 0.9rem;
 }
-.modal__movie-info__info .age-check {
+.modal__container__info .info .age-check {
   border: 1px solid rgb(116, 116, 116);
   padding: 0 4px;
 }
-.modal__movie-info__info .vote {
+.modal__container__info .info .vote {
   border: 1px solid rgb(116, 116, 116);
   padding: 0 4px;
   border-radius: 2px;
 }
-.modal__movie-info__info .media-type {
+.modal__container__info .info .media-type {
   border: 1px solid rgb(116, 116, 116);
   padding: 0 4px;
 }
-.modal__movie-info__info span {
+.modal__container__info .info span {
   color: #ffffff;
   line-height: 0;
 }
-.modal__movie-info .genres label:nth-of-type(1) {
+.modal__container__info .genres label:nth-of-type(1) {
   color: #777777;
   font-size: 0.9rem;
 }
-.modal__movie-info .genres label {
+.modal__container__info .genres label {
   color: #ffffff;
   font-size: 0.9rem;
   margin: 0 3px;
+}
+.modal__container .overview {
+  color: #ffffff;
+  width: 65%;
+  margin-left: 55px;
+  margin-top: 30px;
 }

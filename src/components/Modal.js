@@ -8,9 +8,11 @@ import { AiFillCaretRight } from "react-icons/ai";
 import { IoIosAdd } from "react-icons/io";
 import { BsHandThumbsUp } from "react-icons/bs";
 import { BsChatRightText } from "react-icons/bs";
+import YouTube from "react-youtube";
 
 export default function Modal({ open, closeModal }) {
-  const { trending, randomMovieImage, randomNumber } = useMoviesData();
+  const { trending, randomMovieImage, randomNumber, randomOverview } =
+    useMoviesData();
   const [allGenres, setAllGenres] = useState([]);
   const [releaseDate, setReleaseDate] = useState([]);
   const [airDate, setAirDate] = useState([]);
@@ -19,6 +21,28 @@ export default function Modal({ open, closeModal }) {
   const [mediaType, setMediaType] = useState([]);
   const [movieGenreId, setMovieGenreId] = useState([]);
   const [genresNames, setGenresNames] = useState([]);
+  const [movieId, setMovieId] = useState("");
+  const [selectedMovie, setSelectedMovie] = useState([]);
+  const [isTrailerAvailable, setIsTrailerAvailable] = useState();
+
+  const renderTrailer = () => {
+    if (isTrailerAvailable > 0) {
+      const trailer = selectedMovie.videos.results.find((vid) =>
+        vid.name.includes("Trailer")
+      );
+
+      const key = trailer ? trailer.key : selectedMovie.videos.results[0].key;
+
+      return <YouTube videoId={key} className={"youtube"} />;
+    } else {
+      return (
+        <img
+          src={`https://image.tmdb.org/t/p/original/${randomMovieImage}`}
+          alt=""
+        />
+      );
+    }
+  };
 
   const fetchData = async (url) => {
     try {
@@ -28,6 +52,14 @@ export default function Modal({ open, closeModal }) {
     } catch (error) {
       console.error(error);
     }
+  };
+
+  const fetchVideo = async (id) => {
+    const response = await axios.get(
+      `https://api.themoviedb.org/3/movie/${id}?api_key=7c21ca4ec675f18602bfd1f831746fab&append_to_response=videos`
+    );
+    const data = await response.data;
+    return data;
   };
 
   useEffect(() => {
@@ -84,7 +116,21 @@ export default function Modal({ open, closeModal }) {
       });
       return genre[randomNumber];
     });
+
+    setMovieId(() => {
+      const id = trending.map((movie) => {
+        return movie.id.toString();
+      });
+      return id[randomNumber];
+    });
   }, [trending]);
+
+  useEffect(() => {
+    fetchVideo(movieId).then((data) => {
+      setSelectedMovie(data);
+      setIsTrailerAvailable(data.videos.results.length);
+    });
+  }, [movieId]);
 
   useEffect(() => {
     setGenresNames(() => {
@@ -100,11 +146,17 @@ export default function Modal({ open, closeModal }) {
   if (open) {
     return ReactDom.createPortal(
       <div className="modal">
-        <div className="modal__movie-info">
-          <img
+        <div className="modal__container">
+          <div className="trailer">
+            {/* {selectedMovie.videos ? renderTrailer() : null} */}
+            {selectedMovie.videos ? renderTrailer() : null}
+          </div>
+
+          {/* <img
             src={`https://image.tmdb.org/t/p/original/${randomMovieImage}`}
             alt=""
-          />
+          /> */}
+
           <div className="close">
             <span>
               <AiOutlineClose />
@@ -126,31 +178,37 @@ export default function Modal({ open, closeModal }) {
               </span>
             </div>
           </div>
-          <div className="modal__movie-info__info">
-            <div className="date">
-              <p>{releaseDate ? "Release date" : "First air date"}</p>
-              <p>{releaseDate ? releaseDate : airDate}</p>
+          <div className="modal__container__info">
+            <div className="info">
+              <div className="date">
+                <p>{releaseDate ? "Release date" : "First air date"}</p>
+                <p>{releaseDate ? releaseDate : airDate}</p>
+              </div>
+
+              <div className="age-check">
+                <label>{age ? "18+" : "<18"}</label>
+              </div>
+              <div className="vote">
+                <p>{vote}</p>
+              </div>
+              <div className="media-type">
+                <label>{mediaType}</label>
+              </div>
+
+              <span>
+                <BsChatRightText />
+              </span>
             </div>
 
-            <div className="age-check">
-              <label>{age ? "18+" : "<18"}</label>
+            <div className="genres">
+              <label>Genres:</label>
+              {genresNames.map((name, index) => (
+                <label key={index}>{name}</label>
+              ))}
             </div>
-            <div className="vote">
-              <p>{vote}</p>
-            </div>
-            <div className="media-type">
-              <label>{mediaType}</label>
-            </div>
-
-            <span>
-              <BsChatRightText />
-            </span>
           </div>
-          <div className="genres">
-            <label>Genres:</label>
-            {genresNames.map((name, index) => (
-              <label key={index}>{name}</label>
-            ))}
+          <div className="overview">
+            <p>{randomOverview}</p>
           </div>
         </div>
       </div>,

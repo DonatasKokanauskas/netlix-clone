@@ -9,9 +9,6 @@ import Modal from "./components/Modal";
 import { MoviesDataProvider } from "./context/Context";
 
 function App() {
-  // const [trending, setTrending] = useState([]);
-  // const randomNumber = Math.floor(Math.random() * trending.length);
-
   const [isLoaded, setIsLoaded] = useState(true);
   const [isOpen, setIsOpen] = useState(true);
   return (

@@ -12,10 +12,11 @@ const ContentInfo = () => {
     setRandomTitle,
     randomName,
     setRandomName,
-    randomOverview,
     setRandomOverview,
     setRandomMovieImage,
   } = useMoviesData();
+
+  const [shorterOverview, setShorterOverview] = useState([]);
 
   useEffect(() => {
     setRandomTitle(() => {
@@ -32,13 +33,20 @@ const ContentInfo = () => {
     });
     setRandomOverview(() => {
       const overview = trending.map((movie) => {
-        if (movie.overview.length < 350) {
-          return movie.overview;
-        } else {
-          return movie.overview.slice(0, 350) + "...";
-        }
+        return movie.overview;
       });
       return overview[randomNumber];
+    });
+
+    setShorterOverview(() => {
+      const shorterOverview = trending.map((movie) => {
+        if (movie.overview.length < 200) {
+          return movie.overview;
+        } else {
+          return movie.overview.slice(0, 200) + "...";
+        }
+      });
+      return shorterOverview[randomNumber];
     });
 
     setRandomMovieImage(() => {
@@ -52,7 +60,7 @@ const ContentInfo = () => {
   return (
     <div className="movie-info">
       {randomTitle ? <h1>{randomTitle}</h1> : <h1>{randomName}</h1>}
-      <p>{randomOverview}</p>
+      <p>{shorterOverview}</p>
       <div>
         <button>
           <AiFillCaretRight />

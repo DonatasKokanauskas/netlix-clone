@@ -126,3 +126,5 @@ export default ContentCards;
 
 // api key: 7c21ca4ec675f18602bfd1f831746fab
 // trending now https://api.themoviedb.org/3/trending/all/day?api_key=7c21ca4ec675f18602bfd1f831746fab
+
+// for search https://api.themoviedb.org/3/search/movie?query=avatar&api_key=7c21ca4ec675f18602bfd1f831746fab
