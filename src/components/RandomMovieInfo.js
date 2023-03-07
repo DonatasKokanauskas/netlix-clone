@@ -14,6 +14,7 @@ const ContentInfo = () => {
     setRandomName,
     setRandomOverview,
     setRandomMovieImage,
+    setIsOpen,
   } = useMoviesData();
 
   const [shorterOverview, setShorterOverview] = useState([]);
@@ -57,16 +58,20 @@ const ContentInfo = () => {
     });
   }, [trending]);
 
+  const handleClick = () => {
+    setIsOpen(true);
+  };
+
   return (
     <div className="movie-info">
       {randomTitle ? <h1>{randomTitle}</h1> : <h1>{randomName}</h1>}
       <p>{shorterOverview}</p>
       <div>
-        <button>
+        <button onClick={handleClick}>
           <AiFillCaretRight />
           Play
         </button>
-        <button>
+        <button onClick={handleClick}>
           <AiOutlineInfoCircle />
           More info
         </button>

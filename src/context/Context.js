@@ -17,6 +17,8 @@ export const MoviesDataProvider = ({ children }) => {
   const [randomMovieImage, setRandomMovieImage] = useState([]);
 
   const [isOpen, setIsOpen] = useState(false);
+  const [movieId, setMovieId] = useState("");
+  const [type, setType] = useState("");
 
   const [leftPosition, setLeftPosition] = useState();
   const [topPosition, setTopPosition] = useState();
@@ -50,6 +52,10 @@ export const MoviesDataProvider = ({ children }) => {
         setHoverClass,
         isHovered,
         setIsHovered,
+        movieId,
+        setMovieId,
+        type,
+        setType,
       }}
     >
       {children}

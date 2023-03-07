@@ -48,6 +48,8 @@ const Movies = ({ title, state, alt, handleClick, translate }) => {
           {state.map((movie) => {
             return (
               <img
+                value={movie.id}
+                type={movie.first_air_date ? "TV show" : "movie"}
                 style={hoverClass}
                 onMouseOver={position}
                 onMouseLeave={hoverLeave}

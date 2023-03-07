@@ -24,10 +24,12 @@
   z-index: 100;
   display: flex;
   justify-content: center;
+  overflow-y: scroll;
 
   &__container {
     position: relative;
     width: 750px;
+    height: 100vh;
     margin-top: 28px;
     border-radius: 6px;
     background-color: rgb(20, 20, 20);
@@ -59,6 +61,10 @@
         line-height: 0.8;
         cursor: pointer;
       }
+    }
+
+    .close:active {
+      border: 1px solid rgb(255, 255, 255);
     }
     .modal-buttons {
       margin-top: 20px;
@@ -151,6 +157,10 @@
       }
 
       .genres {
+        max-width: 200px;
+        // display: flex;
+        // flex-direction: column;
+
         label:nth-of-type(1) {
           color: #777777;
           font-size: 0.9rem;
@@ -158,7 +168,7 @@
         label {
           color: #ffffff;
           font-size: 0.9rem;
-          margin: 0 3px;
+          margin-right: 3px;
         }
       }
     }

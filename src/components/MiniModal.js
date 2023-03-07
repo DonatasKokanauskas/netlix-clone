@@ -14,6 +14,9 @@ export default function MiniModal() {
     setHoverClass,
     isHovered,
     setIsHovered,
+    setIsOpen,
+    setMovieId,
+    setType,
   } = useMoviesData();
 
   const imgElement = document.querySelector(".hovered");
@@ -26,14 +29,21 @@ export default function MiniModal() {
     };
   };
 
-  const hoverHandler = () => {
+  const hoverHandler = (e) => {
     setHoverClass(imgElement.classList.add("hovered"));
     setIsHovered(true);
+
+    setMovieId(e.relatedTarget.getAttribute("value"));
+    setType(e.relatedTarget.getAttribute("type"));
   };
 
   const hoverLeave = () => {
     setIsHovered(false);
     setHoverClass(imgElement.classList.remove("hovered"));
+  };
+
+  const handleClick = () => {
+    setIsOpen(true);
   };
 
   if (isHovered) {
@@ -46,7 +56,7 @@ export default function MiniModal() {
       >
         <div className="mini-modal__part">
           <div className="mini-modal__part__first-div">
-            <div className="play">
+            <div className="play" onClick={handleClick}>
               <span>
                 <AiFillCaretRight />
               </span>
@@ -63,7 +73,7 @@ export default function MiniModal() {
             </div>
           </div>
 
-          <div className="mini-modal__part__second-div">
+          <div className="mini-modal__part__second-div" onClick={handleClick}>
             <div className="arrow">
               <span>
                 <FiChevronDown />
