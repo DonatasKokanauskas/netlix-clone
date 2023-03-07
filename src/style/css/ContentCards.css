@@ -15,7 +15,6 @@
 .movies-container .movies__cards {
   width: 100%;
   display: flex;
-  transition: transform 700ms ease-in-out;
   margin: -0.2rem 0;
 }
 .movies-container .movies__cards img {

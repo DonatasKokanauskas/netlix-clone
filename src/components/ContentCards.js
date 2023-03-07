@@ -68,7 +68,7 @@ const Movies = ({ title, state, alt, handleClick, translate }) => {
   );
 };
 
-const ContentCards = ({ setIsLoaded, setIsHovered, isHovered }) => {
+const ContentCards = ({ setIsLoaded }) => {
   const { trending, setTrending } = useMoviesData();
   const [topRatedMovies, setTopRatedMovies] = useState([]);
   const [newMovies, setNewMovies] = useState([]);

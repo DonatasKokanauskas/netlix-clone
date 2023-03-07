@@ -1,3 +1,15 @@
+@mixin button {
+  height: 34px;
+  width: 34px;
+  border: 1px solid rgb(144, 144, 144);
+  border-radius: 50%;
+  background-color: rgba(42, 42, 42, 0.6);
+}
+@mixin flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .mini-modal {
   position: absolute;
   padding-left: 0.377rem;
@@ -5,11 +17,85 @@
   z-index: 2;
   cursor: pointer;
 
-  .part {
+  &__part {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     box-shadow: rgb(0 0 0 / 75%) 0px 3px 10px;
     height: 70px;
     background-color: rgb(24, 24, 24);
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
+
+    &__first-div {
+      display: flex;
+      gap: 5px;
+      margin-left: 8px;
+      .play {
+        @include flex;
+        height: 34px;
+        width: 34px;
+        border-radius: 50%;
+        background-color: #ffffff;
+        line-height: 0;
+        span {
+          font-size: 1.4rem;
+          margin-left: 1px;
+        }
+      }
+
+      .add {
+        @include flex;
+        @include button;
+        line-height: 0;
+        span {
+          color: #ffffff;
+          font-size: 2rem;
+        }
+      }
+
+      .thumb {
+        @include flex;
+        @include button;
+        line-height: 0.8;
+        span {
+          color: #ffffff;
+          font-size: 1.2rem;
+        }
+      }
+    }
+
+    &__second-div {
+      margin-right: 8px;
+      .arrow {
+        @include flex;
+        @include button;
+        line-height: 0;
+        span {
+          margin-top: 2px;
+          color: #ffffff;
+          font-size: 1.5rem;
+        }
+      }
+    }
+
+    .play:hover {
+      background-color: #c0bfc0;
+    }
+    .add:hover,
+    .thumb:hover,
+    .arrow:hover {
+      border: 1.4px solid rgb(255, 255, 255);
+    }
+
+    .play:active {
+      color: rgb(39, 39, 39);
+      border: 1px solid rgb(255, 255, 255);
+    }
+    .add:active,
+    .thumb:active,
+    .arrow:active {
+      border: 2px solid rgb(255, 255, 255);
+    }
   }
 }

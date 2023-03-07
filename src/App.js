@@ -11,7 +11,6 @@ import MiniModal from "./components/MiniModal";
 
 function App() {
   const [isLoaded, setIsLoaded] = useState(true);
-  // const [isHovered, setIsHovered] = useState(false);
   return (
     <div className="app">
       <Header />

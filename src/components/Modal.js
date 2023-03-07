@@ -11,14 +11,8 @@ import { BsChatRightText } from "react-icons/bs";
 import YouTube from "react-youtube";
 
 export default function Modal() {
-  const {
-    trending,
-    randomMovieImage,
-    randomNumber,
-    randomOverview,
-    isOpen,
-    setIsOpen,
-  } = useMoviesData();
+  const { trending, randomMovieImage, randomNumber, randomOverview, isOpen } =
+    useMoviesData();
   const [allGenres, setAllGenres] = useState([]);
   const [releaseDate, setReleaseDate] = useState([]);
   const [airDate, setAirDate] = useState([]);
@@ -154,14 +148,8 @@ export default function Modal() {
       <div className="modal">
         <div className="modal__container">
           <div className="trailer">
-            {/* {selectedMovie.videos ? renderTrailer() : null} */}
             {selectedMovie.videos ? renderTrailer() : null}
           </div>
-
-          {/* <img
-            src={`https://image.tmdb.org/t/p/original/${randomMovieImage}`}
-            alt=""
-          /> */}
 
           <div className="close">
             <span>

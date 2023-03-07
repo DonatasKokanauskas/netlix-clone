@@ -1,8 +1,10 @@
 @mixin button {
   height: 34px;
   width: 34px;
-  border: 1px solid white;
+  border: 1px solid rgb(144, 144, 144);
   border-radius: 50%;
+  background-color: rgba(42, 42, 42, 0.6);
+  cursor: pointer;
 }
 @mixin flex {
   display: flex;
@@ -71,11 +73,13 @@
         background: #ffffff;
         border-radius: 4px;
         border: none;
-        font-size: 21px;
+        font-size: 1.32rem;
         cursor: pointer;
       }
       .add {
+        @include flex;
         @include button;
+        line-height: 0;
         span {
           color: #ffffff;
           font-size: 2rem;
@@ -84,10 +88,30 @@
       .thumb {
         @include flex;
         @include button;
+        line-height: 0.8;
         span {
           color: #ffffff;
           font-size: 1.2rem;
         }
+      }
+
+      button:nth-of-type(1):hover {
+        background-color: #c0bfc0;
+      }
+
+      .add:hover,
+      .thumb:hover {
+        border: 1.4px solid rgb(255, 255, 255);
+      }
+
+      button:nth-of-type(1):active {
+        color: rgb(39, 39, 39);
+        border: 2px solid rgb(255, 255, 255);
+      }
+
+      .add:active,
+      .thumb:active {
+        border: 2px solid rgb(255, 255, 255);
       }
     }
     &__info {

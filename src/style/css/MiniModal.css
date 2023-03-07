@@ -5,10 +5,98 @@
   z-index: 2;
   cursor: pointer;
 }
-.mini-modal .part {
+.mini-modal__part {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   box-shadow: rgba(0, 0, 0, 0.75) 0px 3px 10px;
   height: 70px;
   background-color: rgb(24, 24, 24);
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
+}
+.mini-modal__part__first-div {
+  display: flex;
+  gap: 5px;
+  margin-left: 8px;
+}
+.mini-modal__part__first-div .play {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 34px;
+  width: 34px;
+  border-radius: 50%;
+  background-color: #ffffff;
+  line-height: 0;
+}
+.mini-modal__part__first-div .play span {
+  font-size: 1.4rem;
+  margin-left: 1px;
+}
+.mini-modal__part__first-div .add {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 34px;
+  width: 34px;
+  border: 1px solid rgb(144, 144, 144);
+  border-radius: 50%;
+  background-color: rgba(42, 42, 42, 0.6);
+  line-height: 0;
+}
+.mini-modal__part__first-div .add span {
+  color: #ffffff;
+  font-size: 2rem;
+}
+.mini-modal__part__first-div .thumb {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 34px;
+  width: 34px;
+  border: 1px solid rgb(144, 144, 144);
+  border-radius: 50%;
+  background-color: rgba(42, 42, 42, 0.6);
+  line-height: 0.8;
+}
+.mini-modal__part__first-div .thumb span {
+  color: #ffffff;
+  font-size: 1.2rem;
+}
+.mini-modal__part__second-div {
+  margin-right: 8px;
+}
+.mini-modal__part__second-div .arrow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 34px;
+  width: 34px;
+  border: 1px solid rgb(144, 144, 144);
+  border-radius: 50%;
+  background-color: rgba(42, 42, 42, 0.6);
+  line-height: 0;
+}
+.mini-modal__part__second-div .arrow span {
+  margin-top: 2px;
+  color: #ffffff;
+  font-size: 1.5rem;
+}
+.mini-modal__part .play:hover {
+  background-color: #c0bfc0;
+}
+.mini-modal__part .add:hover,
+.mini-modal__part .thumb:hover,
+.mini-modal__part .arrow:hover {
+  border: 1.4px solid rgb(255, 255, 255);
+}
+.mini-modal__part .play:active {
+  color: rgb(39, 39, 39);
+  border: 1px solid rgb(255, 255, 255);
+}
+.mini-modal__part .add:active,
+.mini-modal__part .thumb:active,
+.mini-modal__part .arrow:active {
+  border: 2px solid rgb(255, 255, 255);
 }
