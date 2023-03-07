@@ -16,6 +16,14 @@ export const MoviesDataProvider = ({ children }) => {
   const [randomOverview, setRandomOverview] = useState([]);
   const [randomMovieImage, setRandomMovieImage] = useState([]);
 
+  const [isOpen, setIsOpen] = useState(false);
+
+  const [leftPosition, setLeftPosition] = useState();
+  const [topPosition, setTopPosition] = useState();
+  const [width, setWidth] = useState();
+
+  const [isHovered, setIsHovered] = useState(false);
+  const [hoverClass, setHoverClass] = useState();
   return (
     <MoviesDataContext.Provider
       value={{
@@ -30,6 +38,18 @@ export const MoviesDataProvider = ({ children }) => {
         setRandomOverview,
         setRandomMovieImage,
         randomMovieImage,
+        setLeftPosition,
+        setTopPosition,
+        leftPosition,
+        topPosition,
+        setWidth,
+        width,
+        isOpen,
+        setIsOpen,
+        hoverClass,
+        setHoverClass,
+        isHovered,
+        setIsHovered,
       }}
     >
       {children}

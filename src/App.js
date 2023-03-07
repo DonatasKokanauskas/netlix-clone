@@ -7,18 +7,20 @@ import ContentCards from "./components/ContentCards";
 import LoadingScreen from "./components/LoadingScreen";
 import Modal from "./components/Modal";
 import { MoviesDataProvider } from "./context/Context";
+import MiniModal from "./components/MiniModal";
 
 function App() {
   const [isLoaded, setIsLoaded] = useState(true);
-  const [isOpen, setIsOpen] = useState(true);
+  // const [isHovered, setIsHovered] = useState(false);
   return (
     <div className="app">
       <Header />
       {isLoaded && <LoadingScreen />}
       <MoviesDataProvider>
-        <Modal open={isOpen} CloseModal={() => setIsOpen(false)} />
+        <Modal />
         <RandomMovieImage />
         <RandomMovieInfo />
+        <MiniModal />
         <ContentCards setIsLoaded={setIsLoaded} />
       </MoviesDataProvider>
     </div>

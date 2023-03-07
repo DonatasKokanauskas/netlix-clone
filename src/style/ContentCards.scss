@@ -14,11 +14,10 @@
     overflow: hidden;
 
     &__cards {
-      // width: 94.3%;
       width: 100%;
       display: flex;
       transition: transform 700ms ease-in-out;
-      // transform: translateX(-100%);
+      margin: -0.2rem 0;
 
       img {
         max-width: calc(100% / 9);
@@ -27,12 +26,17 @@
         z-index: 1;
         cursor: pointer;
       }
+      .hovered {
+        transform-origin: top;
+        transform: scale(1.19);
+        z-index: 2;
+      }
     }
     .handle {
       display: flex;
       justify-content: center;
       align-items: center;
-      border-radius: 7px;
+      border-radius: 6px;
       border: none;
       width: 2.85%;
       background: hsla(0, 0%, 8%, 0.5);
@@ -54,13 +58,11 @@
     }
 
     .left-handle {
-      margin: 0.35rem 0.35rem 0.35rem 0;
       border-top-left-radius: 0;
       border-bottom-left-radius: 0;
     }
 
     .right-handle {
-      margin: 0.35rem 0 0.35rem 0.35rem;
       border-top-right-radius: 0;
       border-bottom-right-radius: 0;
     }

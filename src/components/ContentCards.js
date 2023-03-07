@@ -8,6 +8,33 @@ import useTranslate from "../custom-hooks/useTranslate";
 import { useMoviesData } from "../context/Context";
 
 const Movies = ({ title, state, alt, handleClick, translate }) => {
+  const {
+    setLeftPosition,
+    setTopPosition,
+    setWidth,
+    hoverClass,
+    setHoverClass,
+    setIsHovered,
+  } = useMoviesData();
+
+  const position = (e) => {
+    setHoverClass(e.target.classList.add("hovered"));
+
+    setIsHovered(true);
+    setLeftPosition(e.target.getBoundingClientRect().left + window.scrollX);
+    setTopPosition(
+      e.target.getBoundingClientRect().top +
+        window.scrollY +
+        (e.target.getBoundingClientRect().height - 70)
+    );
+    setWidth(e.target.getBoundingClientRect().width);
+  };
+
+  const hoverLeave = (e) => {
+    setIsHovered(false);
+    setHoverClass(e.target.classList.remove("hovered"));
+  };
+
   return (
     <div className="movies-container">
       <h2>{title}</h2>
@@ -21,6 +48,9 @@ const Movies = ({ title, state, alt, handleClick, translate }) => {
           {state.map((movie) => {
             return (
               <img
+                style={hoverClass}
+                onMouseOver={position}
+                onMouseLeave={hoverLeave}
                 src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`}
                 alt={alt}
                 key={movie.id}
@@ -38,7 +68,7 @@ const Movies = ({ title, state, alt, handleClick, translate }) => {
   );
 };
 
-const ContentCards = ({ setIsLoaded }) => {
+const ContentCards = ({ setIsLoaded, setIsHovered, isHovered }) => {
   const { trending, setTrending } = useMoviesData();
   const [topRatedMovies, setTopRatedMovies] = useState([]);
   const [newMovies, setNewMovies] = useState([]);
@@ -125,6 +155,5 @@ const ContentCards = ({ setIsLoaded }) => {
 export default ContentCards;
 
 // api key: 7c21ca4ec675f18602bfd1f831746fab
-// trending now https://api.themoviedb.org/3/trending/all/day?api_key=7c21ca4ec675f18602bfd1f831746fab
 
 // for search https://api.themoviedb.org/3/search/movie?query=avatar&api_key=7c21ca4ec675f18602bfd1f831746fab

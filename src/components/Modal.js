@@ -10,9 +10,15 @@ import { BsHandThumbsUp } from "react-icons/bs";
 import { BsChatRightText } from "react-icons/bs";
 import YouTube from "react-youtube";
 
-export default function Modal({ open, closeModal }) {
-  const { trending, randomMovieImage, randomNumber, randomOverview } =
-    useMoviesData();
+export default function Modal() {
+  const {
+    trending,
+    randomMovieImage,
+    randomNumber,
+    randomOverview,
+    isOpen,
+    setIsOpen,
+  } = useMoviesData();
   const [allGenres, setAllGenres] = useState([]);
   const [releaseDate, setReleaseDate] = useState([]);
   const [airDate, setAirDate] = useState([]);
@@ -143,7 +149,7 @@ export default function Modal({ open, closeModal }) {
     });
   }, [movieGenreId]);
 
-  if (open) {
+  if (isOpen) {
     return ReactDom.createPortal(
       <div className="modal">
         <div className="modal__container">
@@ -212,7 +218,7 @@ export default function Modal({ open, closeModal }) {
           </div>
         </div>
       </div>,
-      document.getElementById("root")
+      document.getElementById("portal")
     );
   }
 }
