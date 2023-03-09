@@ -42,7 +42,7 @@ export default function MiniModal() {
     setHoverClass(imgElement.classList.remove("hovered"));
   };
 
-  const handleClick = () => {
+  const handleClick = (e) => {
     setIsOpen(true);
   };
 

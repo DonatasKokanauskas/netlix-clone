@@ -49,6 +49,26 @@ header .secondary-navigation a {
 header .secondary-navigation a:visited {
   color: #ffffff;
 }
+header .secondary-navigation .search div {
+  display: flex;
+  align-items: center;
+}
+header .secondary-navigation .search div input {
+  height: 100%;
+  background-color: rgb(20, 20, 20);
+  border: none;
+  color: white;
+  margin: 0 12px;
+}
+header .secondary-navigation .search div input:focus {
+  outline: none;
+}
+header .secondary-navigation .search div span {
+  color: white;
+  font-size: 1.2rem;
+  line-height: 0;
+  cursor: pointer;
+}
 header .secondary-navigation img {
   cursor: pointer;
 }
@@ -64,4 +84,12 @@ header .secondary-navigation .user-container img:nth-of-type(2) {
 header .secondary-navigation .user-container:hover img:nth-of-type(2) {
   transform: rotate(180deg);
   transition: transform 367ms ease;
+}
+
+.search--active {
+  display: flex;
+  align-items: center;
+  padding: 6px 8px;
+  background-color: rgb(20, 20, 20);
+  border: 1px solid white;
 }

@@ -22,8 +22,6 @@ export default function Modal() {
   const [age, setAge] = useState("");
 
   const renderTrailer = () => {
-    console.log(type);
-    console.log(selectedMovie);
     if (isTrailerAvailable > 0) {
       const trailer = selectedMovie.videos.results.find((vid) =>
         vid.name.includes("Trailer")
@@ -53,15 +51,15 @@ export default function Modal() {
   };
 
   useEffect(() => {
-    fetchVideo(movieId, type).then((data) => {
-      setSelectedMovie(data);
+    // čia stebiu if'a, del movieId ir type reikalingumo ife.
+    if ((movieId, type)) {
+      fetchVideo(movieId, type).then((data) => {
+        setSelectedMovie(data);
 
-      setIsTrailerAvailable(data.videos.results.length);
-    });
-
-    console.log(selectedMovie);
-    console.log(type);
-  }, [movieId]);
+        setIsTrailerAvailable(data.videos.results.length);
+      });
+    }
+  }, [movieId, type]);
 
   useEffect(() => {
     setVote(() => {
@@ -82,12 +80,14 @@ export default function Modal() {
     setDate(() => {
       if (type === "movie") {
         return `Release date: ${selectedMovie.release_date}`;
-      } else {
+      } else if (type === "TV show") {
         return `First air date: ${selectedMovie.first_air_date}`;
       }
     });
 
-    setMediaType(type);
+    setMediaType(() => {
+      return type;
+    });
 
     setAge(() => {
       if (selectedMovie.adult === true) {
@@ -139,9 +139,11 @@ export default function Modal() {
           </div>
           <div className="modal__container__info">
             <div className="info">
-              <div className="date">
-                <p>{date ? date : "not found"}</p>
-              </div>
+              {date && (
+                <div className="date">
+                  <p>{date}</p>
+                </div>
+              )}
 
               <div className="age-check">
                 <label>{age}</label>
@@ -149,9 +151,12 @@ export default function Modal() {
               <div className="vote">
                 <p>{vote}</p>
               </div>
-              <div className="media-type">
-                <label>{mediaType}</label>
-              </div>
+
+              {mediaType && (
+                <div className="media-type">
+                  <label>{mediaType}</label>
+                </div>
+              )}
 
               <span>
                 <BsChatRightText />

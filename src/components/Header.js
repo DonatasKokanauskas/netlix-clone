@@ -5,9 +5,12 @@ import Search from "../images/search.png";
 import Bell from "../images/bell.png";
 import User from "../images/user.png";
 import Vector from "../images/vector.png";
+import { AiOutlineClose } from "react-icons/ai";
 
 const Header = () => {
   const [scroll, setScroll] = useState(0);
+  const [searchPressed, setSearchPressed] = useState(false);
+  const input = document.querySelector(".search");
   useEffect(() => {
     const handleScroll = (event) => {
       setScroll(window.scrollY);
@@ -19,6 +22,16 @@ const Header = () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+
+  const openSearch = () => {
+    input.classList.add("search--active");
+    setSearchPressed(true);
+  };
+
+  const closeSearch = () => {
+    input.classList.remove("search--active");
+    setSearchPressed(false);
+  };
 
   return (
     <header
@@ -58,7 +71,22 @@ const Header = () => {
         </ul>
       </nav>
       <div className="secondary-navigation">
-        <img src={Search} alt="Search image" />
+        {!searchPressed ? (
+          <div className="search" onClick={openSearch}>
+            <img src={Search} alt="Search image" />
+          </div>
+        ) : (
+          <div className="search">
+            <img src={Search} alt="Search image" />
+            <div>
+              <input type="text" placeholder="Titles" />
+              <span onClick={closeSearch}>
+                <AiOutlineClose />
+              </span>
+            </div>
+          </div>
+        )}
+
         <a href="">Kids</a>
         <img src={Bell} alt="Bell image" />
         <div className="user-container">

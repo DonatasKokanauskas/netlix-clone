@@ -15,9 +15,13 @@ const ContentInfo = () => {
     setRandomOverview,
     setRandomMovieImage,
     setIsOpen,
+    setMovieId,
+    setType,
   } = useMoviesData();
 
   const [shorterOverview, setShorterOverview] = useState([]);
+  const [randomID, setRandomID] = useState("");
+  const [randomType, setRandomType] = useState("");
 
   useEffect(() => {
     setRandomTitle(() => {
@@ -56,10 +60,26 @@ const ContentInfo = () => {
       });
       return image[randomNumber];
     });
+
+    setRandomID(() => {
+      const ID = trending.map((movie) => {
+        return movie.id;
+      });
+      return ID[randomNumber];
+    });
+
+    setRandomType(() => {
+      const type = trending.map((movie) => {
+        return movie.first_air_date ? "TV show" : "movie";
+      });
+      return type[randomNumber];
+    });
   }, [trending]);
 
   const handleClick = () => {
     setIsOpen(true);
+    setMovieId(randomID);
+    setType(randomType);
   };
 
   return (

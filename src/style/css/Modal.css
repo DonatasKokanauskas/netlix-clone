@@ -155,7 +155,11 @@
   line-height: 0;
 }
 .modal__container__info .genres {
+  position: absolute;
+  right: 50px;
   max-width: 200px;
+  display: flex;
+  flex-direction: column;
 }
 .modal__container__info .genres label:nth-of-type(1) {
   color: #777777;
