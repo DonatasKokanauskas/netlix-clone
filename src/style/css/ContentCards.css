@@ -22,7 +22,6 @@
   padding: 0.35rem;
   border-radius: 15px;
   z-index: 1;
-  cursor: pointer;
 }
 .movies-container .movies__cards .hovered {
   transform-origin: top;

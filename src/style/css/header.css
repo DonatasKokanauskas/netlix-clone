@@ -14,7 +14,11 @@ header nav {
   display: flex;
   align-items: center;
 }
-header nav img {
+header nav .logo-container {
+  display: flex;
+  align-items: center;
+}
+header nav .logo-container img {
   cursor: pointer;
 }
 header nav ul {

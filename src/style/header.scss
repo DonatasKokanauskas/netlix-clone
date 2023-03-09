@@ -24,9 +24,14 @@ header {
 
   nav {
     @include flex-align;
-    img {
-      cursor: pointer;
+
+    .logo-container {
+      @include flex-align;
+      img {
+        cursor: pointer;
+      }
     }
+
     ul {
       margin: 0 27px;
     }
