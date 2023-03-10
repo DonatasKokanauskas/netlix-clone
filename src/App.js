@@ -16,17 +16,21 @@ import {
 } from "react-router-dom";
 
 function App() {
-  const [isLoaded, setIsLoaded] = useState(true);
+  const [isLoading, setIsLoading] = useState(true);
+  const [searchKey, setSearchKey] = useState("");
 
   const router = createBrowserRouter(
     createRoutesFromElements(
-      <Route path="/" element={<Root />}>
-        <Route index element={<Home setIsLoaded={setIsLoaded} />} />
-        <Route path="TVShows" element={<TVShows />} />
+      <Route path="/" element={<Root setSearchKey={setSearchKey} />}>
+        <Route index element={<Home setIsLoading={setIsLoading} />} />
+        <Route
+          path="TVShows"
+          element={<TVShows setIsLoading={setIsLoading} />}
+        />
         <Route path="Movies" element={<Movies />} />
         <Route path="NewAndPopular" element={<NewAndPopular />} />
         <Route path="MyList" element={<MyList />} />
-        <Route path="Search" element={<Search />} />
+        <Route path="Search" element={<Search searchKey={searchKey} />} />
       </Route>
     )
   );
@@ -34,7 +38,7 @@ function App() {
   return (
     <div className="app">
       {/* <Header /> */}
-      {isLoaded && <LoadingScreen />}
+      {isLoading && <LoadingScreen />}
 
       <RouterProvider router={router} />
 

@@ -1,11 +1,7 @@
 import React from "react";
 
 const TVShows = () => {
-  return (
-    <div>
-      <h1>TV shows</h1>
-    </div>
-  );
+  return <div></div>;
 };
 
 export default TVShows;

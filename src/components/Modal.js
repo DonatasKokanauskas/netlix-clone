@@ -43,7 +43,7 @@ export default function Modal() {
   const fetchVideo = async (id, mediaType) => {
     const response = await axios.get(
       `https://api.themoviedb.org/3/${
-        mediaType == "TV show" ? "tv" : "movie"
+        mediaType === "TV show" ? "tv" : "movie"
       }/${id}?api_key=7c21ca4ec675f18602bfd1f831746fab&append_to_response=videos`
     );
     const data = await response.data;

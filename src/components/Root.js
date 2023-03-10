@@ -8,12 +8,13 @@ import Vector from "../images/vector.png";
 import { AiOutlineClose } from "react-icons/ai";
 import { Outlet, Link } from "react-router-dom";
 
-const Root = () => {
+const Root = ({ setSearchKey }) => {
   const [scroll, setScroll] = useState(0);
   const [searchPressed, setSearchPressed] = useState(false);
   const input = document.querySelector(".search");
+
   useEffect(() => {
-    const handleScroll = (event) => {
+    const handleScroll = () => {
       setScroll(window.scrollY);
     };
 
@@ -32,6 +33,7 @@ const Root = () => {
   const closeSearch = () => {
     input.classList.remove("search--active");
     setSearchPressed(false);
+    setSearchKey([]);
   };
 
   return (
@@ -50,34 +52,38 @@ const Root = () => {
         }
       >
         <nav>
-          <Link className="logo-container" to="/">
+          <Link className="logo-container" to="/" onClick={closeSearch}>
             <img src={Logo} alt="Netflix logo" />
           </Link>
-          {/* <img src={Logo} alt="Netflix logo" /> */}
+
           <ul>
             <li>
-              <Link to="/">Home</Link>
-              {/* <a href="">Home</a> */}
+              <Link to="/" onClick={closeSearch}>
+                Home
+              </Link>
             </li>
             <li>
-              <Link to="TVShows">TV Shows</Link>
-              {/* <a href="">TV Shows</a> */}
+              <Link to="TVShows" onClick={closeSearch}>
+                TV Shows
+              </Link>
             </li>
             <li>
-              <Link to="Movies">Movies</Link>
-              {/* <a href="">Movies</a> */}
+              <Link to="Movies" onClick={closeSearch}>
+                Movies
+              </Link>
             </li>
             <li>
-              <Link to="NewAndPopular">New & Popular</Link>
-              {/* <a href="">New & Popular</a> */}
+              <Link to="NewAndPopular" onClick={closeSearch}>
+                New & Popular
+              </Link>
             </li>
             <li>
-              <Link to="MyList">My List</Link>
-              {/* <a href="">My List</a> */}
+              <Link to="MyList" onClick={closeSearch}>
+                My List
+              </Link>
             </li>
             <li>
               <Link to="#">Browse by Languages</Link>
-              {/* <a href="">Browse by Languages</a> */}
             </li>
           </ul>
         </nav>
@@ -85,14 +91,18 @@ const Root = () => {
           {!searchPressed ? (
             <div className="search" onClick={openSearch}>
               <Link to="Search">
-                <img src={Search} alt="Search image" />
+                <img src={Search} alt="Search" />
               </Link>
             </div>
           ) : (
             <div className="search">
-              <img src={Search} alt="Search image" />
+              <img src={Search} alt="Search" />
               <div>
-                <input type="text" placeholder="Titles" />
+                <input
+                  type="text"
+                  placeholder="Titles"
+                  onChange={(e) => setSearchKey(e.target.value)}
+                />
                 <span onClick={closeSearch}>
                   <AiOutlineClose />
                 </span>
@@ -101,10 +111,9 @@ const Root = () => {
           )}
 
           <Link to="#">Kids</Link>
-          {/* <a href="">Kids</a> */}
-          <img src={Bell} alt="Bell image" />
+          <img src={Bell} alt="Bell" />
           <div className="user-container">
-            <img src={User} alt="User's image" />
+            <img src={User} alt="User" />
             <img src={Vector} alt="Vector" />
           </div>
         </div>

@@ -26,6 +26,7 @@ export const MoviesDataProvider = ({ children }) => {
 
   const [isHovered, setIsHovered] = useState(false);
   const [hoverClass, setHoverClass] = useState();
+
   return (
     <MoviesDataContext.Provider
       value={{

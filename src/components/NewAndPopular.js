@@ -1,11 +1,7 @@
 import React from "react";
 
 const NewAndPopular = () => {
-  return (
-    <div>
-      <h1>New & popular</h1>
-    </div>
-  );
+  return <div></div>;
 };
 
 export default NewAndPopular;

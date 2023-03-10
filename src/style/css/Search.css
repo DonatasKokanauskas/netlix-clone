@@ -1,0 +1,29 @@
+.search-page {
+  height: 1200px;
+  width: 100vw;
+  background: #141414;
+}
+.search-page__container {
+  position: absolute;
+  top: 100px;
+  overflow: hidden;
+  margin-left: 50px;
+}
+.search-page__container h2 {
+  margin-left: 5px;
+  font-size: 1.4rem;
+  color: gray;
+}
+.search-page__container .searched__cards {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  row-gap: 40px;
+}
+.search-page__container .searched__cards img {
+  width: 200px;
+  height: 300px;
+  padding: 0.35rem;
+  border-radius: 15px;
+  z-index: 1;
+}

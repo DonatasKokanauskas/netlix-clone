@@ -70,7 +70,7 @@ const Movies = ({ title, state, alt, handleClick, translate }) => {
   );
 };
 
-const ContentCards = ({ setIsLoaded }) => {
+const ContentCards = ({ setIsLoading }) => {
   const { trending, setTrending } = useMoviesData();
   const [topRatedMovies, setTopRatedMovies] = useState([]);
   const [newMovies, setNewMovies] = useState([]);
@@ -83,7 +83,7 @@ const ContentCards = ({ setIsLoaded }) => {
       if (response.status === 200) {
         state(data.results);
         setTimeout(() => {
-          setIsLoaded(false);
+          setIsLoading(false);
         }, 500);
       }
     } catch (error) {
@@ -157,5 +157,3 @@ const ContentCards = ({ setIsLoaded }) => {
 export default ContentCards;
 
 // api key: 7c21ca4ec675f18602bfd1f831746fab
-
-// for search https://api.themoviedb.org/3/search/movie?query=avatar&api_key=7c21ca4ec675f18602bfd1f831746fab
