@@ -8,32 +8,7 @@ import useTranslate from "../custom-hooks/useTranslate";
 import { useMoviesData } from "../context/Context";
 
 const Movies = ({ title, state, alt, handleClick, translate }) => {
-  const {
-    setLeftPosition,
-    setTopPosition,
-    setWidth,
-    hoverClass,
-    setHoverClass,
-    setIsHovered,
-  } = useMoviesData();
-
-  const position = (e) => {
-    setHoverClass(e.target.classList.add("hovered"));
-
-    setIsHovered(true);
-    setLeftPosition(e.target.getBoundingClientRect().left + window.scrollX);
-    setTopPosition(
-      e.target.getBoundingClientRect().top +
-        window.scrollY +
-        (e.target.getBoundingClientRect().height - 70)
-    );
-    setWidth(e.target.getBoundingClientRect().width);
-  };
-
-  const hoverLeave = (e) => {
-    setIsHovered(false);
-    setHoverClass(e.target.classList.remove("hovered"));
-  };
+  const { position, hoverLeave } = useMoviesData();
 
   return (
     <div className="movies-container">
@@ -46,18 +21,19 @@ const Movies = ({ title, state, alt, handleClick, translate }) => {
         </button>
         <div className="movies__cards" style={translate}>
           {state.map((movie) => {
-            return (
-              <img
-                value={movie.id}
-                type={movie.first_air_date ? "TV show" : "movie"}
-                style={hoverClass}
-                onMouseOver={position}
-                onMouseLeave={hoverLeave}
-                src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`}
-                alt={alt}
-                key={movie.id}
-              />
-            );
+            if (movie.poster_path && movie.backdrop_path != null) {
+              return (
+                <img
+                  value={movie.id}
+                  type={movie.first_air_date ? "TV show" : "movie"}
+                  onMouseOver={position}
+                  onMouseLeave={hoverLeave}
+                  src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`}
+                  alt={alt}
+                  key={movie.id}
+                />
+              );
+            }
           })}
         </div>
         <button className="handle right-handle" onClick={handleClick}>

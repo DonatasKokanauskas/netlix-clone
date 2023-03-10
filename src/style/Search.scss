@@ -1,5 +1,5 @@
 .search-page {
-  height: 1200px;
+  height: 1300px;
   width: 100vw;
   background: #141414;
 
@@ -7,10 +7,11 @@
     position: absolute;
     top: 100px;
     overflow: hidden;
-    margin-left: 50px;
+    padding: 0 55px;
 
     h2 {
-      margin-left: 5px;
+      margin-left: 6px;
+      margin-bottom: 10px;
       font-size: 1.4rem;
       color: gray;
     }
@@ -19,14 +20,19 @@
       display: flex;
       justify-content: flex-start;
       flex-wrap: wrap;
-      row-gap: 40px;
+      row-gap: 65px;
 
       img {
-        width: 200px;
-        height: 300px;
+        max-width: calc(100% / 9);
         padding: 0.35rem;
         border-radius: 15px;
         z-index: 1;
+      }
+
+      .hovered {
+        transform-origin: top;
+        transform: scale(1.19);
+        z-index: 2;
       }
     }
   }

@@ -7,11 +7,13 @@ import User from "../images/user.png";
 import Vector from "../images/vector.png";
 import { AiOutlineClose } from "react-icons/ai";
 import { Outlet, Link } from "react-router-dom";
+import { useMoviesData } from "../context/Context";
 
-const Root = ({ setSearchKey }) => {
+const Root = ({ setIsLoading }) => {
   const [scroll, setScroll] = useState(0);
   const [searchPressed, setSearchPressed] = useState(false);
   const input = document.querySelector(".search");
+  const { setSearchKey, setLoadingScreen } = useMoviesData();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -34,6 +36,7 @@ const Root = ({ setSearchKey }) => {
     input.classList.remove("search--active");
     setSearchPressed(false);
     setSearchKey([]);
+    setIsLoading(true);
   };
 
   return (
@@ -101,7 +104,10 @@ const Root = ({ setSearchKey }) => {
                 <input
                   type="text"
                   placeholder="Titles"
-                  onChange={(e) => setSearchKey(e.target.value)}
+                  onChange={(e) => {
+                    setSearchKey(e.target.value);
+                    setLoadingScreen(true);
+                  }}
                 />
                 <span onClick={closeSearch}>
                   <AiOutlineClose />

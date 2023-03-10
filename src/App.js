@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./style/css/App.css";
 import Root from "./components/Root";
 import LoadingScreen from "./components/LoadingScreen";
@@ -14,35 +14,40 @@ import {
   Route,
   RouterProvider,
 } from "react-router-dom";
+import { MoviesDataProvider } from "./context/Context";
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
-  const [searchKey, setSearchKey] = useState("");
 
   const router = createBrowserRouter(
     createRoutesFromElements(
-      <Route path="/" element={<Root setSearchKey={setSearchKey} />}>
+      <Route path="/" element={<Root setIsLoading={setIsLoading} />}>
         <Route index element={<Home setIsLoading={setIsLoading} />} />
-        <Route
-          path="TVShows"
-          element={<TVShows setIsLoading={setIsLoading} />}
-        />
+        <Route path="TVShows" element={<TVShows />} />
         <Route path="Movies" element={<Movies />} />
         <Route path="NewAndPopular" element={<NewAndPopular />} />
         <Route path="MyList" element={<MyList />} />
-        <Route path="Search" element={<Search searchKey={searchKey} />} />
+        <Route
+          path="Search"
+          element={<Search isLoading={isLoading} setIsLoading={setIsLoading} />}
+        />
       </Route>
     )
   );
 
+  useEffect(() => {
+    setTimeout(() => {
+      return setIsLoading(false);
+    }, 200);
+  }, [isLoading]);
+
   return (
     <div className="app">
-      {/* <Header /> */}
-      {isLoading && <LoadingScreen />}
+      <MoviesDataProvider>
+        {isLoading && <LoadingScreen />}
 
-      <RouterProvider router={router} />
-
-      {/* <Home setIsLoaded={setIsLoaded} /> */}
+        <RouterProvider router={router} />
+      </MoviesDataProvider>
     </div>
   );
 }

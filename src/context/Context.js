@@ -1,5 +1,4 @@
-import React, { useContext, useState } from "react";
-import { createContext } from "react";
+import React, { useContext, useState, createContext } from "react";
 
 const MoviesDataContext = createContext();
 
@@ -25,7 +24,34 @@ export const MoviesDataProvider = ({ children }) => {
   const [width, setWidth] = useState();
 
   const [isHovered, setIsHovered] = useState(false);
-  const [hoverClass, setHoverClass] = useState();
+  const [searchKey, setSearchKey] = useState("");
+  const [loadingScreen, setLoadingScreen] = useState(false);
+
+  const [isLoading, setIsLoading] = useState(true);
+
+  const position = (e) => {
+    e.target.classList.add("hovered");
+    console.log(isHovered);
+
+    setIsHovered(true);
+    setLeftPosition(e.target.getBoundingClientRect().left + window.scrollX);
+    setTopPosition(
+      e.target.getBoundingClientRect().top +
+        window.scrollY +
+        (e.target.getBoundingClientRect().height - 70)
+    );
+    setWidth(e.target.getBoundingClientRect().width);
+
+    //??
+    setMovieId(e.target.getAttribute("value"));
+    setType(e.target.getAttribute("type"));
+    //??
+  };
+
+  const hoverLeave = (e) => {
+    setIsHovered(false);
+    e.target.classList.remove("hovered");
+  };
 
   return (
     <MoviesDataContext.Provider
@@ -49,14 +75,20 @@ export const MoviesDataProvider = ({ children }) => {
         width,
         isOpen,
         setIsOpen,
-        hoverClass,
-        setHoverClass,
         isHovered,
         setIsHovered,
         movieId,
         setMovieId,
         type,
         setType,
+        searchKey,
+        setSearchKey,
+        position,
+        hoverLeave,
+        loadingScreen,
+        setLoadingScreen,
+        isLoading,
+        setIsLoading,
       }}
     >
       {children}

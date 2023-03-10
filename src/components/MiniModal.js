@@ -11,7 +11,6 @@ export default function MiniModal() {
     leftPosition,
     topPosition,
     width,
-    setHoverClass,
     isHovered,
     setIsHovered,
     setIsOpen,
@@ -30,7 +29,7 @@ export default function MiniModal() {
   };
 
   const hoverHandler = (e) => {
-    setHoverClass(imgElement.classList.add("hovered"));
+    imgElement.classList.add("hovered");
     setIsHovered(true);
 
     setMovieId(e.relatedTarget.getAttribute("value"));
@@ -39,10 +38,9 @@ export default function MiniModal() {
 
   const hoverLeave = () => {
     setIsHovered(false);
-    setHoverClass(imgElement.classList.remove("hovered"));
+    imgElement.classList.remove("hovered");
   };
-
-  const handleClick = (e) => {
+  const handleClick = () => {
     setIsOpen(true);
   };
 
