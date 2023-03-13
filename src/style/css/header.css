@@ -33,6 +33,9 @@ header nav li a {
   transition: color 0.4s;
   text-decoration: none;
 }
+header nav li a:link {
+  color: #ffffff;
+}
 header nav li a:visited {
   color: #ffffff;
 }
@@ -50,8 +53,14 @@ header .secondary-navigation a {
   transition: color 0.4s;
   text-decoration: none;
 }
+header .secondary-navigation a:link {
+  color: #ffffff;
+}
 header .secondary-navigation a:visited {
   color: #ffffff;
+}
+header .secondary-navigation a:hover {
+  color: #a9a8a8;
 }
 header .secondary-navigation .search div {
   display: flex;

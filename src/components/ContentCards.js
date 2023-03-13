@@ -8,7 +8,11 @@ import useTranslate from "../custom-hooks/useTranslate";
 import { useMoviesData } from "../context/Context";
 
 const Movies = ({ title, state, alt, handleClick, translate }) => {
-  const { position, hoverLeave } = useMoviesData();
+  const { position, hoverLeave, updatePosition } = useMoviesData();
+
+  useEffect(() => {
+    window.onresize = updatePosition;
+  }, []);
 
   return (
     <div className="movies-container">

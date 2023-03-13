@@ -7,8 +7,14 @@
     transition: color 0.4s;
     text-decoration: none;
   }
+  a:link {
+    color: #ffffff;
+  }
   a:visited {
     color: #ffffff;
+  }
+  a:hover {
+    color: #a9a8a8;
   }
 }
 header {
@@ -40,10 +46,6 @@ header {
       list-style: none;
       margin: 0 6px;
       @include a;
-
-      a:hover {
-        color: #a9a8a8;
-      }
     }
   }
   .secondary-navigation {

@@ -6,15 +6,15 @@ import MiniModal from "./MiniModal";
 import Modal from "./Modal";
 import LoadingScreen from "./LoadingScreen";
 
-const Search = ({ isLoading, setIsLoading }) => {
+const Search = ({ setIsLoading }) => {
   const [searchedMovies, setSearchedMovies] = useState([]);
-  const { searchKey } = useMoviesData();
   const {
     position,
     hoverLeave,
     setIsHovered,
     loadingScreen,
     setLoadingScreen,
+    searchKey,
   } = useMoviesData();
 
   const fetchMovies = async (key) => {
@@ -22,8 +22,12 @@ const Search = ({ isLoading, setIsLoading }) => {
       const response = await axios.get(
         `https://api.themoviedb.org/3/search/movie?query=${key}&api_key=7c21ca4ec675f18602bfd1f831746fab`
       );
+      const response2 = await axios.get(
+        `https://api.themoviedb.org/3/search/tv?query=${key}&api_key=7c21ca4ec675f18602bfd1f831746fab`
+      );
       const data = await response.data;
-      return data;
+      const data2 = await response2.data;
+      return [...data.results, ...data2.results];
     } catch (error) {
       console.error(error);
     }
@@ -32,7 +36,7 @@ const Search = ({ isLoading, setIsLoading }) => {
   useEffect(() => {
     fetchMovies(searchKey)
       .then((data) => {
-        setSearchedMovies(data.results);
+        setSearchedMovies(data);
         setTimeout(() => {
           setLoadingScreen(false);
         }, 200);
@@ -43,15 +47,13 @@ const Search = ({ isLoading, setIsLoading }) => {
   }, [searchKey]);
 
   useEffect(() => {
-    if (searchedMovies.length === 0) {
-      setIsHovered(false);
+    setIsHovered(false);
+    if (document.querySelector(".hovered")) {
+      document.querySelector(".hovered").classList.remove("hovered");
     }
   }, [searchedMovies]);
 
-  // useEffect(() => {
-  //   setIsLoading(false);
-  // }, [isLoading]);
-  setIsLoading(false);
+  // setIsLoading(false);
 
   return (
     <div className="search-page">
@@ -59,7 +61,7 @@ const Search = ({ isLoading, setIsLoading }) => {
       <MiniModal />
       <Modal />
       <div className="search-page__container">
-        <h2>Movies related to: {searchKey}</h2>
+        <h2>Movies & TV shows related to: {searchKey}</h2>
         <div className="searched__cards">
           {searchedMovies.map((movie) => {
             if (movie.poster_path && movie.backdrop_path != null) {

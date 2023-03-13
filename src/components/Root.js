@@ -6,14 +6,17 @@ import Bell from "../images/bell.png";
 import User from "../images/user.png";
 import Vector from "../images/vector.png";
 import { AiOutlineClose } from "react-icons/ai";
-import { Outlet, Link } from "react-router-dom";
+import { Outlet, Link, useLocation, useNavigate } from "react-router-dom";
 import { useMoviesData } from "../context/Context";
 
 const Root = ({ setIsLoading }) => {
   const [scroll, setScroll] = useState(0);
   const [searchPressed, setSearchPressed] = useState(false);
   const input = document.querySelector(".search");
-  const { setSearchKey, setLoadingScreen } = useMoviesData();
+  const { setSearchKey, setLoadingScreen, searchKey, setIsHovered } =
+    useMoviesData();
+  const location = useLocation();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -36,8 +39,23 @@ const Root = ({ setIsLoading }) => {
     input.classList.remove("search--active");
     setSearchPressed(false);
     setSearchKey([]);
-    setIsLoading(true);
+    if (location.pathname === "/Search") {
+      setIsLoading(true);
+    }
   };
+
+  useEffect(() => {
+    if (searchKey.length > 0) {
+      navigate("/Search");
+    }
+
+    if (location.pathname === "/Search" && searchKey.length === 0) {
+      navigate("/");
+      setLoadingScreen(true);
+      setIsHovered(false);
+      document.querySelector(".hovered").classList.remove("hovered");
+    }
+  }, [searchKey]);
 
   return (
     <>
@@ -93,9 +111,9 @@ const Root = ({ setIsLoading }) => {
         <div className="secondary-navigation">
           {!searchPressed ? (
             <div className="search" onClick={openSearch}>
-              <Link to="Search">
-                <img src={Search} alt="Search" />
-              </Link>
+              {/* <Link to="Search"> */}
+              <img src={Search} alt="Search" />
+              {/* </Link> */}
             </div>
           ) : (
             <div className="search">
@@ -109,9 +127,21 @@ const Root = ({ setIsLoading }) => {
                     setLoadingScreen(true);
                   }}
                 />
-                <span onClick={closeSearch}>
-                  <AiOutlineClose />
-                </span>
+                {location.pathname === "/" ||
+                location.pathname === "/TVShows" ||
+                location.pathname === "/Movies" ||
+                location.pathname === "/NewAndPopular" ||
+                location.pathname === "/MyList" ? (
+                  <span onClick={closeSearch}>
+                    <AiOutlineClose />
+                  </span>
+                ) : (
+                  <Link to="/" onClick={closeSearch}>
+                    <span onClick={closeSearch}>
+                      <AiOutlineClose />
+                    </span>
+                  </Link>
+                )}
               </div>
             </div>
           )}

@@ -5,6 +5,7 @@ import { AiFillCaretRight } from "react-icons/ai";
 import { IoIosAdd } from "react-icons/io";
 import { BsHandThumbsUp } from "react-icons/bs";
 import { FiChevronDown } from "react-icons/fi";
+import { useEffect, useState } from "react";
 
 export default function MiniModal() {
   const {
@@ -16,6 +17,8 @@ export default function MiniModal() {
     setIsOpen,
     setMovieId,
     setType,
+    myList,
+    setMyList,
   } = useMoviesData();
 
   const imgElement = document.querySelector(".hovered");
@@ -43,7 +46,35 @@ export default function MiniModal() {
   const handleClick = () => {
     setIsOpen(true);
   };
+  //--------------
+  // const [myList, setMyList] = useState([]);
 
+  useEffect(() => {
+    const data = localStorage.getItem("myList");
+    if (data) {
+      setMyList(JSON.parse(data));
+    }
+  }, []);
+
+  const getIdAndType = () => {
+    setMyList(() => {
+      return [
+        ...myList,
+        {
+          id: imgElement.getAttribute("value"),
+          type: imgElement.getAttribute("type"),
+        },
+      ];
+    });
+  };
+
+  useEffect(() => {
+    if (myList.length > 0) {
+      localStorage.setItem("myList", JSON.stringify(myList));
+    }
+  });
+  // console.log(myList);
+  //----------------
   if (isHovered) {
     return ReactDom.createPortal(
       <div
@@ -59,7 +90,7 @@ export default function MiniModal() {
                 <AiFillCaretRight />
               </span>
             </div>
-            <div className="add">
+            <div className="add" onClick={getIdAndType}>
               <span>
                 <IoIosAdd />
               </span>

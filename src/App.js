@@ -14,10 +14,12 @@ import {
   Route,
   RouterProvider,
 } from "react-router-dom";
-import { MoviesDataProvider } from "./context/Context";
+
+import { useMoviesData } from "./context/Context";
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
+  const { loadingScreen } = useMoviesData();
 
   const router = createBrowserRouter(
     createRoutesFromElements(
@@ -43,11 +45,10 @@ function App() {
 
   return (
     <div className="app">
-      <MoviesDataProvider>
-        {isLoading && <LoadingScreen />}
+      {isLoading && <LoadingScreen />}
+      {loadingScreen && <LoadingScreen />}
 
-        <RouterProvider router={router} />
-      </MoviesDataProvider>
+      <RouterProvider router={router} />
     </div>
   );
 }

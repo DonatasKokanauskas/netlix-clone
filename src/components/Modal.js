@@ -29,7 +29,13 @@ export default function Modal() {
 
       const key = trailer ? trailer.key : selectedMovie.videos.results[0].key;
 
-      return <YouTube videoId={key} className={"youtube"} />;
+      return (
+        <YouTube
+          videoId={key}
+          className={"youtube"}
+          opts={{ width: "100%", height: "100%" }}
+        />
+      );
     } else {
       return (
         <img
@@ -122,10 +128,10 @@ export default function Modal() {
             </span>
           </div>
           <div className="modal-buttons">
-            <button>
+            {/* <button>
               <AiFillCaretRight />
               Play
-            </button>
+            </button> */}
             <div className="add">
               <span>
                 <IoIosAdd />

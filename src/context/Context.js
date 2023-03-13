@@ -29,9 +29,10 @@ export const MoviesDataProvider = ({ children }) => {
 
   const [isLoading, setIsLoading] = useState(true);
 
+  const [myList, setMyList] = useState([]);
+
   const position = (e) => {
     e.target.classList.add("hovered");
-    console.log(isHovered);
 
     setIsHovered(true);
     setLeftPosition(e.target.getBoundingClientRect().left + window.scrollX);
@@ -42,15 +43,27 @@ export const MoviesDataProvider = ({ children }) => {
     );
     setWidth(e.target.getBoundingClientRect().width);
 
-    //??
     setMovieId(e.target.getAttribute("value"));
     setType(e.target.getAttribute("type"));
-    //??
   };
 
   const hoverLeave = (e) => {
     setIsHovered(false);
     e.target.classList.remove("hovered");
+  };
+
+  const updatePosition = () => {
+    const imgElement = document.querySelector(".hovered");
+
+    if (imgElement) {
+      setLeftPosition(imgElement.getBoundingClientRect().left + window.scrollX);
+      setTopPosition(
+        imgElement.getBoundingClientRect().top +
+          window.scrollY +
+          (imgElement.getBoundingClientRect().height - 70)
+      );
+      setWidth(imgElement.getBoundingClientRect().width);
+    }
   };
 
   return (
@@ -89,6 +102,9 @@ export const MoviesDataProvider = ({ children }) => {
         setLoadingScreen,
         isLoading,
         setIsLoading,
+        updatePosition,
+        myList,
+        setMyList,
       }}
     >
       {children}
