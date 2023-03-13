@@ -4,7 +4,7 @@
   background: #141414;
 
   &__container {
-    padding: 100px 55px;
+    padding: 85px 55px;
     overflow: hidden;
     background: inherit;
 
@@ -20,7 +20,8 @@
       margin: 200px;
     }
 
-    .list__cards {
+    .my-list__cards {
+      margin-top: 60px;
       display: flex;
       justify-content: flex-start;
       flex-wrap: wrap;

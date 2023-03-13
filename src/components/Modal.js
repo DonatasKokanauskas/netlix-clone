@@ -4,7 +4,6 @@ import "../style/css/Modal.css";
 import axios from "axios";
 import { useMoviesData } from "../context/Context";
 import { AiOutlineClose } from "react-icons/ai";
-import { AiFillCaretRight } from "react-icons/ai";
 import { IoIosAdd } from "react-icons/io";
 import { BsHandThumbsUp } from "react-icons/bs";
 import { BsChatRightText } from "react-icons/bs";
@@ -57,7 +56,6 @@ export default function Modal() {
   };
 
   useEffect(() => {
-    // čia stebiu if'a, del movieId ir type reikalingumo ife.
     if ((movieId, type)) {
       fetchVideo(movieId, type).then((data) => {
         setSelectedMovie(data);
@@ -128,10 +126,6 @@ export default function Modal() {
             </span>
           </div>
           <div className="modal-buttons">
-            {/* <button>
-              <AiFillCaretRight />
-              Play
-            </button> */}
             <div className="add">
               <span>
                 <IoIosAdd />

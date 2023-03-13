@@ -50,11 +50,12 @@ const Movies = ({ title, state, alt, handleClick, translate }) => {
   );
 };
 
-const ContentCards = ({ setIsLoading }) => {
+const ContentCards = () => {
   const { trending, setTrending } = useMoviesData();
   const [topRatedMovies, setTopRatedMovies] = useState([]);
   const [newMovies, setNewMovies] = useState([]);
   const [topRatedShows, setTopRatedShows] = useState([]);
+  const { setIsLoading } = useMoviesData();
 
   const fetchData = async (url, state) => {
     try {

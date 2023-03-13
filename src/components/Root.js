@@ -9,12 +9,17 @@ import { AiOutlineClose } from "react-icons/ai";
 import { Outlet, Link, useLocation, useNavigate } from "react-router-dom";
 import { useMoviesData } from "../context/Context";
 
-const Root = ({ setIsLoading }) => {
+const Root = () => {
   const [scroll, setScroll] = useState(0);
   const [searchPressed, setSearchPressed] = useState(false);
   const input = document.querySelector(".search");
-  const { setSearchKey, setLoadingScreen, searchKey, setIsHovered } =
-    useMoviesData();
+  const {
+    setIsLoading,
+    setSearchKey,
+    setLoadingScreen,
+    searchKey,
+    setIsHovered,
+  } = useMoviesData();
   const location = useLocation();
   const navigate = useNavigate();
 
@@ -39,9 +44,17 @@ const Root = ({ setIsLoading }) => {
     input.classList.remove("search--active");
     setSearchPressed(false);
     setSearchKey([]);
-    if (location.pathname === "/Search") {
-      setIsLoading(true);
-    }
+    setIsLoading(true);
+    setIsHovered(false);
+    document.querySelector(".hovered").classList.remove("hovered");
+    // if (location.pathname === "/Search") {
+    //   setIsLoading(true);
+    // }
+    // else if (location.pathname === "/MyList") {
+    //   setIsLoading(true);
+    // } else if (location.pathname === "/") {
+    //   setIsLoading(true);
+    // }
   };
 
   useEffect(() => {

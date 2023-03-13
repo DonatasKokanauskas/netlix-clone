@@ -4,21 +4,30 @@ import "../style/css/MyList.css";
 import axios from "axios";
 import { useMoviesData } from "../context/Context";
 import MiniModal from "./MiniModal";
+import Modal from "./Modal";
+import LoadingScreen from "./LoadingScreen";
 
 const MyList = () => {
-  const { myList, setMyList } = useMoviesData();
+  const {
+    myList,
+    setMyList,
+    position,
+    hoverLeave,
+    setIsHovered,
+    isLoading,
+    setIsLoading,
+  } = useMoviesData();
   const [fetchedElement, setFetchedElement] = useState();
 
   useEffect(() => {
+    setIsLoading(true);
     const data = localStorage.getItem("myList");
     if (data) {
       setMyList(JSON.parse(data));
     }
   }, []);
 
-  // console.log(myList);
-
-  const fetchData = async (id, mediaType) => {
+  const fetchData = async () => {
     try {
       const response = await Promise.all(
         myList.map((element) => {
@@ -36,9 +45,6 @@ const MyList = () => {
         return response.data;
       });
 
-      // setFetchedImg((prevValue) => {
-      //   return [data.map((data) => data.poster_path)];
-      // });
       return data;
     } catch (error) {
       console.log(error);
@@ -48,32 +54,41 @@ const MyList = () => {
   useEffect(() => {
     fetchData()
       .then((data) => {
-        setFetchedElement(data);
+        const removeDuiplicates = [
+          ...data
+            .reduce((acc, obj) => acc.set(obj.id, obj), new Map())
+            .values(),
+        ];
+        setFetchedElement(removeDuiplicates);
+        setTimeout(() => {
+          setIsLoading(false);
+        }, 200);
       })
       .catch((error) => {
         console.log(error);
       });
   }, [myList]);
 
-  console.log(fetchedElement);
-
   return (
     <div className="my-list-page">
-      {/* {loadingScreen && <LoadingScreen />} */}
-      {/* <MiniModal />
-      <Modal /> */}
+      {isLoading && <LoadingScreen />}
+      <MiniModal />
+      <Modal />
       <div className="my-list-page__container">
         <h1>My List</h1>
-        <h3>You haven't added any titles to your list yet</h3>
-        <div className="list__cards">
+
+        {fetchedElement !== undefined && fetchedElement.length === 0 && (
+          <h3>You haven't added any titles to your list yet</h3>
+        )}
+        <div className="my-list__cards">
           {fetchedElement &&
             fetchedElement.map((movie) => {
               return (
                 <img
-                  // value={movie.id}
-                  // type={movie.first_air_date ? "TV show" : "movie"}
-                  // onMouseOver={position}
-                  // onMouseLeave={hoverLeave}
+                  value={movie.id}
+                  type={movie.first_air_date ? "TV show" : "movie"}
+                  onMouseOver={position}
+                  onMouseLeave={hoverLeave}
                   src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`}
                   key={movie.id}
                 />

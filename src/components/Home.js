@@ -5,15 +5,17 @@ import RandomMovieInfo from "./RandomMovieInfo";
 import ContentCards from "./ContentCards";
 import Modal from "./Modal";
 import MiniModal from "./MiniModal";
+import { useMoviesData } from "../context/Context";
 
-const Home = ({ setIsLoading }) => {
+const Home = () => {
+  const { setIsLoading } = useMoviesData();
   return (
     <div className="home">
       <Modal />
       <RandomMovieImage />
       <RandomMovieInfo />
       <MiniModal />
-      <ContentCards setIsLoading={setIsLoading} />
+      <ContentCards />
     </div>
   );
 };

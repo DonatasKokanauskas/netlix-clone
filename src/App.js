@@ -18,21 +18,17 @@ import {
 import { useMoviesData } from "./context/Context";
 
 function App() {
-  const [isLoading, setIsLoading] = useState(true);
-  const { loadingScreen } = useMoviesData();
+  const { isLoading, setIsLoading, loadingScreen } = useMoviesData();
 
   const router = createBrowserRouter(
     createRoutesFromElements(
-      <Route path="/" element={<Root setIsLoading={setIsLoading} />}>
-        <Route index element={<Home setIsLoading={setIsLoading} />} />
+      <Route path="/" element={<Root />}>
+        <Route index element={<Home />} />
         <Route path="TVShows" element={<TVShows />} />
         <Route path="Movies" element={<Movies />} />
         <Route path="NewAndPopular" element={<NewAndPopular />} />
         <Route path="MyList" element={<MyList />} />
-        <Route
-          path="Search"
-          element={<Search isLoading={isLoading} setIsLoading={setIsLoading} />}
-        />
+        <Route path="Search" element={<Search />} />
       </Route>
     )
   );

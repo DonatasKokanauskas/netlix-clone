@@ -4,7 +4,7 @@
   background: #141414;
 }
 .my-list-page__container {
-  padding: 100px 55px;
+  padding: 85px 55px;
   overflow: hidden;
   background: inherit;
 }
@@ -19,19 +19,20 @@
   text-align: center;
   margin: 200px;
 }
-.my-list-page__container .list__cards {
+.my-list-page__container .my-list__cards {
+  margin-top: 60px;
   display: flex;
   justify-content: flex-start;
   flex-wrap: wrap;
   row-gap: 65px;
 }
-.my-list-page__container .list__cards img {
+.my-list-page__container .my-list__cards img {
   max-width: 11.1111111111%;
   padding: 0.35rem;
   border-radius: 15px;
   z-index: 1;
 }
-.my-list-page__container .list__cards .hovered {
+.my-list-page__container .my-list__cards .hovered {
   transform-origin: top;
   transform: scale(1.19);
   z-index: 2;

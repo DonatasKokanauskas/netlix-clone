@@ -6,7 +6,7 @@ import MiniModal from "./MiniModal";
 import Modal from "./Modal";
 import LoadingScreen from "./LoadingScreen";
 
-const Search = ({ setIsLoading }) => {
+const Search = () => {
   const [searchedMovies, setSearchedMovies] = useState([]);
   const {
     position,
