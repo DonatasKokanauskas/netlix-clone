@@ -70,6 +70,12 @@ const Root = () => {
     }
   }, [searchKey]);
 
+  const boldNav = (page) => {
+    return location.pathname === page
+      ? { fontWeight: "bold" }
+      : { fontWeight: "normal" };
+  };
+
   return (
     <>
       <header
@@ -92,27 +98,43 @@ const Root = () => {
 
           <ul>
             <li>
-              <Link to="/" onClick={closeSearch}>
+              <Link to="/" onClick={closeSearch} style={boldNav("/")}>
                 Home
               </Link>
             </li>
             <li>
-              <Link to="TVShows" onClick={closeSearch}>
+              <Link
+                to="TVShows"
+                onClick={closeSearch}
+                style={boldNav("/TVShows")}
+              >
                 TV Shows
               </Link>
             </li>
             <li>
-              <Link to="Movies" onClick={closeSearch}>
+              <Link
+                to="Movies"
+                onClick={closeSearch}
+                style={boldNav("/Movies")}
+              >
                 Movies
               </Link>
             </li>
             <li>
-              <Link to="NewAndPopular" onClick={closeSearch}>
+              <Link
+                to="NewAndPopular"
+                onClick={closeSearch}
+                style={boldNav("/NewAndPopular")}
+              >
                 New & Popular
               </Link>
             </li>
             <li>
-              <Link to="MyList" onClick={closeSearch}>
+              <Link
+                to="MyList"
+                onClick={closeSearch}
+                style={boldNav("/MyList")}
+              >
                 My List
               </Link>
             </li>

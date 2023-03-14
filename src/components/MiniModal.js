@@ -23,6 +23,9 @@ export default function MiniModal() {
   } = useMoviesData();
 
   const imgElement = document.querySelector(".hovered");
+  const [mouseOverAdd, setMouseOverAdd] = useState(false);
+  const [mouseOverThumb, setMouseOverThumb] = useState(false);
+  const [mouseOverArrow, setMouseOverArrow] = useState(false);
 
   const position = () => {
     return {
@@ -57,6 +60,7 @@ export default function MiniModal() {
   }, []);
 
   const getIdAndType = () => {
+    setMouseOverAdd(false);
     if (
       myList.filter((obj) => obj.id === imgElement.getAttribute("value"))
         .length > 0
@@ -86,8 +90,14 @@ export default function MiniModal() {
       localStorage.setItem("myList", []);
     }
   }, [myList]);
-  console.log(myList);
   //----------------
+
+  const handleMouseOver = (state) => {
+    state(true);
+  };
+  const handleMouseLeave = (state) => {
+    state(false);
+  };
   if (isHovered) {
     return ReactDom.createPortal(
       <div
@@ -103,32 +113,67 @@ export default function MiniModal() {
                 <AiFillCaretRight />
               </span>
             </div>
-            <div className="add" onClick={getIdAndType}>
-              {imgElement &&
-              myList.filter(
-                (obj) => obj.id === imgElement.getAttribute("value")
-              ).length > 0 ? (
-                <span>
-                  <CgCheck />
-                </span>
-              ) : (
-                <span>
-                  <IoIosAdd />
-                </span>
-              )}
+
+            <div className="add-container">
+              {mouseOverAdd &&
+                myList.filter(
+                  (obj) => obj.id === imgElement.getAttribute("value")
+                ).length === 0 && <div className="bubble">Add to My List</div>}
+              {mouseOverAdd &&
+                myList.filter(
+                  (obj) => obj.id === imgElement.getAttribute("value")
+                ).length > 0 && (
+                  <div className="bubble" style={{ width: "170px" }}>
+                    Remove from My List
+                  </div>
+                )}
+              <div
+                className="add"
+                onMouseOver={() => handleMouseOver(setMouseOverAdd)}
+                onMouseLeave={() => handleMouseLeave(setMouseOverAdd)}
+                onClick={getIdAndType}
+              >
+                {imgElement &&
+                myList.filter(
+                  (obj) => obj.id === imgElement.getAttribute("value")
+                ).length > 0 ? (
+                  <span>
+                    <CgCheck />
+                  </span>
+                ) : (
+                  <span>
+                    <IoIosAdd />
+                  </span>
+                )}
+              </div>
             </div>
-            <div className="thumb">
-              <span>
-                <BsHandThumbsUp />
-              </span>
+
+            <div className="thumb-container">
+              {mouseOverThumb && <div className="bubble">Like this</div>}
+              <div
+                className="thumb"
+                onMouseOver={() => handleMouseOver(setMouseOverThumb)}
+                onMouseLeave={() => handleMouseLeave(setMouseOverThumb)}
+              >
+                <span>
+                  <BsHandThumbsUp />
+                </span>
+              </div>
             </div>
           </div>
 
           <div className="mini-modal__part__second-div" onClick={handleClick}>
-            <div className="arrow">
-              <span>
-                <FiChevronDown />
-              </span>
+            <div className="arrow-container">
+              {mouseOverArrow && <div className="bubble">Info</div>}
+              <div
+                className="arrow"
+                onMouseOver={() => handleMouseOver(setMouseOverArrow)}
+                onMouseLeave={() => handleMouseLeave(setMouseOverArrow)}
+              >
+                <span>
+                  <FiChevronDown />
+                </span>
+              </div>
             </div>
           </div>
         </div>

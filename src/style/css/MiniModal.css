@@ -105,3 +105,38 @@
 .mini-modal__part .arrow:active {
   border: 2px solid rgb(255, 255, 255);
 }
+.mini-modal__part .add-container,
+.mini-modal__part .thumb-container,
+.mini-modal__part .arrow-container {
+  display: flex;
+  justify-content: center;
+}
+.mini-modal__part .add-container .bubble,
+.mini-modal__part .thumb-container .bubble,
+.mini-modal__part .arrow-container .bubble {
+  position: absolute;
+  top: -35px;
+  background: whitesmoke;
+  color: black;
+  font-size: 1.5vh;
+  line-height: 10px;
+  text-align: center;
+  height: 30px;
+  border-radius: 5px;
+  padding: 10px;
+}
+.mini-modal__part .add-container .bubble:after,
+.mini-modal__part .thumb-container .bubble:after,
+.mini-modal__part .arrow-container .bubble:after {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 0;
+  z-index: 1;
+  border-style: solid;
+  border-color: whitesmoke transparent;
+  border-width: 10px 9px 0;
+  bottom: -10px;
+  left: 50%;
+  margin-left: -9px;
+}
