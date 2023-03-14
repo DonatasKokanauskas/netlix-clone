@@ -19,9 +19,6 @@
   gap: 5px;
   margin-left: 8px;
 }
-.mini-modal__part__first-div div {
-  cursor: pointer;
-}
 .mini-modal__part__first-div .play {
   display: flex;
   justify-content: center;
@@ -31,6 +28,7 @@
   border-radius: 50%;
   background-color: #ffffff;
   line-height: 0;
+  cursor: pointer;
 }
 .mini-modal__part__first-div .play span {
   font-size: 1.4rem;
@@ -45,7 +43,9 @@
   border: 1px solid rgb(144, 144, 144);
   border-radius: 50%;
   background-color: rgba(42, 42, 42, 0.6);
+  cursor: pointer;
   line-height: 0;
+  cursor: pointer;
 }
 .mini-modal__part__first-div .add span {
   color: #ffffff;
@@ -60,6 +60,7 @@
   border: 1px solid rgb(144, 144, 144);
   border-radius: 50%;
   background-color: rgba(42, 42, 42, 0.6);
+  cursor: pointer;
   line-height: 0.8;
 }
 .mini-modal__part__first-div .thumb span {
@@ -68,9 +69,6 @@
 }
 .mini-modal__part__second-div {
   margin-right: 8px;
-}
-.mini-modal__part__second-div div {
-  cursor: pointer;
 }
 .mini-modal__part__second-div .arrow {
   display: flex;
@@ -81,6 +79,7 @@
   border: 1px solid rgb(144, 144, 144);
   border-radius: 50%;
   background-color: rgba(42, 42, 42, 0.6);
+  cursor: pointer;
   line-height: 0;
 }
 .mini-modal__part__second-div .arrow span {
@@ -119,6 +118,7 @@
   background: whitesmoke;
   color: black;
   font-size: 1.5vh;
+  white-space: nowrap;
   line-height: 10px;
   text-align: center;
   height: 30px;

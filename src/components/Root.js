@@ -44,7 +44,6 @@ const Root = () => {
     input.classList.remove("search--active");
     setSearchPressed(false);
     setSearchKey([]);
-    setIsLoading(true);
     setIsHovered(false);
     document.querySelector(".hovered").classList.remove("hovered");
     // if (location.pathname === "/Search") {

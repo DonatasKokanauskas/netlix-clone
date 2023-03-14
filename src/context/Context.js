@@ -30,6 +30,10 @@ export const MoviesDataProvider = ({ children }) => {
   const [isLoading, setIsLoading] = useState(true);
 
   const [myList, setMyList] = useState([]);
+  const [mouseOverAdd, setMouseOverAdd] = useState(false);
+  const imgElement = document.querySelector(".hovered");
+  const [mouseOverThumb, setMouseOverThumb] = useState(false);
+  const [likes, setLikes] = useState([]);
 
   const position = (e) => {
     e.target.classList.add("hovered");
@@ -66,6 +70,37 @@ export const MoviesDataProvider = ({ children }) => {
     }
   };
 
+  const handleMouseOver = (state) => {
+    state(true);
+  };
+  const handleMouseLeave = (state) => {
+    state(false);
+  };
+
+  const getIdAndType = (state, setState, id, type) => {
+    setMouseOverAdd(false);
+    setMouseOverThumb(false);
+    if (state.filter((obj) => obj.id === id).length > 0) {
+      setState(state.filter((obj) => obj.id !== id));
+      setIsHovered(false);
+      if (window.location.pathname === "/MyList") {
+        setIsOpen(false);
+      }
+      if (imgElement) {
+        imgElement.classList.remove("hovered");
+      }
+    } else {
+      setState(() => {
+        return [
+          ...state,
+          {
+            id: id,
+            type: type,
+          },
+        ];
+      });
+    }
+  };
   return (
     <MoviesDataContext.Provider
       value={{
@@ -105,6 +140,16 @@ export const MoviesDataProvider = ({ children }) => {
         updatePosition,
         myList,
         setMyList,
+        mouseOverAdd,
+        setMouseOverAdd,
+        handleMouseOver,
+        handleMouseLeave,
+        imgElement,
+        getIdAndType,
+        mouseOverThumb,
+        setMouseOverThumb,
+        likes,
+        setLikes,
       }}
     >
       {children}

@@ -7,6 +7,7 @@ import { BsHandThumbsUp } from "react-icons/bs";
 import { FiChevronDown } from "react-icons/fi";
 import { useEffect, useState } from "react";
 import { CgCheck } from "react-icons/cg";
+import { BsHandThumbsUpFill } from "react-icons/bs";
 
 export default function MiniModal() {
   const {
@@ -20,12 +21,23 @@ export default function MiniModal() {
     setType,
     myList,
     setMyList,
+    mouseOverAdd,
+    setMouseOverAdd,
+    handleMouseOver,
+    handleMouseLeave,
+    imgElement,
+    getIdAndType,
+    mouseOverThumb,
+    setMouseOverThumb,
+    likes,
+    setLikes,
   } = useMoviesData();
 
-  const imgElement = document.querySelector(".hovered");
-  const [mouseOverAdd, setMouseOverAdd] = useState(false);
-  const [mouseOverThumb, setMouseOverThumb] = useState(false);
+  // const imgElement = document.querySelector(".hovered");
+  // const [mouseOverAdd, setMouseOverAdd] = useState(false);
+  // const [mouseOverThumb, setMouseOverThumb] = useState(false);
   const [mouseOverArrow, setMouseOverArrow] = useState(false);
+  // const [likes, setLikes] = useState([]);
 
   const position = () => {
     return {
@@ -50,7 +62,7 @@ export default function MiniModal() {
   const handleClick = () => {
     setIsOpen(true);
   };
-  //--------------
+  //My List--------------
 
   useEffect(() => {
     const data = localStorage.getItem("myList");
@@ -59,29 +71,30 @@ export default function MiniModal() {
     }
   }, []);
 
-  const getIdAndType = () => {
-    setMouseOverAdd(false);
-    if (
-      myList.filter((obj) => obj.id === imgElement.getAttribute("value"))
-        .length > 0
-    ) {
-      setMyList(
-        myList.filter((obj) => obj.id !== imgElement.getAttribute("value"))
-      );
-      setIsHovered(false);
-      imgElement.classList.remove("hovered");
-    } else {
-      setMyList(() => {
-        return [
-          ...myList,
-          {
-            id: imgElement.getAttribute("value"),
-            type: imgElement.getAttribute("type"),
-          },
-        ];
-      });
-    }
-  };
+  // const getIdAndType = (state, setState) => {
+  //   setMouseOverAdd(false);
+  //   setMouseOverThumb(false);
+  //   if (
+  //     state.filter((obj) => obj.id === imgElement.getAttribute("value"))
+  //       .length > 0
+  //   ) {
+  //     setState(
+  //       state.filter((obj) => obj.id !== imgElement.getAttribute("value"))
+  //     );
+  //     setIsHovered(false);
+  //     imgElement.classList.remove("hovered");
+  //   } else {
+  //     setState(() => {
+  //       return [
+  //         ...state,
+  //         {
+  //           id: imgElement.getAttribute("value"),
+  //           type: imgElement.getAttribute("type"),
+  //         },
+  //       ];
+  //     });
+  //   }
+  // };
 
   useEffect(() => {
     if (myList.length > 0) {
@@ -92,12 +105,32 @@ export default function MiniModal() {
   }, [myList]);
   //----------------
 
-  const handleMouseOver = (state) => {
-    state(true);
-  };
-  const handleMouseLeave = (state) => {
-    state(false);
-  };
+  // const handleMouseOver = (state) => {
+  //   state(true);
+  // };
+  // const handleMouseLeave = (state) => {
+  //   state(false);
+  // };
+
+  //Likes ------------------------
+  useEffect(() => {
+    // setIsLoading(true);
+    const data = localStorage.getItem("likes");
+    if (data) {
+      setLikes(JSON.parse(data));
+    }
+  }, []);
+
+  useEffect(() => {
+    if (likes.length > 0) {
+      localStorage.setItem("likes", JSON.stringify(likes));
+    } else {
+      localStorage.setItem("likes", []);
+    }
+  }, [likes]);
+
+  //------------------
+
   if (isHovered) {
     return ReactDom.createPortal(
       <div
@@ -123,15 +156,20 @@ export default function MiniModal() {
                 myList.filter(
                   (obj) => obj.id === imgElement.getAttribute("value")
                 ).length > 0 && (
-                  <div className="bubble" style={{ width: "170px" }}>
-                    Remove from My List
-                  </div>
+                  <div className="bubble">Remove from My List</div>
                 )}
               <div
                 className="add"
                 onMouseOver={() => handleMouseOver(setMouseOverAdd)}
                 onMouseLeave={() => handleMouseLeave(setMouseOverAdd)}
-                onClick={getIdAndType}
+                onClick={() =>
+                  getIdAndType(
+                    myList,
+                    setMyList,
+                    imgElement.getAttribute("value"),
+                    imgElement.getAttribute("type")
+                  )
+                }
               >
                 {imgElement &&
                 myList.filter(
@@ -149,26 +187,51 @@ export default function MiniModal() {
             </div>
 
             <div className="thumb-container">
-              {mouseOverThumb && <div className="bubble">Like this</div>}
+              {mouseOverThumb &&
+                likes.filter(
+                  (obj) => obj.id === imgElement.getAttribute("value")
+                ).length === 0 && <div className="bubble">Like this</div>}
+              {mouseOverThumb &&
+                likes.filter(
+                  (obj) => obj.id === imgElement.getAttribute("value")
+                ).length > 0 && <div className="bubble">Rated</div>}
               <div
                 className="thumb"
                 onMouseOver={() => handleMouseOver(setMouseOverThumb)}
                 onMouseLeave={() => handleMouseLeave(setMouseOverThumb)}
+                onClick={() =>
+                  getIdAndType(
+                    likes,
+                    setLikes,
+                    imgElement.getAttribute("value"),
+                    imgElement.getAttribute("type")
+                  )
+                }
               >
-                <span>
-                  <BsHandThumbsUp />
-                </span>
+                {imgElement &&
+                likes.filter(
+                  (obj) => obj.id === imgElement.getAttribute("value")
+                ).length > 0 ? (
+                  <span>
+                    <BsHandThumbsUpFill />
+                  </span>
+                ) : (
+                  <span>
+                    <BsHandThumbsUp />
+                  </span>
+                )}
               </div>
             </div>
           </div>
 
-          <div className="mini-modal__part__second-div" onClick={handleClick}>
+          <div className="mini-modal__part__second-div">
             <div className="arrow-container">
               {mouseOverArrow && <div className="bubble">Info</div>}
               <div
                 className="arrow"
                 onMouseOver={() => handleMouseOver(setMouseOverArrow)}
                 onMouseLeave={() => handleMouseLeave(setMouseOverArrow)}
+                onClick={handleClick}
               >
                 <span>
                   <FiChevronDown />

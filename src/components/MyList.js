@@ -8,15 +8,8 @@ import Modal from "./Modal";
 import LoadingScreen from "./LoadingScreen";
 
 const MyList = () => {
-  const {
-    myList,
-    setMyList,
-    position,
-    hoverLeave,
-    setIsHovered,
-    isLoading,
-    setIsLoading,
-  } = useMoviesData();
+  const { myList, setMyList, position, hoverLeave, isLoading, setIsLoading } =
+    useMoviesData();
   const [fetchedElement, setFetchedElement] = useState();
 
   useEffect(() => {
