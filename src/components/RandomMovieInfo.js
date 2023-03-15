@@ -78,7 +78,7 @@ const ContentInfo = () => {
 
   const handleClick = () => {
     setIsOpen(true);
-    setMovieId(randomID);
+    setMovieId(randomID.toString());
     setType(randomType);
   };
 

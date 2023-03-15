@@ -2,9 +2,9 @@ import React, { useEffect, useState } from "react";
 import "../style/css/Search.css";
 import axios from "axios";
 import { useMoviesData } from "../context/Context";
-import MiniModal from "./MiniModal";
-import Modal from "./Modal";
-import LoadingScreen from "./LoadingScreen";
+import MiniModal from "../components/MiniModal";
+import Modal from "../components/Modal";
+import LoadingScreen from "../components/LoadingScreen";
 
 const Search = () => {
   const [searchedMovies, setSearchedMovies] = useState([]);

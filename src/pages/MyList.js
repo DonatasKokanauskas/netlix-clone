@@ -3,9 +3,9 @@ import { useEffect } from "react";
 import "../style/css/MyList.css";
 import axios from "axios";
 import { useMoviesData } from "../context/Context";
-import MiniModal from "./MiniModal";
-import Modal from "./Modal";
-import LoadingScreen from "./LoadingScreen";
+import MiniModal from "../components/MiniModal";
+import Modal from "../components/Modal";
+import LoadingScreen from "../components/LoadingScreen";
 
 const MyList = () => {
   const { myList, setMyList, position, hoverLeave, isLoading, setIsLoading } =

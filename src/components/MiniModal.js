@@ -130,7 +130,6 @@ export default function MiniModal() {
   }, [likes]);
 
   //------------------
-
   if (isHovered) {
     return ReactDom.createPortal(
       <div

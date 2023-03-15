@@ -1,4 +1,5 @@
 import React, { useContext, useState, createContext } from "react";
+import axios from "axios";
 
 const MoviesDataContext = createContext();
 
@@ -34,6 +35,21 @@ export const MoviesDataProvider = ({ children }) => {
   const imgElement = document.querySelector(".hovered");
   const [mouseOverThumb, setMouseOverThumb] = useState(false);
   const [likes, setLikes] = useState([]);
+
+  const fetchData = async (url, state) => {
+    try {
+      const response = await axios.get(url);
+      const data = await response.data;
+      if (response.status === 200) {
+        state(data.results);
+        setTimeout(() => {
+          setIsLoading(false);
+        }, 500);
+      }
+    } catch (error) {
+      console.error(error);
+    }
+  };
 
   const position = (e) => {
     e.target.classList.add("hovered");
@@ -83,9 +99,6 @@ export const MoviesDataProvider = ({ children }) => {
     if (state.filter((obj) => obj.id === id).length > 0) {
       setState(state.filter((obj) => obj.id !== id));
       setIsHovered(false);
-      if (window.location.pathname === "/MyList") {
-        setIsOpen(false);
-      }
       if (imgElement) {
         imgElement.classList.remove("hovered");
       }
@@ -150,6 +163,7 @@ export const MoviesDataProvider = ({ children }) => {
         setMouseOverThumb,
         likes,
         setLikes,
+        fetchData,
       }}
     >
       {children}

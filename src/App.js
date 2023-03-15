@@ -1,13 +1,13 @@
 import { useEffect, useState } from "react";
 import "./style/css/App.css";
-import Root from "./components/Root";
+import Root from "./pages/Root";
 import LoadingScreen from "./components/LoadingScreen";
-import Home from "./components/Home";
-import TVShows from "./components/TVShows";
-import Movies from "./components/Movies";
-import NewAndPopular from "./components/NewAndPopular";
-import MyList from "./components/MyList";
-import Search from "./components/Search";
+import Home from "./pages/Home";
+import TVShows from "./pages/TVShows";
+import Movies from "./pages/Movies";
+import NewAndPopular from "./pages/NewAndPopular";
+import MyList from "./pages/MyList";
+import Search from "./pages/Search";
 import {
   createBrowserRouter,
   createRoutesFromElements,

@@ -21,7 +21,6 @@ export default function Modal() {
     setMouseOverAdd,
     myList,
     setMyList,
-    imgElement,
     handleMouseOver,
     handleMouseLeave,
     getIdAndType,
