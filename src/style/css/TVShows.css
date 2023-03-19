@@ -1,14 +1,31 @@
 .tv-show-page {
   background: #141414;
   padding-bottom: 100px;
-  height: 100vh;
+  height: auto;
 }
-.tv-show-page h1 {
+.tv-show-page .h1-select {
+  display: flex;
   padding-top: 85px;
   padding-left: 62px;
   padding-bottom: 20px;
+}
+.tv-show-page .h1-select h1 {
   font-size: 1.8rem;
   color: #666;
+}
+.tv-show-page .h1-select select {
+  margin-left: 40px;
+  height: 1.8rem;
+  width: 115px;
+  background-color: #000;
+  border: 1px solid hsla(0, 0%, 100%, 0.9);
+  color: #fff;
+  font-size: 1rem;
+  padding-left: 5px;
+  cursor: pointer;
+}
+.tv-show-page .h1-select select:focus {
+  outline: none;
 }
 .tv-show-page .movies-container {
   position: relative;

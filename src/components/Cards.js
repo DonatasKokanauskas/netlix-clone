@@ -22,19 +22,19 @@ const Cards = ({ title, state, alt, handleClick, translate }) => {
         </button>
         <div className="movies__cards" style={translate}>
           {state.map((movie) => {
-            if (movie.poster_path && movie.backdrop_path != null) {
-              return (
-                <img
-                  value={movie.id}
-                  type={movie.first_air_date ? "TV show" : "movie"}
-                  onMouseOver={position}
-                  onMouseLeave={hoverLeave}
-                  src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`}
-                  alt={alt}
-                  key={movie.id}
-                />
-              );
-            }
+            // if (movie.poster_path && movie.backdrop_path != null) {
+            return (
+              <img
+                value={movie.id}
+                type={movie.first_air_date ? "TV show" : "movie"}
+                onMouseOver={position}
+                onMouseLeave={hoverLeave}
+                src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`}
+                alt={alt}
+                key={movie.id}
+              />
+            );
+            // }
           })}
         </div>
         <button className="handle right-handle" onClick={handleClick}>

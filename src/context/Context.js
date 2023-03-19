@@ -41,7 +41,11 @@ export const MoviesDataProvider = ({ children }) => {
       const response = await axios.get(url);
       const data = await response.data;
       if (response.status === 200) {
-        state(data.results);
+        state(
+          data.results.filter(
+            (obj) => obj.poster_path && obj.backdrop_path != null
+          )
+        );
         setTimeout(() => {
           setIsLoading(false);
         }, 500);

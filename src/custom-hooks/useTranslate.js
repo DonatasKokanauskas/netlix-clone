@@ -11,7 +11,7 @@ const useTranslate = (initialValue) => {
       setValue((prevValue) => prevValue - 100);
       setValue2(value + 100);
 
-      if (count <= initialValue - 9) {
+      if (count < initialValue - 9) {
         setTranslate(() => ({
           transform: `translateX(${value}%)`,
         }));
@@ -29,11 +29,21 @@ const useTranslate = (initialValue) => {
       setValue2((prevValue) => prevValue + 100);
 
       if (count < 1) {
-        setValue2(-100);
-        setTranslate(() => ({
-          transform: `translateX(-${Math.floor(initialValue / 9)}00%)`,
-        }));
-        setCount(Math.floor(initialValue / 9) * 9);
+        if (initialValue % 9 === 0) {
+          setTranslate(() => ({
+            transform: `translateX(${
+              Math.floor(initialValue / 9) * -100 + 100
+            }%)`,
+          }));
+          setValue2(Math.floor(initialValue / 9) * -100 + 200);
+          setCount(Math.floor(initialValue / 9) * 9 - 9);
+        } else {
+          setTranslate(() => ({
+            transform: `translateX(-${Math.floor(initialValue / 9)}00%)`,
+          }));
+          setCount(Math.floor(initialValue / 9) * 9);
+          setValue2(Math.floor(initialValue / 9) * -100 + 100);
+        }
       } else {
         setTranslate(() => ({
           transform: `translateX(${value2}%)`,
@@ -42,6 +52,7 @@ const useTranslate = (initialValue) => {
       }
     }
   };
+
   return [translate, handleClick];
 };
 
