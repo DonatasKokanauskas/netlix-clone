@@ -53,8 +53,6 @@ const Search = () => {
     }
   }, [searchedMovies]);
 
-  // setIsLoading(false);
-
   return (
     <div className="search-page">
       {loadingScreen && <LoadingScreen />}

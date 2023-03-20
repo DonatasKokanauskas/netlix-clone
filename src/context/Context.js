@@ -49,6 +49,9 @@ export const MoviesDataProvider = ({ children }) => {
         setTimeout(() => {
           setIsLoading(false);
         }, 500);
+        setTimeout(() => {
+          setLoadingScreen(false);
+        }, 500);
       }
     } catch (error) {
       console.error(error);
@@ -118,6 +121,19 @@ export const MoviesDataProvider = ({ children }) => {
       });
     }
   };
+
+  const fetchGenres = async (url, state) => {
+    try {
+      const response = await axios.get(url);
+      const data = await response.data;
+      if (response.status === 200) {
+        state(data.genres);
+      }
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
   return (
     <MoviesDataContext.Provider
       value={{
@@ -168,6 +184,7 @@ export const MoviesDataProvider = ({ children }) => {
         likes,
         setLikes,
         fetchData,
+        fetchGenres,
       }}
     >
       {children}

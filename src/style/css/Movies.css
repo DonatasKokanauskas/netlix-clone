@@ -1,19 +1,19 @@
-.tv-show-page {
+.movies-page {
   background: #141414;
   padding-bottom: 100px;
   height: auto;
 }
-.tv-show-page .h1-select {
+.movies-page .h1-select {
   display: flex;
   padding-top: 85px;
   padding-left: 62px;
   padding-bottom: 20px;
 }
-.tv-show-page .h1-select h1 {
+.movies-page .h1-select h1 {
   font-size: 1.8rem;
   color: #666;
 }
-.tv-show-page .h1-select select {
+.movies-page .h1-select select {
   margin-left: 40px;
   height: 1.8rem;
   background-color: #000;
@@ -23,38 +23,38 @@
   padding-left: 5px;
   cursor: pointer;
 }
-.tv-show-page .h1-select select:focus {
+.movies-page .h1-select select:focus {
   outline: none;
 }
-.tv-show-page__container {
+.movies-page__container {
   padding: 100px 55px;
   overflow: hidden;
   background: inherit;
 }
-.tv-show-page__container h2 {
+.movies-page__container h2 {
   margin-left: 6px;
   margin-bottom: 10px;
   font-size: 1.4rem;
   color: gray;
 }
-.tv-show-page__container .tv__cards {
+.movies-page__container .movies__cards {
   display: flex;
   justify-content: flex-start;
   flex-wrap: wrap;
   row-gap: 65px;
 }
-.tv-show-page__container .tv__cards img {
+.movies-page__container .movies__cards img {
   max-width: 11.1111111111%;
   padding: 0.35rem;
   border-radius: 15px;
   z-index: 1;
 }
-.tv-show-page__container .tv__cards .hovered {
+.movies-page__container .movies__cards .hovered {
   transform-origin: top;
   transform: scale(1.19);
   z-index: 2;
 }
-.tv-show-page .movies-container {
+.movies-page .movies-container {
   position: relative;
   top: 0;
 }
