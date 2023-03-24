@@ -36,6 +36,8 @@ export const MoviesDataProvider = ({ children }) => {
   const [mouseOverThumb, setMouseOverThumb] = useState(false);
   const [likes, setLikes] = useState([]);
 
+  const [profileIsHovered, setProfileIsHovered] = useState(false);
+
   const fetchData = async (url, state) => {
     try {
       const response = await axios.get(url);
@@ -185,6 +187,8 @@ export const MoviesDataProvider = ({ children }) => {
         setLikes,
         fetchData,
         fetchGenres,
+        profileIsHovered,
+        setProfileIsHovered,
       }}
     >
       {children}

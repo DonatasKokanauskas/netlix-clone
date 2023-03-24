@@ -14,8 +14,8 @@ import {
   Route,
   RouterProvider,
 } from "react-router-dom";
-
 import { useMoviesData } from "./context/Context";
+import NotFound from "./pages/NotFound";
 
 function App() {
   const { isLoading, setIsLoading, loadingScreen } = useMoviesData();
@@ -29,6 +29,7 @@ function App() {
         <Route path="NewAndPopular" element={<NewAndPopular />} />
         <Route path="MyList" element={<MyList />} />
         <Route path="Search" element={<Search />} />
+        <Route path="*" element={<NotFound />} />
       </Route>
     )
   );

@@ -6,6 +6,7 @@ import useTranslate from "../custom-hooks/useTranslate";
 import { useMoviesData } from "../context/Context";
 import MiniModal from "../components/MiniModal";
 import Modal from "../components/Modal";
+import Footer from "../components/Footer";
 
 const NewAndPopular = () => {
   const [popularMovies, setPopularMovies] = useState([]);
@@ -80,6 +81,7 @@ const NewAndPopular = () => {
         handleClick={handleClickPopularTVShows}
         translate={translatePopularTVShows}
       />
+      <Footer />
     </div>
   );
 };

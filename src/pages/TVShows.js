@@ -7,6 +7,7 @@ import { useMoviesData } from "../context/Context";
 import MiniModal from "../components/MiniModal";
 import Modal from "../components/Modal";
 import LoadingScreen from "../components/LoadingScreen";
+import Footer from "../components/Footer";
 
 const TVShows = () => {
   const [topRatedShows, setTopRatedShows] = useState([]);
@@ -117,6 +118,7 @@ const TVShows = () => {
           />
         </>
       )}
+      <Footer />
     </div>
   );
 };

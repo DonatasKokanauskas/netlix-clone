@@ -8,20 +8,25 @@ import Vector from "../images/vector.png";
 import { AiOutlineClose } from "react-icons/ai";
 import { Outlet, Link, useLocation, useNavigate } from "react-router-dom";
 import { useMoviesData } from "../context/Context";
+import ProfileMenu from "../components/ProfileMenu";
 
 const Root = () => {
   const [scroll, setScroll] = useState(0);
   const [searchPressed, setSearchPressed] = useState(false);
   const input = document.querySelector(".search");
   const {
-    setIsLoading,
     setSearchKey,
     setLoadingScreen,
     searchKey,
     setIsHovered,
+    setProfileIsHovered,
+    handleMouseOver,
+    handleMouseLeave,
   } = useMoviesData();
   const location = useLocation();
   const navigate = useNavigate();
+  const userImage = document.querySelector("#user");
+  const [leftPosition, setLeftPosition] = useState();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -46,14 +51,6 @@ const Root = () => {
     setSearchKey([]);
     setIsHovered(false);
     document.querySelector(".hovered").classList.remove("hovered");
-    // if (location.pathname === "/Search") {
-    //   setIsLoading(true);
-    // }
-    // else if (location.pathname === "/MyList") {
-    //   setIsLoading(true);
-    // } else if (location.pathname === "/") {
-    //   setIsLoading(true);
-    // }
   };
 
   useEffect(() => {
@@ -145,9 +142,7 @@ const Root = () => {
         <div className="secondary-navigation">
           {!searchPressed ? (
             <div className="search" onClick={openSearch}>
-              {/* <Link to="Search"> */}
               <img src={Search} alt="Search" />
-              {/* </Link> */}
             </div>
           ) : (
             <div className="search">
@@ -179,12 +174,21 @@ const Root = () => {
               </div>
             </div>
           )}
-
           <Link to="#">Kids</Link>
           <img src={Bell} alt="Bell" />
-          <div className="user-container">
-            <img src={User} alt="User" />
+          <div
+            className="user-container"
+            onMouseOver={() => {
+              setLeftPosition(userImage.getBoundingClientRect().left - 127);
+              handleMouseOver(setProfileIsHovered);
+            }}
+            onMouseLeave={() => {
+              handleMouseLeave(setProfileIsHovered);
+            }}
+          >
+            <img id="user" src={User} alt="User" />
             <img src={Vector} alt="Vector" />
+            <ProfileMenu leftPosition={leftPosition} />
           </div>
         </div>
       </header>

@@ -5,10 +5,8 @@ import RandomMovieInfo from "../components/RandomMovieInfo";
 import MainContent from "../components/MainContent";
 import Modal from "../components/Modal";
 import MiniModal from "../components/MiniModal";
-import { useMoviesData } from "../context/Context";
-
+import Footer from "../components/Footer";
 const Home = () => {
-  // const {} = useMoviesData();
   return (
     <div className="home">
       <Modal />
@@ -16,6 +14,7 @@ const Home = () => {
       <RandomMovieInfo />
       <MiniModal />
       <MainContent />
+      <Footer />
     </div>
   );
 };

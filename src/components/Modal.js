@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import ReactDom from "react-dom";
+import ReactDOM from "react-dom";
 import "../style/css/Modal.css";
 import axios from "axios";
 import { useMoviesData } from "../context/Context";
@@ -151,7 +151,7 @@ export default function Modal() {
   }, [myList]);
 
   if (isOpen) {
-    return ReactDom.createPortal(
+    return ReactDOM.createPortal(
       <div className="modal">
         <div className="modal__container">
           <div className="trailer">

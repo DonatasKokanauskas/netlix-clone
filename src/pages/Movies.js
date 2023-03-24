@@ -7,6 +7,7 @@ import { useMoviesData } from "../context/Context";
 import MiniModal from "../components/MiniModal";
 import Modal from "../components/Modal";
 import LoadingScreen from "../components/LoadingScreen";
+import Footer from "../components/Footer";
 
 const Movies = () => {
   const [topRatedMovies, setTopRatedMovies] = useState([]);
@@ -118,6 +119,7 @@ const Movies = () => {
           />
         </>
       )}
+      <Footer />
     </div>
   );
 };

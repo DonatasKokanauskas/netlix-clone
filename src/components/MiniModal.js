@@ -1,4 +1,4 @@
-import ReactDom from "react-dom";
+import ReactDOM from "react-dom";
 import "../style/css/MiniModal.css";
 import { useMoviesData } from "../context/Context";
 import { AiFillCaretRight } from "react-icons/ai";
@@ -33,11 +33,7 @@ export default function MiniModal() {
     setLikes,
   } = useMoviesData();
 
-  // const imgElement = document.querySelector(".hovered");
-  // const [mouseOverAdd, setMouseOverAdd] = useState(false);
-  // const [mouseOverThumb, setMouseOverThumb] = useState(false);
   const [mouseOverArrow, setMouseOverArrow] = useState(false);
-  // const [likes, setLikes] = useState([]);
 
   const position = () => {
     return {
@@ -71,31 +67,6 @@ export default function MiniModal() {
     }
   }, []);
 
-  // const getIdAndType = (state, setState) => {
-  //   setMouseOverAdd(false);
-  //   setMouseOverThumb(false);
-  //   if (
-  //     state.filter((obj) => obj.id === imgElement.getAttribute("value"))
-  //       .length > 0
-  //   ) {
-  //     setState(
-  //       state.filter((obj) => obj.id !== imgElement.getAttribute("value"))
-  //     );
-  //     setIsHovered(false);
-  //     imgElement.classList.remove("hovered");
-  //   } else {
-  //     setState(() => {
-  //       return [
-  //         ...state,
-  //         {
-  //           id: imgElement.getAttribute("value"),
-  //           type: imgElement.getAttribute("type"),
-  //         },
-  //       ];
-  //     });
-  //   }
-  // };
-
   useEffect(() => {
     if (myList.length > 0) {
       localStorage.setItem("myList", JSON.stringify(myList));
@@ -104,13 +75,6 @@ export default function MiniModal() {
     }
   }, [myList]);
   //----------------
-
-  // const handleMouseOver = (state) => {
-  //   state(true);
-  // };
-  // const handleMouseLeave = (state) => {
-  //   state(false);
-  // };
 
   //Likes ------------------------
   useEffect(() => {
@@ -131,7 +95,7 @@ export default function MiniModal() {
 
   //------------------
   if (isHovered) {
-    return ReactDom.createPortal(
+    return ReactDOM.createPortal(
       <div
         onMouseOver={hoverHandler}
         onMouseLeave={hoverLeave}

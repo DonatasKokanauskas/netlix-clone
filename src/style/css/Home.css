@@ -1,6 +1,11 @@
 .home {
-  height: 2300px;
+  height: 2390px;
   padding-bottom: 1000px;
   background: linear-gradient(180deg, rgba(20, 20, 20, 0) 20%, #141414 35%);
   z-index: 2;
+}
+
+.footer {
+  position: absolute;
+  bottom: -1450px;
 }

@@ -1,0 +1,53 @@
+.profile {
+  position: fixed;
+  top: 45px;
+  padding-top: 25px;
+  z-index: 4;
+}
+.profile__menu {
+  position: relative;
+  background: rgba(0, 0, 0, 0.9);
+  color: #ffffff;
+  font-size: 20px;
+  line-height: 27px;
+  width: 170px;
+  height: 180px;
+  border: 1px solid hsla(0, 0%, 100%, 0.15);
+  border-radius: 0px;
+  padding: 12px;
+}
+.profile__menu span {
+  font-size: 15px;
+  margin-right: 10px;
+}
+.profile__menu a {
+  font-size: 13px;
+  cursor: pointer;
+}
+.profile__menu a:hover {
+  transition: none;
+  text-decoration: underline;
+  color: #ffffff !important;
+}
+.profile__menu .sign-out {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 6px;
+  width: 100%;
+  border-top: 1px solid hsla(0, 0%, 100%, 0.25);
+  text-align: center;
+}
+.profile__menu:after {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 0;
+  z-index: 1;
+  border-style: solid;
+  border-color: #e5e5e5 transparent;
+  border-width: 0 7px 9px;
+  top: -9px;
+  left: 83%;
+  margin-left: -7px;
+}
