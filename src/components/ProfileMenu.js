@@ -5,12 +5,12 @@ import { BiTransferAlt } from "react-icons/bi";
 import { MdOutlineAccountCircle } from "react-icons/md";
 import { BiHelpCircle } from "react-icons/bi";
 
-export default function ProfileMenu({ leftPosition }) {
+export default function ProfileMenu() {
   const { profileIsHovered } = useMoviesData();
 
   if (profileIsHovered) {
     return (
-      <div className="profile" style={{ left: leftPosition }}>
+      <div className="profile">
         <div className="profile__menu">
           <div>
             <div>

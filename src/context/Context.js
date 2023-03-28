@@ -37,6 +37,7 @@ export const MoviesDataProvider = ({ children }) => {
   const [likes, setLikes] = useState([]);
 
   const [profileIsHovered, setProfileIsHovered] = useState(false);
+  const [navMenuIsHovered, setNavMenuIsHovered] = useState(false);
 
   const fetchData = async (url, state) => {
     try {
@@ -189,6 +190,8 @@ export const MoviesDataProvider = ({ children }) => {
         fetchGenres,
         profileIsHovered,
         setProfileIsHovered,
+        navMenuIsHovered,
+        setNavMenuIsHovered,
       }}
     >
       {children}

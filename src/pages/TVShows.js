@@ -61,7 +61,7 @@ const TVShows = () => {
   const [translateTVShows, handleClickTVShows] =
     useTranslate(topRatedShowsLength);
   const [translateOnTheAir, handleClickOnTheAir] = useTranslate(onTheAirLength);
-  console.log(filteredTVShows);
+
   return (
     <div className="tv-show-page">
       {loadingScreen && <LoadingScreen />}

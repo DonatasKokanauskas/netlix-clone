@@ -24,7 +24,7 @@ header {
   width: 100vw;
   height: 68px;
   padding: 0 52px;
-  font-size: 0.9rem;
+  font-size: 1.2rem;
   @include flex-align;
   justify-content: space-between;
 
@@ -46,6 +46,19 @@ header {
       list-style: none;
       margin: 0 6px;
       @include a;
+    }
+
+    .navigation-menu-container {
+      color: #ffffff;
+      margin: 0 27px;
+      position: relative;
+
+      span {
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        gap: 4px;
+      }
     }
   }
   .secondary-navigation {
@@ -87,6 +100,7 @@ header {
     .user-container {
       @include flex-align;
       gap: 8px;
+      position: relative;
       img:nth-of-type(2) {
         width: 13px;
         height: auto;
@@ -108,4 +122,19 @@ header {
   padding: 6px 8px;
   background-color: rgba(20, 20, 20, 1);
   border: 1px solid white;
+}
+
+@media screen and (max-width: 970px) {
+  header {
+    img {
+      height: 1.8em;
+      width: auto;
+    }
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  header {
+    font-size: 14px;
+  }
 }

@@ -5,7 +5,7 @@ header {
   width: 100vw;
   height: 68px;
   padding: 0 52px;
-  font-size: 0.9rem;
+  font-size: 1.2rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -41,6 +41,17 @@ header nav li a:visited {
 }
 header nav li a:hover {
   color: #a9a8a8;
+}
+header nav .navigation-menu-container {
+  color: #ffffff;
+  margin: 0 27px;
+  position: relative;
+}
+header nav .navigation-menu-container span {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 4px;
 }
 header .secondary-navigation {
   display: flex;
@@ -89,6 +100,7 @@ header .secondary-navigation .user-container {
   display: flex;
   align-items: center;
   gap: 8px;
+  position: relative;
 }
 header .secondary-navigation .user-container img:nth-of-type(2) {
   width: 13px;
@@ -105,4 +117,16 @@ header .secondary-navigation .user-container:hover img:nth-of-type(2) {
   padding: 6px 8px;
   background-color: rgb(20, 20, 20);
   border: 1px solid white;
+}
+
+@media screen and (max-width: 970px) {
+  header img {
+    height: 1.8em;
+    width: auto;
+  }
+}
+@media screen and (min-width: 1200px) {
+  header {
+    font-size: 14px;
+  }
 }

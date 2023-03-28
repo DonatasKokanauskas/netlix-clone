@@ -1,13 +1,14 @@
 .profile {
-  position: fixed;
-  top: 45px;
-  padding-top: 25px;
+  position: absolute;
+  top: 25px;
+  right: 0;
+  padding-top: 30px;
   z-index: 4;
+
   &__menu {
     position: relative;
     background: rgba(0, 0, 0, 0.9);
     color: #ffffff;
-    font-size: 20px;
     line-height: 27px;
     width: 170px;
     height: 180px;
@@ -50,7 +51,7 @@
     border-color: #e5e5e5 transparent;
     border-width: 0 7px 9px;
     top: -9px;
-    left: 83%;
+    left: 78%;
     margin-left: -7px;
   }
 }

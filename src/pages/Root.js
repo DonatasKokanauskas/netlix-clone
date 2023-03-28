@@ -9,6 +9,8 @@ import { AiOutlineClose } from "react-icons/ai";
 import { Outlet, Link, useLocation, useNavigate } from "react-router-dom";
 import { useMoviesData } from "../context/Context";
 import ProfileMenu from "../components/ProfileMenu";
+import { AiFillCaretDown } from "react-icons/ai";
+import NavigationMenu from "../components/NavigationMenu";
 
 const Root = () => {
   const [scroll, setScroll] = useState(0);
@@ -22,11 +24,11 @@ const Root = () => {
     setProfileIsHovered,
     handleMouseOver,
     handleMouseLeave,
+    setNavMenuIsHovered,
   } = useMoviesData();
   const location = useLocation();
   const navigate = useNavigate();
-  const userImage = document.querySelector("#user");
-  const [leftPosition, setLeftPosition] = useState();
+  const [windowSize, setWindowSize] = useState(window.innerWidth);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -68,9 +70,21 @@ const Root = () => {
 
   const boldNav = (page) => {
     return location.pathname === page
-      ? { fontWeight: "bold" }
+      ? { color: "#ffffff", fontWeight: "bold" }
       : { fontWeight: "normal" };
   };
+
+  useEffect(() => {
+    const handleWindowResize = () => {
+      setWindowSize(window.innerWidth);
+    };
+
+    window.addEventListener("resize", handleWindowResize);
+
+    return () => {
+      window.removeEventListener("resize", handleWindowResize);
+    };
+  });
 
   return (
     <>
@@ -92,52 +106,69 @@ const Root = () => {
             <img src={Logo} alt="Netflix logo" />
           </Link>
 
-          <ul>
-            <li>
-              <Link to="/" onClick={closeSearch} style={boldNav("/")}>
-                Home
-              </Link>
-            </li>
-            <li>
-              <Link
-                to="TVShows"
-                onClick={closeSearch}
-                style={boldNav("/TVShows")}
-              >
-                TV Shows
-              </Link>
-            </li>
-            <li>
-              <Link
-                to="Movies"
-                onClick={closeSearch}
-                style={boldNav("/Movies")}
-              >
-                Movies
-              </Link>
-            </li>
-            <li>
-              <Link
-                to="NewAndPopular"
-                onClick={closeSearch}
-                style={boldNav("/NewAndPopular")}
-              >
-                New & Popular
-              </Link>
-            </li>
-            <li>
-              <Link
-                to="MyList"
-                onClick={closeSearch}
-                style={boldNav("/MyList")}
-              >
-                My List
-              </Link>
-            </li>
-            <li>
-              <Link to="#">Browse by Languages</Link>
-            </li>
-          </ul>
+          {windowSize > 970 ? (
+            <ul>
+              <li>
+                <Link to="/" onClick={closeSearch} style={boldNav("/")}>
+                  Home
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="TVShows"
+                  onClick={closeSearch}
+                  style={boldNav("/TVShows")}
+                >
+                  TV Shows
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="Movies"
+                  onClick={closeSearch}
+                  style={boldNav("/Movies")}
+                >
+                  Movies
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="NewAndPopular"
+                  onClick={closeSearch}
+                  style={boldNav("/NewAndPopular")}
+                >
+                  New & Popular
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="MyList"
+                  onClick={closeSearch}
+                  style={boldNav("/MyList")}
+                >
+                  My List
+                </Link>
+              </li>
+              <li>
+                <Link to="#">Browse by Languages</Link>
+              </li>
+            </ul>
+          ) : (
+            <div
+              className="navigation-menu-container"
+              onMouseOver={() => {
+                handleMouseOver(setNavMenuIsHovered);
+              }}
+              onMouseLeave={() => {
+                handleMouseLeave(setNavMenuIsHovered);
+              }}
+            >
+              <span>
+                Browse <AiFillCaretDown />
+              </span>
+              <NavigationMenu boldNav={boldNav} closeSearch={closeSearch} />
+            </div>
+          )}
         </nav>
         <div className="secondary-navigation">
           {!searchPressed ? (
@@ -179,16 +210,15 @@ const Root = () => {
           <div
             className="user-container"
             onMouseOver={() => {
-              setLeftPosition(userImage.getBoundingClientRect().left - 127);
               handleMouseOver(setProfileIsHovered);
             }}
             onMouseLeave={() => {
               handleMouseLeave(setProfileIsHovered);
             }}
           >
-            <img id="user" src={User} alt="User" />
-            <img src={Vector} alt="Vector" />
-            <ProfileMenu leftPosition={leftPosition} />
+            <img id="user" src={User} alt="User" onMouse />
+            <img id="profile-vector" src={Vector} alt="Vector" />
+            <ProfileMenu />
           </div>
         </div>
       </header>
