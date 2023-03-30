@@ -173,7 +173,7 @@ const Root = () => {
         <div className="secondary-navigation">
           {!searchPressed ? (
             <div className="search" onClick={openSearch}>
-              <img src={Search} alt="Search" />
+              <img className="search-img" src={Search} alt="Search" />
             </div>
           ) : (
             <div className="search">

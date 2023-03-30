@@ -46,3 +46,9 @@
   left: 50%;
   margin-left: -7px;
 }
+
+@media screen and (max-width: 288px) {
+  .navigation-menu {
+    top: 7px;
+  }
+}

@@ -22,7 +22,6 @@ const Cards = ({ title, state, alt, handleClick, translate }) => {
         </button>
         <div className="movies__cards" style={translate}>
           {state.map((movie) => {
-            // if (movie.poster_path && movie.backdrop_path != null) {
             return (
               <img
                 value={movie.id}
@@ -34,7 +33,6 @@ const Cards = ({ title, state, alt, handleClick, translate }) => {
                 key={movie.id}
               />
             );
-            // }
           })}
         </div>
         <button className="handle right-handle" onClick={handleClick}>

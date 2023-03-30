@@ -4,7 +4,7 @@ header {
   z-index: 3;
   width: 100vw;
   height: 68px;
-  padding: 0 52px;
+  padding: 0 4%;
   font-size: 1.2rem;
   display: flex;
   align-items: center;
@@ -20,6 +20,7 @@ header nav .logo-container {
 }
 header nav .logo-container img {
   cursor: pointer;
+  margin-left: -7px;
 }
 header nav ul {
   margin: 0 27px;
@@ -101,6 +102,7 @@ header .secondary-navigation .user-container {
   align-items: center;
   gap: 8px;
   position: relative;
+  cursor: pointer;
 }
 header .secondary-navigation .user-container img:nth-of-type(2) {
   width: 13px;
@@ -119,10 +121,23 @@ header .secondary-navigation .user-container:hover img:nth-of-type(2) {
   border: 1px solid white;
 }
 
+@media screen and (max-width: 399px) {
+  header {
+    height: 42px;
+  }
+}
+@media screen and (min-width: 400px) and (max-width: 970px) {
+  header {
+    height: 50px;
+  }
+}
 @media screen and (max-width: 970px) {
   header img {
     height: 1.8em;
     width: auto;
+  }
+  header .search-img {
+    height: 1.5em;
   }
 }
 @media screen and (min-width: 1200px) {

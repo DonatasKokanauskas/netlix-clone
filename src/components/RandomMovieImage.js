@@ -5,12 +5,9 @@ const MainImage = () => {
   const { randomMovieImage } = useMoviesData();
 
   return (
-    <div
-      className="image-container"
-      style={{
-        backgroundImage: `url(https://image.tmdb.org/t/p/original/${randomMovieImage})`,
-      }}
-    ></div>
+    <div className="image-container">
+      <img src={`https://image.tmdb.org/t/p/original/${randomMovieImage}`} />
+    </div>
   );
 };
 

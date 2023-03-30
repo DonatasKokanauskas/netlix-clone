@@ -2,7 +2,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 50px;
+  padding-top: 0.8rem;
+  padding-bottom: 0.8rem;
   background: #ffffff;
   border-radius: 4px;
   border: none;
@@ -11,18 +12,17 @@
 }
 .movie-info {
   position: absolute;
-  top: 230px;
-  left: 60px;
-  // width: 547px;
-  width: 29vw;
+  top: 13vw;
+  width: 34%;
+  left: 4%;
   h1 {
     color: #ffffff;
-    font-size: 5rem;
+    font-size: 3.4vw;
   }
   p {
     margin: 22px 0;
     color: #ffffff;
-    font-size: 22px;
+    font-size: 1.2vw;
   }
   div {
     margin-top: 28px;
@@ -30,15 +30,18 @@
     gap: 10px;
     button:nth-of-type(1) {
       @include button-style;
-      width: 130px;
+      padding-left: 2rem;
+      padding-right: 2.4rem;
       gap: 5px;
     }
     button:nth-of-type(2) {
       @include button-style;
       background: rgba(88, 84, 81, 0.6);
       color: #ffffff;
-      width: 150px;
+      padding-left: 1.6rem;
+      padding-right: 2rem;
       gap: 7px;
+      white-space: nowrap;
     }
 
     button:nth-of-type(1):hover {
