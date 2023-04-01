@@ -9,7 +9,7 @@ const Cards = ({ title, state, alt, handleClick, translate }) => {
 
   useEffect(() => {
     window.onresize = updatePosition;
-  }, []);
+  });
 
   return (
     <div className="movies-container">

@@ -103,14 +103,14 @@ header {
       gap: 8px;
       position: relative;
       cursor: pointer;
-      img:nth-of-type(2) {
+      #profile-vector {
         width: 13px;
         height: auto;
       }
     }
 
     .user-container:hover {
-      img:nth-of-type(2) {
+      #profile-vector {
         transform: rotate(180deg);
         transition: transform 367ms ease;
       }
@@ -147,6 +147,10 @@ header {
 
     .search-img {
       height: 1.5em;
+    }
+
+    #profile-vector {
+      width: 0.9em !important;
     }
   }
 }

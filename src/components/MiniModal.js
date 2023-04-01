@@ -1,10 +1,10 @@
 import ReactDOM from "react-dom";
 import "../style/css/MiniModal.css";
 import { useMoviesData } from "../context/Context";
-import { AiFillCaretRight } from "react-icons/ai";
+import { BsFillPlayFill } from "react-icons/bs";
 import { IoIosAdd } from "react-icons/io";
 import { BsHandThumbsUp } from "react-icons/bs";
-import { FiChevronDown } from "react-icons/fi";
+import { BsChevronDown } from "react-icons/bs";
 import { useEffect, useState } from "react";
 import { CgCheck } from "react-icons/cg";
 import { BsHandThumbsUpFill } from "react-icons/bs";
@@ -106,7 +106,7 @@ export default function MiniModal() {
           <div className="mini-modal__part__first-div">
             <div className="play" onClick={handleClick}>
               <span>
-                <AiFillCaretRight />
+                <BsFillPlayFill />
               </span>
             </div>
 
@@ -197,7 +197,7 @@ export default function MiniModal() {
                 onClick={handleClick}
               >
                 <span>
-                  <FiChevronDown />
+                  <BsChevronDown />
                 </span>
               </div>
             </div>

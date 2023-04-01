@@ -66,30 +66,48 @@
   .movies__cards img {
     max-width: 100% !important;
   }
+  .handle {
+    width: 7.5% !important;
+  }
 }
 @media screen and (min-width: 151px) and (max-width: 300px) {
   .movies__cards img {
     max-width: 50% !important;
+  }
+  .handle {
+    width: 6.5% !important;
   }
 }
 @media screen and (min-width: 301px) and (max-width: 500px) {
   .movies__cards img {
     max-width: 33.3333333333% !important;
   }
+  .handle {
+    width: 5.5% !important;
+  }
 }
 @media screen and (min-width: 501px) and (max-width: 620px) {
   .movies__cards img {
     max-width: 25% !important;
+  }
+  .handle {
+    width: 5% !important;
   }
 }
 @media screen and (min-width: 621px) and (max-width: 850px) {
   .movies__cards img {
     max-width: 20% !important;
   }
+  .handle {
+    width: 4.5% !important;
+  }
 }
 @media screen and (min-width: 851px) and (max-width: 950px) {
   .movies__cards img {
     max-width: 16.6666666667% !important;
+  }
+  .handle {
+    width: 4% !important;
   }
 }
 @media screen and (min-width: 951px) and (max-width: 1100px) {

@@ -104,11 +104,11 @@ header .secondary-navigation .user-container {
   position: relative;
   cursor: pointer;
 }
-header .secondary-navigation .user-container img:nth-of-type(2) {
+header .secondary-navigation .user-container #profile-vector {
   width: 13px;
   height: auto;
 }
-header .secondary-navigation .user-container:hover img:nth-of-type(2) {
+header .secondary-navigation .user-container:hover #profile-vector {
   transform: rotate(180deg);
   transition: transform 367ms ease;
 }
@@ -138,6 +138,9 @@ header .secondary-navigation .user-container:hover img:nth-of-type(2) {
   }
   header .search-img {
     height: 1.5em;
+  }
+  header #profile-vector {
+    width: 0.9em !important;
   }
 }
 @media screen and (min-width: 1200px) {

@@ -25,10 +25,11 @@ const Root = () => {
     handleMouseOver,
     handleMouseLeave,
     setNavMenuIsHovered,
+    windowSize,
   } = useMoviesData();
   const location = useLocation();
   const navigate = useNavigate();
-  const [windowSize, setWindowSize] = useState(window.innerWidth);
+  // const [windowSize, setWindowSize] = useState(window.innerWidth);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -74,17 +75,17 @@ const Root = () => {
       : { fontWeight: "normal" };
   };
 
-  useEffect(() => {
-    const handleWindowResize = () => {
-      setWindowSize(window.innerWidth);
-    };
+  // useEffect(() => {
+  //   const handleWindowResize = () => {
+  //     setWindowSize(window.innerWidth);
+  //   };
 
-    window.addEventListener("resize", handleWindowResize);
+  //   window.addEventListener("resize", handleWindowResize);
 
-    return () => {
-      window.removeEventListener("resize", handleWindowResize);
-    };
-  });
+  //   return () => {
+  //     window.removeEventListener("resize", handleWindowResize);
+  //   };
+  // });
 
   return (
     <>
@@ -216,7 +217,7 @@ const Root = () => {
               handleMouseLeave(setProfileIsHovered);
             }}
           >
-            <img id="user" src={User} alt="User" onMouse />
+            <img id="user" src={User} alt="User" />
             <img id="profile-vector" src={Vector} alt="Vector" />
             <ProfileMenu />
           </div>

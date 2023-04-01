@@ -1,5 +1,6 @@
 import React, { useContext, useState, createContext } from "react";
 import axios from "axios";
+import { useEffect } from "react";
 
 const MoviesDataContext = createContext();
 
@@ -39,6 +40,8 @@ export const MoviesDataProvider = ({ children }) => {
   const [profileIsHovered, setProfileIsHovered] = useState(false);
   const [navMenuIsHovered, setNavMenuIsHovered] = useState(false);
 
+  const [windowSize, setWindowSize] = useState(window.innerWidth);
+
   const fetchData = async (url, state) => {
     try {
       const response = await axios.get(url);
@@ -69,7 +72,8 @@ export const MoviesDataProvider = ({ children }) => {
     setTopPosition(
       e.target.getBoundingClientRect().top +
         window.scrollY +
-        (e.target.getBoundingClientRect().height - 70)
+        (e.target.getBoundingClientRect().height -
+          e.target.getBoundingClientRect().height * 0.19)
     );
     setWidth(e.target.getBoundingClientRect().width);
 
@@ -90,7 +94,8 @@ export const MoviesDataProvider = ({ children }) => {
       setTopPosition(
         imgElement.getBoundingClientRect().top +
           window.scrollY +
-          (imgElement.getBoundingClientRect().height - 70)
+          (imgElement.getBoundingClientRect().height -
+            imgElement.getBoundingClientRect().height * 0.19)
       );
       setWidth(imgElement.getBoundingClientRect().width);
     }
@@ -136,6 +141,18 @@ export const MoviesDataProvider = ({ children }) => {
       console.error(error);
     }
   };
+
+  useEffect(() => {
+    const handleWindowResize = () => {
+      setWindowSize(window.innerWidth);
+    };
+
+    window.addEventListener("resize", handleWindowResize);
+
+    return () => {
+      window.removeEventListener("resize", handleWindowResize);
+    };
+  });
 
   return (
     <MoviesDataContext.Provider
@@ -192,6 +209,8 @@ export const MoviesDataProvider = ({ children }) => {
         setProfileIsHovered,
         navMenuIsHovered,
         setNavMenuIsHovered,
+        windowSize,
+        setWindowSize,
       }}
     >
       {children}

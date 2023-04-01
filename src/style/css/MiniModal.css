@@ -9,7 +9,7 @@
   justify-content: space-between;
   align-items: center;
   box-shadow: rgba(0, 0, 0, 0.75) 0px 3px 10px;
-  height: 70px;
+  height: 3.67vw;
   background-color: rgb(24, 24, 24);
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
@@ -23,23 +23,23 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 34px;
-  width: 34px;
+  height: 1.78vw;
+  width: 1.78vw;
   border-radius: 50%;
   background-color: #ffffff;
   line-height: 0;
   cursor: pointer;
 }
 .mini-modal__part__first-div .play span {
-  font-size: 1.4rem;
+  font-size: 1.4vw;
   margin-left: 1px;
 }
 .mini-modal__part__first-div .add {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 34px;
-  width: 34px;
+  height: 1.78vw;
+  width: 1.78vw;
   border: 1px solid rgb(144, 144, 144);
   border-radius: 50%;
   background-color: rgba(42, 42, 42, 0.6);
@@ -49,14 +49,14 @@
 }
 .mini-modal__part__first-div .add span {
   color: #ffffff;
-  font-size: 2rem;
+  font-size: 1.5vw;
 }
 .mini-modal__part__first-div .thumb {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 34px;
-  width: 34px;
+  height: 1.78vw;
+  width: 1.78vw;
   border: 1px solid rgb(144, 144, 144);
   border-radius: 50%;
   background-color: rgba(42, 42, 42, 0.6);
@@ -65,7 +65,7 @@
 }
 .mini-modal__part__first-div .thumb span {
   color: #ffffff;
-  font-size: 1.2rem;
+  font-size: 0.9vw;
 }
 .mini-modal__part__second-div {
   margin-right: 8px;
@@ -74,18 +74,18 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 34px;
-  width: 34px;
+  height: 1.78vw;
+  width: 1.78vw;
   border: 1px solid rgb(144, 144, 144);
   border-radius: 50%;
   background-color: rgba(42, 42, 42, 0.6);
   cursor: pointer;
   line-height: 0;
+  margin-left: 3px;
 }
 .mini-modal__part__second-div .arrow span {
-  margin-top: 2px;
   color: #ffffff;
-  font-size: 1.5rem;
+  font-size: 0.9vw;
 }
 .mini-modal__part .play:hover {
   background-color: #c0bfc0;
@@ -139,4 +139,170 @@
   bottom: -10px;
   left: 50%;
   margin-left: -9px;
+}
+
+@media screen and (max-width: 220px) {
+  .mini-modal__part {
+    height: 20vw;
+  }
+  .mini-modal__part .play {
+    height: 10vw;
+    width: 10vw;
+  }
+  .mini-modal__part .play span {
+    font-size: 7vw;
+  }
+  .mini-modal__part .add {
+    height: 10vw;
+    width: 10vw;
+  }
+  .mini-modal__part .add span {
+    font-size: 7vw;
+  }
+  .mini-modal__part .thumb {
+    height: 10vw;
+    width: 10vw;
+  }
+  .mini-modal__part .thumb span {
+    font-size: 4vw;
+  }
+  .mini-modal__part .arrow {
+    height: 10vw;
+    width: 10vw;
+  }
+  .mini-modal__part .arrow span {
+    font-size: 4vw;
+  }
+}
+@media screen and (min-width: 221px) and (max-width: 400px) {
+  .mini-modal__part {
+    height: 16vw;
+  }
+  .mini-modal__part .play {
+    height: 6.6vw;
+    width: 6.6vw;
+  }
+  .mini-modal__part .play span {
+    font-size: 5vw;
+  }
+  .mini-modal__part .add {
+    height: 6.6vw;
+    width: 6.6vw;
+  }
+  .mini-modal__part .add span {
+    font-size: 5vw;
+  }
+  .mini-modal__part .thumb {
+    height: 6.6vw;
+    width: 6.6vw;
+  }
+  .mini-modal__part .thumb span {
+    font-size: 3vw;
+  }
+  .mini-modal__part .arrow {
+    height: 6.6vw;
+    width: 6.6vw;
+  }
+  .mini-modal__part .arrow span {
+    font-size: 3vw;
+  }
+}
+@media screen and (min-width: 401px) and (max-width: 600px) {
+  .mini-modal__part {
+    height: 10vw;
+  }
+  .mini-modal__part .play {
+    height: 5vw;
+    width: 5vw;
+  }
+  .mini-modal__part .play span {
+    font-size: 4vw;
+  }
+  .mini-modal__part .add {
+    height: 5vw;
+    width: 5vw;
+  }
+  .mini-modal__part .add span {
+    font-size: 4vw;
+  }
+  .mini-modal__part .thumb {
+    height: 5vw;
+    width: 5vw;
+  }
+  .mini-modal__part .thumb span {
+    font-size: 2.5vw;
+  }
+  .mini-modal__part .arrow {
+    height: 5vw;
+    width: 5vw;
+  }
+  .mini-modal__part .arrow span {
+    font-size: 2.5vw;
+  }
+}
+@media screen and (min-width: 601px) and (max-width: 800px) {
+  .mini-modal__part {
+    height: 8vw;
+  }
+  .mini-modal__part .play {
+    height: 3.5vw;
+    width: 3.5vw;
+  }
+  .mini-modal__part .play span {
+    font-size: 3vw;
+  }
+  .mini-modal__part .add {
+    height: 3.5vw;
+    width: 3.5vw;
+  }
+  .mini-modal__part .add span {
+    font-size: 3vw;
+  }
+  .mini-modal__part .thumb {
+    height: 3.5vw;
+    width: 3.5vw;
+  }
+  .mini-modal__part .thumb span {
+    font-size: 2vw;
+  }
+  .mini-modal__part .arrow {
+    height: 3.5vw;
+    width: 3.5vw;
+  }
+  .mini-modal__part .arrow span {
+    font-size: 2vw;
+  }
+}
+@media screen and (min-width: 801px) and (max-width: 1100px) {
+  .mini-modal__part {
+    height: 5vw;
+  }
+  .mini-modal__part .play {
+    height: 2.5vw;
+    width: 2.5vw;
+  }
+  .mini-modal__part .play span {
+    font-size: 2vw;
+  }
+  .mini-modal__part .add {
+    height: 2.5vw;
+    width: 2.5vw;
+  }
+  .mini-modal__part .add span {
+    font-size: 2vw;
+  }
+  .mini-modal__part .thumb {
+    height: 2.5vw;
+    width: 2.5vw;
+  }
+  .mini-modal__part .thumb span {
+    font-size: 1.5vw;
+  }
+  .mini-modal__part .arrow {
+    height: 2.5vw;
+    width: 2.5vw;
+  }
+  .mini-modal__part .arrow span {
+    font-size: 1.5vw;
+  }
 }
