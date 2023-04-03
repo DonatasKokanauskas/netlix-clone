@@ -4,12 +4,12 @@
   background: #141414;
 }
 .my-list-page__container {
-  padding: 85px 55px;
+  padding: 90px 4%;
   overflow: hidden;
   background: inherit;
 }
 .my-list-page__container h1 {
-  margin-left: 6px;
+  padding: 0 !important;
   margin-bottom: 10px;
   font-size: 1.8rem;
   color: #ffffff;
@@ -17,10 +17,11 @@
 .my-list-page__container h3 {
   color: #666;
   text-align: center;
-  margin: 200px;
+  margin: 200px auto;
+  white-space: nowrap;
 }
 .my-list-page__container .my-list__cards {
-  margin-top: 60px;
+  margin-top: 70px;
   display: flex;
   justify-content: flex-start;
   flex-wrap: wrap;
@@ -36,4 +37,90 @@
   transform-origin: top;
   transform: scale(1.19);
   z-index: 2;
+}
+.my-list-page .footer {
+  position: absolute !important;
+  bottom: 0 !important;
+  padding: 0;
+  margin: 0 !important;
+  height: 10%;
+}
+
+@media screen and (max-width: 100px) {
+  .my-list-page__container {
+    padding: 50px 4%;
+  }
+  .my-list-page__container .my-list__cards {
+    margin-top: 20px !important;
+  }
+  .my-list-page__container .my-list__cards img {
+    max-width: 50% !important;
+  }
+}
+@media screen and (min-width: 101px) and (max-width: 200px) {
+  .my-list-page__container {
+    padding: 60px 4%;
+  }
+  .my-list-page__container .my-list__cards {
+    margin-top: 30px !important;
+  }
+  .my-list-page__container .my-list__cards img {
+    max-width: 50% !important;
+  }
+}
+@media screen and (min-width: 201px) and (max-width: 300px) {
+  .my-list-page__container {
+    padding: 70px 4%;
+  }
+  .my-list-page__container .my-list__cards {
+    margin-top: 40px !important;
+  }
+  .my-list-page__container .my-list__cards img {
+    max-width: 50% !important;
+  }
+}
+@media screen and (min-width: 301px) and (max-width: 500px) {
+  .my-list-page__container {
+    padding: 80px 4%;
+  }
+  .my-list-page__container .my-list__cards {
+    margin-top: 50px !important;
+  }
+  .my-list-page__container .my-list__cards img {
+    max-width: 33.3333333333% !important;
+  }
+}
+@media screen and (min-width: 501px) and (max-width: 620px) {
+  .my-list__cards {
+    margin-top: 50px !important;
+  }
+  .my-list__cards img {
+    max-width: 25% !important;
+  }
+}
+@media screen and (min-width: 621px) and (max-width: 850px) {
+  .my-list__cards {
+    margin-top: 60px !important;
+  }
+  .my-list__cards img {
+    max-width: 20% !important;
+  }
+}
+@media screen and (min-width: 851px) and (max-width: 950px) {
+  .my-list__cards {
+    margin-top: 60px !important;
+  }
+  .my-list__cards img {
+    max-width: 16.6666666667% !important;
+  }
+}
+@media screen and (min-width: 951px) and (max-width: 1100px) {
+  .my-list__cards img {
+    max-width: 14.2857142857% !important;
+  }
+}
+@media screen and (min-width: 1101px) and (max-width: 1300px) {
+  .my-list__cards img {
+    max-width: 12.5% !important;
+  }
 }

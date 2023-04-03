@@ -1,6 +1,7 @@
 .image-container {
   filter: brightness(85%);
   position: absolute;
+  top: 0px;
   z-index: -1;
 }
 

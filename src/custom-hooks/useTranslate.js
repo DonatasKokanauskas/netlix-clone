@@ -25,8 +25,6 @@ const useTranslate = (initialValue) => {
       return 3;
     } else if (windowSize <= 300 && windowSize >= 151) {
       return 2;
-    } else if (windowSize <= 300 && windowSize >= 151) {
-      return 2;
     } else if (windowSize <= 150) {
       return 1;
     }

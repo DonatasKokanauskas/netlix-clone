@@ -27,3 +27,43 @@
     font-size: 11px;
   }
 }
+
+@media screen and (max-width: 120px) {
+  .footer {
+    div {
+      a {
+        font-size: 4.5rem;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 121px) and (max-width: 180px) {
+  .footer {
+    div {
+      a {
+        font-size: 3.5rem;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 181px) and (max-width: 240px) {
+  .footer {
+    div {
+      a {
+        font-size: 2.5rem;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 241px) and (max-width: 380px) {
+  .footer {
+    div {
+      a {
+        font-size: 2rem;
+      }
+    }
+  }
+}

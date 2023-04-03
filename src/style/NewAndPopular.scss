@@ -1,23 +1,102 @@
 .new-and-popular-page {
   background: #141414;
   padding-bottom: 30px;
-  height: auto;
+  height: 100vh;
 
   h1 {
     padding-top: 85px;
-    padding-left: 62px;
-    padding-bottom: 20px;
+    padding-left: 4%;
+    padding-bottom: 10px;
     font-size: 1.8rem;
     color: #666;
   }
 
   .movies-container {
-    position: relative;
     top: 0;
+    margin-top: 2.62vw;
+    h2 {
+      margin: 0 0 0.5em 4%;
+    }
   }
   .footer {
     position: relative !important;
     bottom: 0 !important;
-    margin-top: 6em;
+    margin-top: 6.1em !important;
+    padding-bottom: 0;
+    // height: 10%;
+  }
+}
+
+@media screen and (max-width: 150px) {
+  .movies-container {
+    margin-top: 6vw !important;
+  }
+  h1 {
+    padding-top: 45px !important;
+    font-size: 3.8rem !important;
+  }
+}
+
+@media screen and (min-width: 151px) and (max-width: 250px) {
+  .movies-container {
+    margin-top: 6vw !important;
+  }
+  h1 {
+    padding-top: 55px !important;
+    font-size: 3rem !important;
+  }
+}
+
+@media screen and (min-width: 251px) and (max-width: 300px) {
+  .movies-container {
+    margin-top: 6vw !important;
+  }
+  h1 {
+    padding-top: 60px !important;
+    font-size: 2.5rem !important;
+  }
+}
+
+@media screen and (min-width: 301px) and (max-width: 370px) {
+  .movies-container {
+    margin-top: 5vw !important;
+  }
+  h1 {
+    padding-top: 60px !important;
+    font-size: 2rem !important;
+  }
+}
+
+@media screen and (min-width: 371px) and (max-width: 500px) {
+  .movies-container {
+    margin-top: 4vw !important;
+  }
+  h1 {
+    padding-top: 75px !important;
+  }
+}
+
+@media screen and (min-width: 501px) and (max-width: 550px) {
+  .movies-container {
+    margin-top: 3vw !important;
+  }
+  h1 {
+    padding-top: 75px !important;
+    font-size: 1.5rem !important;
+  }
+}
+
+@media screen and (min-width: 551px) and (max-width: 750px) {
+  .movies-container {
+    margin-top: 3vw !important;
+  }
+  h1 {
+    padding-top: 75px !important;
+  }
+}
+
+@media screen and (min-width: 751px) and (max-width: 900px) {
+  .movies-container {
+    margin-top: 2.62vw !important;
   }
 }

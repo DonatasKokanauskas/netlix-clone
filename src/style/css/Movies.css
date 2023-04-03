@@ -1,20 +1,21 @@
 .movies-page {
   background: #141414;
-  padding-bottom: 30px;
-  height: auto;
+  height: 100vh;
 }
 .movies-page .h1-select {
+  min-height: 15%;
   display: flex;
   padding-top: 85px;
-  padding-left: 62px;
-  padding-bottom: 20px;
+  padding-left: 4%;
+  padding-bottom: 10px;
 }
 .movies-page .h1-select h1 {
   font-size: 1.8rem;
   color: #666;
+  padding-top: 0 !important;
 }
 .movies-page .h1-select select {
-  margin-left: 40px;
+  margin-left: 2.1vw;
   height: 1.8rem;
   background-color: #000;
   border: 1px solid hsla(0, 0%, 100%, 0.9);
@@ -27,7 +28,7 @@
   outline: none;
 }
 .movies-page__container {
-  padding: 100px 55px;
+  padding: 5.25vw 4%;
   overflow: hidden;
   background: inherit;
 }
@@ -55,11 +56,251 @@
   z-index: 2;
 }
 .movies-page .movies-container {
-  position: relative;
   top: 0;
+  height: 35%;
+  min-height: 230px;
+  margin-top: 2.62vw;
+}
+.movies-page .movies-container h2 {
+  margin: 0 0 0.5em 4%;
 }
 .movies-page .footer {
   position: relative !important;
   bottom: 0 !important;
-  margin-top: 6em;
+  margin-top: 6.1em;
+  height: 10%;
+}
+
+@media screen and (max-width: 200px) {
+  .h1-select select {
+    width: 18rem;
+    height: 3.5rem !important;
+    font-size: 2.2rem !important;
+  }
+  .h1-select h1 {
+    font-size: 2.7rem !important;
+  }
+  .movies-page__container img {
+    max-width: 50% !important;
+  }
+}
+@media screen and (min-width: 201px) and (max-width: 300px) {
+  .h1-select select {
+    width: 14rem;
+    height: 2.8rem !important;
+    font-size: 1.8rem !important;
+  }
+  .movies-page__container img {
+    max-width: 50% !important;
+  }
+}
+@media screen and (min-width: 301px) and (max-width: 500px) {
+  .h1-select {
+    padding-top: 75px !important;
+  }
+  .h1-select select {
+    width: 11rem;
+    height: 2.2rem !important;
+    font-size: 1.3rem !important;
+  }
+  .movies-page__container img {
+    max-width: 33.3333333333% !important;
+  }
+}
+@media screen and (min-width: 501px) and (max-width: 620px) {
+  .movies-page__container img {
+    max-width: 25% !important;
+  }
+}
+@media screen and (min-width: 621px) and (max-width: 850px) {
+  .movies-page__container img {
+    max-width: 20% !important;
+  }
+}
+@media screen and (min-width: 851px) and (max-width: 950px) {
+  .movies-page__container img {
+    max-width: 16.6666666667% !important;
+  }
+}
+@media screen and (min-width: 951px) and (max-width: 1100px) {
+  .movies-page__container img {
+    max-width: 14.2857142857% !important;
+  }
+}
+@media screen and (min-width: 1101px) and (max-width: 1300px) {
+  .movies-page__container img {
+    max-width: 12.5% !important;
+  }
+}
+@media screen and (max-width: 110px) {
+  .h1-select {
+    min-height: 12% !important;
+    padding-top: 60px !important;
+  }
+  .movies-container {
+    height: 20% !important;
+    min-height: 160px !important;
+    margin-top: 1.62vw !important;
+  }
+  .footer {
+    margin-top: 100% !important;
+    padding-top: 100%;
+    height: 50% !important;
+  }
+}
+@media screen and (min-width: 111px) and (max-width: 150px) {
+  .h1-select {
+    min-height: 12% !important;
+    padding-top: 60px !important;
+  }
+  .movies-container {
+    height: 30% !important;
+    min-height: 210px !important;
+    margin-top: 1.62vw !important;
+  }
+  .footer {
+    margin-top: 95% !important;
+    height: 15% !important;
+  }
+}
+@media screen and (min-width: 151px) and (max-width: 170px) {
+  .h1-select {
+    min-height: 13% !important;
+    padding-top: 70px !important;
+  }
+  .movies-container {
+    height: 22% !important;
+    min-height: 140px !important;
+    margin-top: 1.62vw !important;
+  }
+  .footer {
+    margin-top: 100% !important;
+    padding-top: 90%;
+    height: 15% !important;
+  }
+}
+@media screen and (min-width: 171px) and (max-width: 201px) {
+  .h1-select {
+    min-height: 13% !important;
+    padding-top: 70px !important;
+  }
+  .movies-container {
+    height: 25% !important;
+    min-height: 160px !important;
+    margin-top: 1.62vw !important;
+  }
+  .footer {
+    margin-top: 100% !important;
+    padding-top: 20%;
+    height: 15% !important;
+  }
+}
+@media screen and (min-width: 201px) and (max-width: 250px) {
+  .h1-select {
+    min-height: 13% !important;
+    padding-top: 70px !important;
+  }
+  .movies-container {
+    height: 25% !important;
+    min-height: 200px !important;
+    margin-top: 1.62vw !important;
+  }
+  .footer {
+    margin-top: 90% !important;
+    height: 15% !important;
+  }
+}
+@media screen and (min-width: 251px) and (max-width: 300px) {
+  .h1-select {
+    min-height: 14% !important;
+  }
+  .movies-container {
+    height: 28% !important;
+    min-height: 230px !important;
+    margin-top: 3vw !important;
+  }
+  .footer {
+    margin-top: 50% !important;
+    height: 15% !important;
+  }
+}
+@media screen and (min-width: 301px) and (max-width: 370px) {
+  .h1-select {
+    min-height: 14% !important;
+  }
+  .movies-container {
+    height: 25% !important;
+    min-height: 190px !important;
+    margin-top: 1.62vw !important;
+  }
+  .footer {
+    margin-top: 55% !important;
+    height: 15% !important;
+  }
+}
+@media screen and (min-width: 371px) and (max-width: 450px) {
+  .movies-container {
+    height: 30% !important;
+    min-height: 230px !important;
+    margin-top: 1.62vw !important;
+  }
+  .footer {
+    margin-top: 30% !important;
+    height: 10%;
+  }
+}
+@media screen and (min-width: 451px) and (max-width: 500px) {
+  .movies-container {
+    height: 30% !important;
+    min-height: 250px !important;
+    margin-top: 1.62vw !important;
+  }
+  .footer {
+    margin-top: 25% !important;
+    height: 10%;
+  }
+}
+@media screen and (min-width: 501px) and (max-width: 600px) {
+  .movies-container {
+    height: 30% !important;
+    min-height: 230px !important;
+    margin-top: 1.62vw !important;
+  }
+  .footer {
+    margin-top: 20% !important;
+    height: 10%;
+  }
+}
+@media screen and (min-width: 601px) and (max-width: 740px) {
+  .movies-container {
+    height: 30% !important;
+    min-height: 230px !important;
+    margin-top: 1.62vw !important;
+  }
+  .footer {
+    margin-top: 15% !important;
+    height: 10%;
+  }
+}
+@media screen and (min-width: 741px) and (max-width: 850px) {
+  .movies-container {
+    height: 30% !important;
+    min-height: 250px !important;
+    margin-top: 1.62vw !important;
+  }
+  .footer {
+    margin-top: 12% !important;
+    height: 10%;
+  }
+}
+@media screen and (min-width: 851px) and (max-width: 900px) {
+  .movies-container {
+    height: 30% !important;
+    min-height: 220px !important;
+    margin-top: 1.62vw !important;
+  }
+  .footer {
+    margin-top: 12% !important;
+    height: 10%;
+  }
 }

@@ -6,6 +6,7 @@ import { useMoviesData } from "../context/Context";
 import MiniModal from "../components/MiniModal";
 import Modal from "../components/Modal";
 import LoadingScreen from "../components/LoadingScreen";
+import Footer from "../components/Footer";
 
 const MyList = () => {
   const { myList, setMyList, position, hoverLeave, isLoading, setIsLoading } =
@@ -89,6 +90,7 @@ const MyList = () => {
             })}
         </div>
       </div>
+      <Footer />
     </div>
   );
 };

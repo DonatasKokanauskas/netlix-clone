@@ -121,9 +121,31 @@ header .secondary-navigation .user-container:hover #profile-vector {
   border: 1px solid white;
 }
 
-@media screen and (max-width: 399px) {
+@media screen and (max-width: 249px) {
   header {
+    font-size: 1.7rem;
+    height: 34px;
+  }
+  header .navigation-menu-container {
+    margin: 0 5px !important;
+  }
+  header .secondary-navigation {
+    gap: 10px;
+  }
+  header .secondary-navigation #profile-vector {
+    display: none !important;
+  }
+}
+@media screen and (min-width: 250px) and (max-width: 399px) {
+  header {
+    font-size: 1.5rem;
     height: 42px;
+  }
+  header .navigation-menu-container {
+    margin: 0 10px !important;
+  }
+  header #profile-vector {
+    display: none !important;
   }
 }
 @media screen and (min-width: 400px) and (max-width: 970px) {

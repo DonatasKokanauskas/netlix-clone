@@ -29,7 +29,6 @@ const Root = () => {
   } = useMoviesData();
   const location = useLocation();
   const navigate = useNavigate();
-  // const [windowSize, setWindowSize] = useState(window.innerWidth);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -74,18 +73,6 @@ const Root = () => {
       ? { color: "#ffffff", fontWeight: "bold" }
       : { fontWeight: "normal" };
   };
-
-  // useEffect(() => {
-  //   const handleWindowResize = () => {
-  //     setWindowSize(window.innerWidth);
-  //   };
-
-  //   window.addEventListener("resize", handleWindowResize);
-
-  //   return () => {
-  //     window.removeEventListener("resize", handleWindowResize);
-  //   };
-  // });
 
   return (
     <>

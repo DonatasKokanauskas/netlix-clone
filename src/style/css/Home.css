@@ -3,6 +3,7 @@
 }
 
 .footer {
-  position: absolute;
-  bottom: -1450px;
+  position: relative;
+  bottom: -50vw;
+  padding-bottom: 15px;
 }
