@@ -165,7 +165,7 @@ const Root = () => {
             </div>
           ) : (
             <div className="search">
-              <img src={Search} alt="Search" />
+              <img className="search-img-active" src={Search} alt="Search" />
               <div>
                 <input
                   type="text"
@@ -193,7 +193,9 @@ const Root = () => {
               </div>
             </div>
           )}
-          <Link to="#">Kids</Link>
+          <Link to="#" className="page-for-kids">
+            Kids
+          </Link>
           <img src={Bell} alt="Bell" />
           <div
             className="user-container"

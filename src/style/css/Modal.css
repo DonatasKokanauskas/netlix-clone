@@ -62,8 +62,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 34px;
-  width: 34px;
+  height: 1.78vw;
+  width: 1.78vw;
   border: 1px solid rgb(144, 144, 144);
   border-radius: 50%;
   background-color: rgba(42, 42, 42, 0.6);
@@ -72,14 +72,14 @@
 }
 .modal__container .modal-buttons .add span {
   color: #ffffff;
-  font-size: 2rem;
+  font-size: 1.5vw;
 }
 .modal__container .modal-buttons .thumb {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 34px;
-  width: 34px;
+  height: 1.78vw;
+  width: 1.78vw;
   border: 1px solid rgb(144, 144, 144);
   border-radius: 50%;
   background-color: rgba(42, 42, 42, 0.6);
@@ -88,7 +88,7 @@
 }
 .modal__container .modal-buttons .thumb span {
   color: #ffffff;
-  font-size: 1.2rem;
+  font-size: 0.9vw;
 }
 .modal__container .modal-buttons .add:hover,
 .modal__container .modal-buttons .thumb:hover {
@@ -196,4 +196,322 @@
   width: 65%;
   margin-left: 55px;
   margin-top: 30px;
+}
+
+@media screen and (max-width: 300px) {
+  .modal__container {
+    width: 100vw;
+  }
+  .modal__container .close span {
+    font-size: 4vw;
+  }
+  .modal__container .info .date p {
+    font-size: 3.5vw;
+  }
+  .modal__container .info .age-check label {
+    font-size: 3.5vw;
+  }
+  .modal__container .info .vote p {
+    font-size: 3.5vw;
+  }
+  .modal__container .info .media-type label {
+    font-size: 3.5vw;
+  }
+  .modal__container .info span {
+    font-size: 3.5vw;
+  }
+  .modal__container .genres label {
+    font-size: 3.5vw !important;
+  }
+  .modal__container .overview p {
+    font-size: 3.5vw !important;
+  }
+  .modal__container .add {
+    height: 7vw !important;
+    width: 7vw !important;
+  }
+  .modal__container .add span {
+    font-size: 5.5vw !important;
+  }
+  .modal__container .thumb {
+    height: 7vw !important;
+    width: 7vw !important;
+  }
+  .modal__container .thumb span {
+    font-size: 4.1vw !important;
+  }
+  .modal__container .modal__container__info .info {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+@media screen and (min-width: 301px) and (max-width: 400px) {
+  .modal__container {
+    width: 95vw;
+  }
+  .modal__container .close span {
+    font-size: 3.5vw;
+  }
+  .modal__container .info .date p {
+    font-size: 3vw;
+  }
+  .modal__container .info .age-check label {
+    font-size: 3vw;
+  }
+  .modal__container .info .vote p {
+    font-size: 3vw;
+  }
+  .modal__container .info .media-type label {
+    font-size: 3vw;
+  }
+  .modal__container .info span {
+    font-size: 3vw;
+  }
+  .modal__container .genres label {
+    font-size: 3vw !important;
+  }
+  .modal__container .overview p {
+    font-size: 3vw !important;
+  }
+  .modal__container .add {
+    height: 6vw !important;
+    width: 6vw !important;
+  }
+  .modal__container .add span {
+    font-size: 5vw !important;
+  }
+  .modal__container .thumb {
+    height: 6vw !important;
+    width: 6vw !important;
+  }
+  .modal__container .thumb span {
+    font-size: 3.6vw !important;
+  }
+  .modal__container .modal__container__info .info {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+@media screen and (min-width: 401px) and (max-width: 500px) {
+  .modal__container {
+    width: 85vw;
+  }
+  .modal__container .close span {
+    font-size: 3vw;
+  }
+  .modal__container .info .date p {
+    font-size: 2.5vw;
+  }
+  .modal__container .info .age-check label {
+    font-size: 2.5vw;
+  }
+  .modal__container .info .vote p {
+    font-size: 2.5vw;
+  }
+  .modal__container .info .media-type label {
+    font-size: 2.5vw;
+  }
+  .modal__container .info span {
+    font-size: 2.5vw;
+  }
+  .modal__container .genres label {
+    font-size: 2.5vw !important;
+  }
+  .modal__container .overview p {
+    font-size: 2.5vw !important;
+  }
+  .modal__container .add {
+    height: 5.5vw !important;
+    width: 5.5vw !important;
+  }
+  .modal__container .add span {
+    font-size: 4.2vw !important;
+  }
+  .modal__container .thumb {
+    height: 5.5vw !important;
+    width: 5.5vw !important;
+  }
+  .modal__container .thumb span {
+    font-size: 3.3vw !important;
+  }
+  .modal__container .modal__container__info .info {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+@media screen and (min-width: 501px) and (max-width: 550px) {
+  .modal__container {
+    width: 75vw;
+  }
+  .modal__container .close span {
+    font-size: 2.5vw;
+  }
+  .modal__container .info .date p {
+    font-size: 2vw;
+  }
+  .modal__container .info .age-check label {
+    font-size: 2vw;
+  }
+  .modal__container .info .vote p {
+    font-size: 2vw;
+  }
+  .modal__container .info .media-type label {
+    font-size: 2vw;
+  }
+  .modal__container .info span {
+    font-size: 2vw;
+  }
+  .modal__container .genres label {
+    font-size: 2vw !important;
+  }
+  .modal__container .overview p {
+    font-size: 2vw !important;
+  }
+  .modal__container .add {
+    height: 4vw !important;
+    width: 4vw !important;
+  }
+  .modal__container .add span {
+    font-size: 3.3vw !important;
+  }
+  .modal__container .thumb {
+    height: 4vw !important;
+    width: 4vw !important;
+  }
+  .modal__container .thumb span {
+    font-size: 2.4vw !important;
+  }
+  .modal__container .modal__container__info .info {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+@media screen and (min-width: 551px) and (max-width: 650px) {
+  .modal__container {
+    width: 75vw;
+  }
+  .modal__container .close span {
+    font-size: 2.2vw;
+  }
+  .modal__container .info .date p {
+    font-size: 1.7vw;
+  }
+  .modal__container .info .age-check label {
+    font-size: 1.7vw;
+  }
+  .modal__container .info .vote p {
+    font-size: 1.7vw;
+  }
+  .modal__container .info .media-type label {
+    font-size: 1.7vw;
+  }
+  .modal__container .info span {
+    font-size: 1.7vw;
+  }
+  .modal__container .genres label {
+    font-size: 1.7vw !important;
+  }
+  .modal__container .overview p {
+    font-size: 1.7vw !important;
+  }
+  .modal__container .add {
+    height: 4vw !important;
+    width: 4vw !important;
+  }
+  .modal__container .add span {
+    font-size: 3.3vw !important;
+  }
+  .modal__container .thumb {
+    height: 4vw !important;
+    width: 4vw !important;
+  }
+  .modal__container .thumb span {
+    font-size: 2.4vw !important;
+  }
+}
+@media screen and (min-width: 651px) and (max-width: 850px) {
+  .modal__container {
+    width: 65vw;
+  }
+  .modal__container .close span {
+    font-size: 1.7vw;
+  }
+  .modal__container .info .date p {
+    font-size: 1.4vw;
+  }
+  .modal__container .info .age-check label {
+    font-size: 1.4vw;
+  }
+  .modal__container .info .vote p {
+    font-size: 1.4vw;
+  }
+  .modal__container .info .media-type label {
+    font-size: 1.4vw;
+  }
+  .modal__container .info span {
+    font-size: 1.4vw;
+  }
+  .modal__container .genres label {
+    font-size: 1.4vw !important;
+  }
+  .modal__container .overview p {
+    font-size: 1.4vw !important;
+  }
+  .modal__container .add {
+    height: 3vw !important;
+    width: 3vw !important;
+  }
+  .modal__container .add span {
+    font-size: 2.8vw !important;
+  }
+  .modal__container .thumb {
+    height: 3vw !important;
+    width: 3vw !important;
+  }
+  .modal__container .thumb span {
+    font-size: 1.9vw !important;
+  }
+}
+@media screen and (min-width: 851px) and (max-width: 1100px) {
+  .modal__container {
+    width: 50vw;
+  }
+  .modal__container .close span {
+    font-size: 1.5vw;
+  }
+  .modal__container .info .date p {
+    font-size: 1.2vw;
+  }
+  .modal__container .info .age-check label {
+    font-size: 1.2vw;
+  }
+  .modal__container .info .vote p {
+    font-size: 1.2vw;
+  }
+  .modal__container .info .media-type label {
+    font-size: 1.2vw;
+  }
+  .modal__container .info span {
+    font-size: 1.2vw;
+  }
+  .modal__container .genres label {
+    font-size: 1.2vw !important;
+  }
+  .modal__container .overview p {
+    font-size: 1.2vw !important;
+  }
+  .modal__container .add {
+    height: 2.5vw !important;
+    width: 2.5vw !important;
+  }
+  .modal__container .add span {
+    font-size: 2.3vw !important;
+  }
+  .modal__container .thumb {
+    height: 2.5vw !important;
+    width: 2.5vw !important;
+  }
+  .modal__container .thumb span {
+    font-size: 1.5vw !important;
+  }
 }

@@ -74,9 +74,10 @@ header .secondary-navigation a:visited {
 header .secondary-navigation a:hover {
   color: #a9a8a8;
 }
-header .secondary-navigation .search div {
+header .secondary-navigation .search {
   display: flex;
   align-items: center;
+  position: relative;
 }
 header .secondary-navigation .search div input {
   height: 100%;
@@ -84,11 +85,16 @@ header .secondary-navigation .search div input {
   border: none;
   color: white;
   margin: 0 12px;
+  font-size: inherit;
 }
 header .secondary-navigation .search div input:focus {
   outline: none;
 }
 header .secondary-navigation .search div span {
+  position: absolute;
+  margin-top: 2px;
+  margin-right: 0.5vw;
+  right: 0;
   color: white;
   font-size: 1.2rem;
   line-height: 0;
@@ -130,13 +136,22 @@ header .secondary-navigation .user-container:hover #profile-vector {
     margin: 0 5px !important;
   }
   header .secondary-navigation {
-    gap: 10px;
+    gap: 5px;
+  }
+  header .secondary-navigation .search {
+    height: 16px;
+  }
+  header .secondary-navigation .search .search-img-active {
+    height: 1.7vw;
+  }
+  header .secondary-navigation .search input {
+    width: 7vw;
   }
   header .secondary-navigation #profile-vector {
     display: none !important;
   }
 }
-@media screen and (min-width: 250px) and (max-width: 399px) {
+@media screen and (min-width: 250px) and (max-width: 310px) {
   header {
     font-size: 1.5rem;
     height: 42px;
@@ -144,11 +159,58 @@ header .secondary-navigation .user-container:hover #profile-vector {
   header .navigation-menu-container {
     margin: 0 10px !important;
   }
+  header .secondary-navigation {
+    gap: 8px;
+  }
+  header .secondary-navigation .search {
+    height: 20px;
+  }
+  header .secondary-navigation .search .search-img-active {
+    height: 1.7vw;
+  }
+  header .secondary-navigation .search input {
+    width: 10.2vw;
+  }
+  header .secondary-navigation .page-for-kids {
+    display: none !important;
+  }
+  header .secondary-navigation #profile-vector {
+    display: none !important;
+  }
+}
+@media screen and (min-width: 311px) and (max-width: 399px) {
+  header {
+    font-size: 1.5rem;
+    height: 42px;
+  }
+  header .navigation-menu-container {
+    margin: 0 10px !important;
+  }
+  header .secondary-navigation {
+    gap: 12px;
+  }
+  header .secondary-navigation .search {
+    height: 20px;
+  }
+  header .secondary-navigation .search .search-img-active {
+    height: 1.7vw;
+  }
+  header .secondary-navigation .search input {
+    width: 10.2vw;
+  }
+  header .secondary-navigation #profile-vector {
+    display: none !important;
+  }
+}
+@media screen and (min-width: 400px) and (max-width: 430px) {
+  header {
+    height: 50px;
+  }
   header #profile-vector {
     display: none !important;
   }
 }
-@media screen and (min-width: 400px) and (max-width: 970px) {
+@media screen and (min-width: 431px) and (max-width: 970px) {
   header {
     height: 50px;
   }
@@ -168,5 +230,59 @@ header .secondary-navigation .user-container:hover #profile-vector {
 @media screen and (min-width: 1200px) {
   header {
     font-size: 14px;
+  }
+}
+@media screen and (min-width: 141px) and (max-width: 640px) {
+  .search {
+    height: 20px;
+  }
+  .search .search-img-active {
+    height: 1.7vw;
+  }
+  .search input {
+    width: 13.2vw;
+  }
+}
+@media screen and (min-width: 641px) and (max-width: 970px) {
+  .search {
+    height: 3vw;
+  }
+  .search .search-img-active {
+    height: 1.7vw;
+  }
+  .search input {
+    width: 13.2vw;
+  }
+}
+@media screen and (min-width: 971px) and (max-width: 997px) {
+  .search .search-img-active {
+    height: 1.7vw;
+  }
+  .search input {
+    width: 7.2vw;
+  }
+}
+@media screen and (min-width: 998px) and (max-width: 1034px) {
+  .search .search-img-active {
+    height: 1.7vw;
+  }
+  .search input {
+    width: 9.2vw;
+  }
+}
+@media screen and (min-width: 1035px) and (max-width: 1074px) {
+  .search .search-img-active {
+    height: 1.7vw;
+  }
+  .search input {
+    width: 11.2vw;
+  }
+}
+@media screen and (min-width: 1075px) and (max-width: 1200px) {
+  .search .search-img-active {
+    height: 1.7vw;
+  }
+  .search input {
+    width: 13.2vw;
   }
 }

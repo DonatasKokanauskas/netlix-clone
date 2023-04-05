@@ -4,12 +4,12 @@
   background: #141414;
 
   &__container {
+    height: 100%;
     padding: 90px 4%;
     overflow: hidden;
     background: inherit;
 
     h1 {
-      // margin-left: 6px;
       padding: 0 !important;
       margin-bottom: 10px;
       font-size: 1.8rem;
@@ -31,6 +31,7 @@
 
       img {
         max-width: calc(100% / 9);
+        min-width: calc(100% / 9);
         padding: 0.35rem;
         border-radius: 15px;
         z-index: 1;
@@ -44,13 +45,13 @@
     }
   }
   .footer {
-    position: absolute !important;
+    position: relative !important;
     bottom: 0 !important;
-    padding: 0;
-    margin: 0 !important;
-    // margin-top: 4em;
+    margin-top: 6.1em;
 
-    height: 10%;
+    padding: 2em !important;
+    display: flex;
+    justify-content: end;
   }
 }
 
@@ -61,6 +62,7 @@
       margin-top: 20px !important;
       img {
         max-width: calc(100% / 2) !important;
+        min-width: calc(100% / 2) !important;
       }
     }
   }
@@ -73,6 +75,7 @@
       margin-top: 30px !important;
       img {
         max-width: calc(100% / 2) !important;
+        min-width: calc(100% / 2) !important;
       }
     }
   }
@@ -85,6 +88,7 @@
       margin-top: 40px !important;
       img {
         max-width: calc(100% / 2) !important;
+        min-width: calc(100% / 2) !important;
       }
     }
   }
@@ -97,6 +101,7 @@
       margin-top: 50px !important;
       img {
         max-width: calc(100% / 3) !important;
+        min-width: calc(100% / 3) !important;
       }
     }
   }
@@ -107,6 +112,7 @@
     margin-top: 50px !important;
     img {
       max-width: calc(100% / 4) !important;
+      min-width: calc(100% / 4) !important;
     }
   }
 }
@@ -116,6 +122,7 @@
     margin-top: 60px !important;
     img {
       max-width: calc(100% / 5) !important;
+      min-width: calc(100% / 5) !important;
     }
   }
 }
@@ -125,6 +132,7 @@
     margin-top: 60px !important;
     img {
       max-width: calc(100% / 6) !important;
+      min-width: calc(100% / 6) !important;
     }
   }
 }
@@ -133,6 +141,7 @@
   .my-list__cards {
     img {
       max-width: calc(100% / 7) !important;
+      min-width: calc(100% / 7) !important;
     }
   }
 }
@@ -141,6 +150,16 @@
   .my-list__cards {
     img {
       max-width: calc(100% / 8) !important;
+      min-width: calc(100% / 8) !important;
+    }
+  }
+}
+
+@media screen and (min-height: 1200px) {
+  .my-list-page {
+    .footer {
+      position: absolute !important;
+      bottom: 0 !important;
     }
   }
 }

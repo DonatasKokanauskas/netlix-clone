@@ -7,6 +7,7 @@
 .movie-info h1 {
   color: #ffffff;
   font-size: 3.4vw;
+  padding: 0 !important;
 }
 .movie-info p {
   margin: 22px 0;
@@ -73,6 +74,7 @@
   }
   .movie-info h1 {
     font-size: 6vw;
+    line-height: 1.2;
   }
   .movie-info p {
     margin: 2px 0;
@@ -82,13 +84,32 @@
     margin-top: 5px;
   }
 }
-@media screen and (min-width: 201px) and (max-width: 270px) {
+@media screen and (max-width: 150px) {
   .movie-info {
-    width: 85%;
+    width: 95%;
+    top: 16vw;
+  }
+  .movie-info h1 {
+    font-size: 6vw;
+    line-height: 1;
+  }
+  .movie-info p {
+    margin: 2px 0;
+    font-size: 4.1vw;
+    line-height: 1.2;
+  }
+  .movie-info div {
+    margin-top: 5px;
+  }
+}
+@media screen and (min-width: 151px) and (max-width: 270px) {
+  .movie-info {
+    width: 95%;
     top: 16vw;
   }
   .movie-info h1 {
     font-size: 5.5vw;
+    line-height: 1.2;
   }
   .movie-info p {
     margin: 3px 0;
@@ -115,7 +136,7 @@
 }
 @media screen and (min-width: 331px) and (max-width: 420px) {
   .movie-info {
-    width: 65%;
+    width: 70%;
   }
   .movie-info h1 {
     font-size: 4.6vw;
@@ -130,7 +151,7 @@
 }
 @media screen and (min-width: 421px) and (max-width: 500px) {
   .movie-info {
-    width: 55%;
+    width: 60%;
   }
   .movie-info h1 {
     font-size: 4.3vw;
@@ -145,7 +166,7 @@
 }
 @media screen and (min-width: 501px) and (max-width: 600px) {
   .movie-info {
-    width: 45%;
+    width: 55%;
   }
   .movie-info h1 {
     font-size: 4vw;
@@ -156,7 +177,7 @@
 }
 @media screen and (min-width: 601px) and (max-width: 800px) {
   .movie-info {
-    width: 40%;
+    width: 45%;
   }
   .movie-info h1 {
     font-size: 3.7vw;

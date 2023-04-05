@@ -20,6 +20,7 @@
 }
 .movies-container .movies__cards img {
   max-width: 11.1111111111%;
+  min-width: 11.1111111111%;
   padding: 0.35rem;
   border-radius: 15px;
   z-index: 1;
@@ -68,6 +69,7 @@
   }
   .movies__cards img {
     max-width: 100% !important;
+    min-width: 100% !important;
   }
   .handle {
     width: 7.5% !important;
@@ -79,6 +81,7 @@
   }
   .movies__cards img {
     max-width: 50% !important;
+    min-width: 50% !important;
   }
   .handle {
     width: 6.5% !important;
@@ -90,6 +93,7 @@
   }
   .movies__cards img {
     max-width: 33.3333333333% !important;
+    min-width: 33.3333333333% !important;
   }
   .handle {
     width: 5.5% !important;
@@ -101,6 +105,7 @@
   }
   .movies__cards img {
     max-width: 25% !important;
+    min-width: 25% !important;
   }
   .handle {
     width: 5% !important;
@@ -112,6 +117,7 @@
   }
   .movies__cards img {
     max-width: 20% !important;
+    min-width: 20% !important;
   }
   .handle {
     width: 4.5% !important;
@@ -120,6 +126,7 @@
 @media screen and (min-width: 851px) and (max-width: 950px) {
   .movies__cards img {
     max-width: 16.6666666667% !important;
+    min-width: 16.6666666667% !important;
   }
   .handle {
     width: 4% !important;
@@ -128,10 +135,12 @@
 @media screen and (min-width: 951px) and (max-width: 1100px) {
   .movies__cards img {
     max-width: 14.2857142857% !important;
+    min-width: 14.2857142857% !important;
   }
 }
 @media screen and (min-width: 1101px) and (max-width: 1300px) {
   .movies__cards img {
     max-width: 12.5% !important;
+    min-width: 12.5% !important;
   }
 }

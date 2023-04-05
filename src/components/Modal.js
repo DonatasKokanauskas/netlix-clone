@@ -222,12 +222,6 @@ export default function Modal() {
                 )}
               </div>
             </div>
-
-            {/* <div className="thumb">
-              <span>
-                <BsHandThumbsUp />
-              </span>
-            </div> */}
           </div>
 
           <div className="modal__container__info">

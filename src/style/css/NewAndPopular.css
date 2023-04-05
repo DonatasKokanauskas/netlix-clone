@@ -13,6 +13,7 @@
 .new-and-popular-page .movies-container {
   top: 0;
   margin-top: 2.62vw;
+  margin-bottom: 0 !important;
 }
 .new-and-popular-page .movies-container h2 {
   margin: 0 0 0.5em 4%;
@@ -22,6 +23,9 @@
   bottom: 0 !important;
   margin-top: 6.1em !important;
   padding-bottom: 0;
+  padding: 2em !important;
+  display: flex;
+  justify-content: end;
 }
 
 @media screen and (max-width: 150px) {

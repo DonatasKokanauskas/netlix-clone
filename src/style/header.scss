@@ -70,15 +70,16 @@ header {
     @include a;
 
     .search {
+      @include flex-align;
+      position: relative;
       div {
-        display: flex;
-        align-items: center;
         input {
           height: 100%;
           background-color: rgba(20, 20, 20, 1);
           border: none;
           color: white;
           margin: 0 12px;
+          font-size: inherit;
         }
 
         input:focus {
@@ -86,6 +87,10 @@ header {
         }
 
         span {
+          position: absolute;
+          margin-top: 2px;
+          margin-right: 0.5vw;
+          right: 0;
           color: white;
           font-size: 1.2rem;
           line-height: 0;
@@ -136,7 +141,17 @@ header {
     }
 
     .secondary-navigation {
-      gap: 10px;
+      gap: 5px;
+
+      .search {
+        height: 16px;
+        .search-img-active {
+          height: 1.7vw;
+        }
+        input {
+          width: 7vw;
+        }
+      }
 
       #profile-vector {
         display: none !important;
@@ -145,7 +160,7 @@ header {
   }
 }
 
-@media screen and (min-width: 250px) and (max-width: 399px) {
+@media screen and (min-width: 250px) and (max-width: 310px) {
   header {
     font-size: 1.5rem;
     height: 42px;
@@ -154,13 +169,74 @@ header {
       margin: 0 10px !important;
     }
 
+    .secondary-navigation {
+      gap: 8px;
+
+      .search {
+        height: 20px;
+        .search-img-active {
+          height: 1.7vw;
+        }
+        input {
+          width: 10.2vw;
+        }
+      }
+
+      .page-for-kids {
+        display: none !important;
+      }
+
+      #profile-vector {
+        display: none !important;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 311px) and (max-width: 399px) {
+  header {
+    font-size: 1.5rem;
+    height: 42px;
+
+    .navigation-menu-container {
+      margin: 0 10px !important;
+    }
+
+    .secondary-navigation {
+      gap: 12px;
+
+      .search {
+        height: 20px;
+        .search-img-active {
+          height: 1.7vw;
+        }
+        input {
+          width: 10.2vw;
+        }
+      }
+
+      #profile-vector {
+        display: none !important;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 400px) and (max-width: 430px) {
+  header {
+    height: 50px;
+
+    // .navigation-menu-container {
+    //   margin: 0 10px !important;
+    // }
+
     #profile-vector {
       display: none !important;
     }
   }
 }
 
-@media screen and (min-width: 400px) and (max-width: 970px) {
+@media screen and (min-width: 431px) and (max-width: 970px) {
   header {
     height: 50px;
   }
@@ -189,37 +265,70 @@ header {
   }
 }
 
-// @media screen and (min-width: 800px) and (max-width: 970px) {
-//   .search {
-//     width: 100%;
-//     // height: 100% !important;
-//   }
-// }
+@media screen and (min-width: 141px) and (max-width: 640px) {
+  .search {
+    height: 20px;
+    .search-img-active {
+      height: 1.7vw;
+    }
+    input {
+      width: 13.2vw;
+    }
+  }
+}
 
-// @media screen and (min-width: 971px) and (max-width: 996px) {
-//   .search {
-//     width: 140px;
-//     height: 32px !important;
-//   }
-// }
+@media screen and (min-width: 641px) and (max-width: 970px) {
+  .search {
+    height: 3vw;
+    .search-img-active {
+      height: 1.7vw;
+    }
+    input {
+      width: 13.2vw;
+    }
+  }
+}
 
-// @media screen and (min-width: 997px) and (max-width: 1033px) {
-//   .search {
-//     width: 160px;
-//     height: 32px !important;
-//   }
-// }
+@media screen and (min-width: 971px) and (max-width: 997px) {
+  .search {
+    .search-img-active {
+      height: 1.7vw;
+    }
+    input {
+      width: 7.2vw;
+    }
+  }
+}
 
-// @media screen and (min-width: 1034px) and (max-width: 1071px) {
-//   .search {
-//     width: 180px;
-//     height: 32px !important;
-//   }
-// }
+@media screen and (min-width: 998px) and (max-width: 1034px) {
+  .search {
+    .search-img-active {
+      height: 1.7vw;
+    }
+    input {
+      width: 9.2vw;
+    }
+  }
+}
 
-// @media screen and (min-width: 1072px) and (max-width: 1134px) {
-//   .search {
-//     width: 200px;
-//     height: 32px !important;
-//   }
-// }
+@media screen and (min-width: 1035px) and (max-width: 1074px) {
+  .search {
+    .search-img-active {
+      height: 1.7vw;
+    }
+    input {
+      width: 11.2vw;
+    }
+  }
+}
+
+@media screen and (min-width: 1075px) and (max-width: 1200px) {
+  .search {
+    .search-img-active {
+      height: 1.7vw;
+    }
+    input {
+      width: 13.2vw;
+    }
+  }
+}
