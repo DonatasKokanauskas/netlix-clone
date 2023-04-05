@@ -86,7 +86,7 @@ const ContentInfo = () => {
     <div className="movie-info">
       {randomTitle ? <h1>{randomTitle}</h1> : <h1>{randomName}</h1>}
       <p>{shorterOverview}</p>
-      <div>
+      <div className="buttons-div">
         <button onClick={handleClick}>
           <AiFillCaretRight />
           Play

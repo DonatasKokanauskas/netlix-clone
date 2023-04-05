@@ -142,10 +142,16 @@ header .secondary-navigation .user-container:hover #profile-vector {
     height: 16px;
   }
   header .secondary-navigation .search .search-img-active {
-    height: 1.7vw;
+    height: 2.5vw;
   }
-  header .secondary-navigation .search input {
+  header .secondary-navigation .search div input {
     width: 7vw;
+  }
+  header .secondary-navigation .search div span {
+    font-size: 3.5vw;
+  }
+  header .secondary-navigation .page-for-kids {
+    display: none !important;
   }
   header .secondary-navigation #profile-vector {
     display: none !important;
@@ -166,10 +172,13 @@ header .secondary-navigation .user-container:hover #profile-vector {
     height: 20px;
   }
   header .secondary-navigation .search .search-img-active {
-    height: 1.7vw;
+    height: 3vw;
   }
-  header .secondary-navigation .search input {
+  header .secondary-navigation .search div input {
     width: 10.2vw;
+  }
+  header .secondary-navigation .search div span {
+    font-size: 3vw;
   }
   header .secondary-navigation .page-for-kids {
     display: none !important;

@@ -1,16 +1,18 @@
 .movie-info {
   position: absolute;
   top: 13vw;
-  width: 34%;
+  width: 38%;
   left: 4%;
 }
 .movie-info h1 {
   color: #ffffff;
   font-size: 3.4vw;
   padding: 0 !important;
+  line-height: 1.1;
 }
 .movie-info p {
   margin: 22px 0;
+  width: 90%;
   color: #ffffff;
   font-size: 1.2vw;
 }
@@ -98,7 +100,7 @@
     font-size: 4.1vw;
     line-height: 1.2;
   }
-  .movie-info div {
+  .movie-info .buttons-div {
     margin-top: 5px;
   }
 }
@@ -115,7 +117,7 @@
     margin: 3px 0;
     font-size: 3.3vw;
   }
-  .movie-info div {
+  .movie-info .buttons-div {
     margin-top: 7px;
   }
 }
@@ -130,7 +132,7 @@
     margin: 3px 0;
     font-size: 2.8vw;
   }
-  .movie-info div {
+  .movie-info .buttons-div {
     margin-top: 7px;
   }
 }
@@ -151,16 +153,16 @@
 }
 @media screen and (min-width: 421px) and (max-width: 500px) {
   .movie-info {
-    width: 60%;
+    width: 62%;
   }
   .movie-info h1 {
     font-size: 4.3vw;
   }
   .movie-info p {
-    margin: 10px 0;
+    margin: 8px 0;
     font-size: 2.1vw;
   }
-  .movie-info div {
+  .movie-info .buttons-div {
     margin-top: 15px;
   }
 }
@@ -172,7 +174,11 @@
     font-size: 4vw;
   }
   .movie-info p {
+    margin: 8px 0;
     font-size: 1.8vw;
+  }
+  .movie-info .buttons-div {
+    margin-top: 15px;
   }
 }
 @media screen and (min-width: 601px) and (max-width: 800px) {
@@ -185,8 +191,14 @@
   .movie-info p {
     font-size: 1.5vw;
   }
+  .movie-info .buttons-div {
+    margin-top: 20px;
+  }
 }
 @media screen and (min-width: 801px) and (max-width: 960px) {
+  .movie-info {
+    width: 42%;
+  }
   .movie-info h1 {
     font-size: 3.5vw;
   }

@@ -146,11 +146,20 @@ header {
       .search {
         height: 16px;
         .search-img-active {
-          height: 1.7vw;
+          height: 2.5vw;
         }
-        input {
-          width: 7vw;
+        div {
+          input {
+            width: 7vw;
+          }
+          span {
+            font-size: 3.5vw;
+          }
         }
+      }
+
+      .page-for-kids {
+        display: none !important;
       }
 
       #profile-vector {
@@ -175,10 +184,15 @@ header {
       .search {
         height: 20px;
         .search-img-active {
-          height: 1.7vw;
+          height: 3vw;
         }
-        input {
-          width: 10.2vw;
+        div {
+          input {
+            width: 10.2vw;
+          }
+          span {
+            font-size: 3vw;
+          }
         }
       }
 
