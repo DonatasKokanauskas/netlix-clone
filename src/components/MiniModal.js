@@ -58,7 +58,6 @@ export default function MiniModal() {
   const handleClick = () => {
     setIsOpen(true);
   };
-  //My List--------------
 
   useEffect(() => {
     const data = localStorage.getItem("myList");
@@ -74,11 +73,8 @@ export default function MiniModal() {
       localStorage.setItem("myList", []);
     }
   }, [myList]);
-  //----------------
 
-  //Likes ------------------------
   useEffect(() => {
-    // setIsLoading(true);
     const data = localStorage.getItem("likes");
     if (data) {
       setLikes(JSON.parse(data));
@@ -93,7 +89,6 @@ export default function MiniModal() {
     }
   }, [likes]);
 
-  //------------------
   if (isHovered) {
     return ReactDOM.createPortal(
       <div

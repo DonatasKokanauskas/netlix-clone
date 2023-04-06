@@ -95,5 +95,3 @@ const MainContent = () => {
 };
 
 export default MainContent;
-
-// api key: 7c21ca4ec675f18602bfd1f831746fab

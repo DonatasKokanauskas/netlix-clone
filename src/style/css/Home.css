@@ -7,3 +7,24 @@
   bottom: -50vw;
   padding-bottom: 15px;
 }
+
+@media screen and (min-height: 2040px) and (max-height: 2150px) {
+  .home .footer {
+    bottom: -56vw;
+  }
+}
+@media screen and (min-height: 2151px) and (max-height: 2350px) {
+  .home .footer {
+    bottom: -68vw;
+  }
+}
+@media screen and (min-height: 2351px) and (max-height: 2450px) {
+  .home .footer {
+    bottom: -90vw;
+  }
+}
+@media screen and (min-height: 2451px) {
+  .home .footer {
+    bottom: -100vw;
+  }
+}

@@ -124,5 +124,3 @@ const TVShows = () => {
 };
 
 export default TVShows;
-
-// api key: 7c21ca4ec675f18602bfd1f831746fab

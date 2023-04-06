@@ -12,5 +12,3 @@ const MainImage = () => {
 };
 
 export default MainImage;
-
-// backdrop_path

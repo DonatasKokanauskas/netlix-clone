@@ -29,68 +29,73 @@
 }
 
 @media screen and (max-width: 150px) {
-  .movies-container {
+  .new-and-popular-page .movies-container {
     margin-top: 6vw !important;
   }
-  h1 {
+  .new-and-popular-page h1 {
     padding-top: 45px !important;
     font-size: 3.8rem !important;
   }
 }
 @media screen and (min-width: 151px) and (max-width: 250px) {
-  .movies-container {
+  .new-and-popular-page .movies-container {
     margin-top: 6vw !important;
   }
-  h1 {
+  .new-and-popular-page h1 {
     padding-top: 55px !important;
     font-size: 3rem !important;
   }
 }
 @media screen and (min-width: 251px) and (max-width: 300px) {
-  .movies-container {
+  .new-and-popular-page .movies-container {
     margin-top: 6vw !important;
   }
-  h1 {
+  .new-and-popular-page h1 {
     padding-top: 60px !important;
     font-size: 2.5rem !important;
   }
 }
 @media screen and (min-width: 301px) and (max-width: 370px) {
-  .movies-container {
+  .new-and-popular-page .movies-container {
     margin-top: 5vw !important;
   }
-  h1 {
+  .new-and-popular-page h1 {
     padding-top: 60px !important;
     font-size: 2rem !important;
   }
 }
 @media screen and (min-width: 371px) and (max-width: 500px) {
-  .movies-container {
+  .new-and-popular-page .movies-container {
     margin-top: 4vw !important;
   }
-  h1 {
+  .new-and-popular-page h1 {
     padding-top: 75px !important;
   }
 }
 @media screen and (min-width: 501px) and (max-width: 550px) {
-  .movies-container {
+  .new-and-popular-page .movies-container {
     margin-top: 3vw !important;
   }
-  h1 {
+  .new-and-popular-page h1 {
     padding-top: 75px !important;
     font-size: 1.5rem !important;
   }
 }
 @media screen and (min-width: 551px) and (max-width: 750px) {
-  .movies-container {
+  .new-and-popular-page .movies-container {
     margin-top: 3vw !important;
   }
-  h1 {
+  .new-and-popular-page h1 {
     padding-top: 75px !important;
   }
 }
 @media screen and (min-width: 751px) and (max-width: 900px) {
-  .movies-container {
+  .new-and-popular-page .movies-container {
     margin-top: 2.62vw !important;
+  }
+}
+@media screen and (min-height: 1000px) {
+  .new-and-popular-page .movies-container {
+    min-height: 32% !important;
   }
 }
