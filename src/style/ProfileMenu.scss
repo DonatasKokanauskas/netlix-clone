@@ -1,0 +1,87 @@
+.profile {
+  position: absolute;
+  top: 25px;
+  right: 0;
+  padding-top: 30px;
+  z-index: 4;
+
+  &__menu {
+    position: relative;
+    background: rgba(0, 0, 0, 0.9);
+    color: #ffffff;
+    line-height: 27px;
+    width: 170px;
+    height: 180px;
+    border: 1px solid hsla(0, 0%, 100%, 0.15);
+    border-radius: 0px;
+    padding: 12px;
+
+    span {
+      font-size: 15px;
+      margin-right: 10px;
+    }
+    a {
+      font-size: 13px;
+      cursor: pointer;
+    }
+
+    a:hover {
+      transition: none;
+      text-decoration: underline;
+      color: #ffffff !important;
+    }
+
+    .sign-out {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      padding: 6px;
+      width: 100%;
+      border-top: 1px solid hsla(0, 0%, 100%, 0.25);
+      text-align: center;
+    }
+  }
+  &__menu:after {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 0;
+    z-index: 1;
+    border-style: solid;
+    border-color: #e5e5e5 transparent;
+    border-width: 0 7px 9px;
+    top: -9px;
+    left: 78%;
+    margin-left: -7px;
+  }
+}
+
+@media screen and (max-width: 347px) {
+  .profile {
+    top: 12px;
+  }
+}
+
+@media screen and (min-width: 348px) and (max-width: 393px) {
+  .profile {
+    top: 14px;
+  }
+}
+
+@media screen and (min-width: 394px) and (max-width: 628px) {
+  .profile {
+    top: 16px;
+  }
+}
+
+@media screen and (min-width: 629px) and (max-width: 811px) {
+  .profile {
+    top: 18px;
+  }
+}
+
+@media screen and (min-width: 812px) and (max-width: 970px) {
+  .profile {
+    top: 20px;
+  }
+}

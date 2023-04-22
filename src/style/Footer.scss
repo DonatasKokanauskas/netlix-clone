@@ -1,0 +1,69 @@
+.footer {
+  color: #ffffff;
+  width: 100vw;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  div {
+    margin-bottom: 1em;
+    a {
+      color: #ffffff;
+      margin-right: 15px;
+      cursor: pointer;
+      font-size: 1.5rem;
+    }
+    a:link {
+      color: #ffffff;
+    }
+    a:visited {
+      color: #ffffff;
+    }
+  }
+
+  p {
+    font-size: 11px;
+  }
+}
+
+@media screen and (max-width: 120px) {
+  .footer {
+    div {
+      a {
+        font-size: 4.5rem;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 121px) and (max-width: 180px) {
+  .footer {
+    div {
+      a {
+        font-size: 3.5rem;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 181px) and (max-width: 240px) {
+  .footer {
+    div {
+      a {
+        font-size: 2.5rem;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 241px) and (max-width: 380px) {
+  .footer {
+    div {
+      a {
+        font-size: 2rem;
+      }
+    }
+  }
+}
