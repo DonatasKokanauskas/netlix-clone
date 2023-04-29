@@ -120,14 +120,16 @@ export default function MiniModal() {
                 className="add"
                 onMouseOver={() => handleMouseOver(setMouseOverAdd)}
                 onMouseLeave={() => handleMouseLeave(setMouseOverAdd)}
-                onClick={() =>
+                onClick={() => {
                   getIdAndType(
                     myList,
                     setMyList,
                     imgElement.getAttribute("value"),
                     imgElement.getAttribute("type")
-                  )
-                }
+                  );
+                  imgElement.classList.remove("hovered");
+                  setIsHovered(false);
+                }}
               >
                 {imgElement &&
                 myList.filter(
@@ -157,14 +159,16 @@ export default function MiniModal() {
                 className="thumb"
                 onMouseOver={() => handleMouseOver(setMouseOverThumb)}
                 onMouseLeave={() => handleMouseLeave(setMouseOverThumb)}
-                onClick={() =>
+                onClick={() => {
                   getIdAndType(
                     likes,
                     setLikes,
                     imgElement.getAttribute("value"),
                     imgElement.getAttribute("type")
-                  )
-                }
+                  );
+                  imgElement.classList.remove("hovered");
+                  setIsHovered(false);
+                }}
               >
                 {imgElement &&
                 likes.filter(
