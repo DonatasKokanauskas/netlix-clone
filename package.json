@@ -1,5 +1,6 @@
 {
   "name": "netflix-clone",
+   "homepage": "http://netflix.donatas-k.lt",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
