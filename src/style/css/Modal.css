@@ -24,7 +24,7 @@
 .modal__container .trailer .youtube {
   width: 100%;
   height: 52vh;
-  padding: 0 55px;
+  padding: 0 50px 0 7%;
   margin-top: 15px;
 }
 .modal__container .trailer img {
@@ -54,7 +54,7 @@
 }
 .modal__container .modal-buttons {
   margin-top: 20px;
-  margin-left: 55px;
+  margin-left: 7%;
   display: flex;
   gap: 8px;
 }
@@ -140,7 +140,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 50px 40px 0 55px;
+  margin: 50px 40px 0 7%;
 }
 .modal__container__info p {
   color: #ffffff;
@@ -177,7 +177,7 @@
 }
 .modal__container__info .genres {
   position: absolute;
-  right: 50px;
+  right: 7%;
   max-width: 200px;
   display: flex;
   flex-direction: column;
@@ -194,13 +194,25 @@
 .modal__container .overview {
   color: #ffffff;
   width: 65%;
-  margin-left: 55px;
+  margin-left: 7%;
   margin-top: 30px;
 }
 
+@media screen and (max-width: 220px) {
+  .modal__container {
+    height: 100vh !important;
+  }
+  .close span {
+    font-size: 5vw !important;
+  }
+}
 @media screen and (max-width: 300px) {
   .modal__container {
     width: 100vw;
+    height: 110vh;
+  }
+  .modal__container .trailer .youtube {
+    padding: 0 38px 0 7%;
   }
   .modal__container .close span {
     font-size: 4vw;
@@ -222,6 +234,9 @@
   }
   .modal__container .genres label {
     font-size: 3.5vw !important;
+  }
+  .modal__container .overview {
+    width: 85%;
   }
   .modal__container .overview p {
     font-size: 3.5vw !important;
@@ -248,6 +263,10 @@
 @media screen and (min-width: 301px) and (max-width: 400px) {
   .modal__container {
     width: 95vw;
+    height: 110vh;
+  }
+  .modal__container .trailer .youtube {
+    padding: 0 40px 0 7%;
   }
   .modal__container .close span {
     font-size: 3.5vw;
@@ -269,6 +288,9 @@
   }
   .modal__container .genres label {
     font-size: 3vw !important;
+  }
+  .modal__container .overview {
+    width: 87%;
   }
   .modal__container .overview p {
     font-size: 3vw !important;
@@ -294,7 +316,11 @@
 }
 @media screen and (min-width: 401px) and (max-width: 500px) {
   .modal__container {
-    width: 85vw;
+    width: 92vw;
+    height: 110vh;
+  }
+  .modal__container .trailer .youtube {
+    padding: 0 43px 0 7%;
   }
   .modal__container .close span {
     font-size: 3vw;
@@ -316,6 +342,9 @@
   }
   .modal__container .genres label {
     font-size: 2.5vw !important;
+  }
+  .modal__container .overview {
+    width: 87%;
   }
   .modal__container .overview p {
     font-size: 2.5vw !important;
@@ -341,7 +370,11 @@
 }
 @media screen and (min-width: 501px) and (max-width: 550px) {
   .modal__container {
-    width: 75vw;
+    width: 88vw;
+    height: 105vh;
+  }
+  .modal__container .trailer .youtube {
+    padding: 0 45px 0 7%;
   }
   .modal__container .close span {
     font-size: 2.5vw;
@@ -363,6 +396,9 @@
   }
   .modal__container .genres label {
     font-size: 2vw !important;
+  }
+  .modal__container .overview {
+    width: 87%;
   }
   .modal__container .overview p {
     font-size: 2vw !important;
@@ -388,7 +424,10 @@
 }
 @media screen and (min-width: 551px) and (max-width: 650px) {
   .modal__container {
-    width: 75vw;
+    width: 80vw;
+  }
+  .modal__container .trailer .youtube {
+    padding: 0 45px 0 7%;
   }
   .modal__container .close span {
     font-size: 2.2vw;
@@ -431,7 +470,10 @@
 }
 @media screen and (min-width: 651px) and (max-width: 850px) {
   .modal__container {
-    width: 65vw;
+    width: 67vw;
+  }
+  .modal__container .trailer .youtube {
+    padding: 0 45px 0 7%;
   }
   .modal__container .close span {
     font-size: 1.7vw;
@@ -474,7 +516,7 @@
 }
 @media screen and (min-width: 851px) and (max-width: 1100px) {
   .modal__container {
-    width: 50vw;
+    width: 54vw;
   }
   .modal__container .close span {
     font-size: 1.5vw;
@@ -513,5 +555,10 @@
   }
   .modal__container .thumb span {
     font-size: 1.5vw !important;
+  }
+}
+@media screen and (min-width: 1101px) and (max-width: 1280px) {
+  .modal__container {
+    width: 45vw;
   }
 }

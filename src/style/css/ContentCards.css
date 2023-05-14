@@ -72,10 +72,10 @@
     min-width: 100% !important;
   }
   .handle {
-    width: 7.5% !important;
+    width: 9.5% !important;
   }
   .handle span {
-    font-size: 5vw !important;
+    font-size: 7vw !important;
   }
 }
 @media screen and (min-width: 151px) and (max-width: 300px) {
@@ -87,10 +87,10 @@
     min-width: 50% !important;
   }
   .handle {
-    width: 6.5% !important;
+    width: 8.5% !important;
   }
   .handle span {
-    font-size: 4.5vw !important;
+    font-size: 6vw !important;
   }
 }
 @media screen and (min-width: 301px) and (max-width: 500px) {
@@ -102,10 +102,10 @@
     min-width: 33.3333333333% !important;
   }
   .handle {
-    width: 5.5% !important;
+    width: 7.5% !important;
   }
   .handle span {
-    font-size: 4vw !important;
+    font-size: 5vw !important;
   }
 }
 @media screen and (min-width: 501px) and (max-width: 620px) {
@@ -117,10 +117,10 @@
     min-width: 25% !important;
   }
   .handle {
-    width: 5% !important;
+    width: 6.5% !important;
   }
   .handle span {
-    font-size: 3.5vw !important;
+    font-size: 4vw !important;
   }
 }
 @media screen and (min-width: 621px) and (max-width: 850px) {
@@ -132,10 +132,10 @@
     min-width: 20% !important;
   }
   .handle {
-    width: 4.5% !important;
+    width: 5% !important;
   }
   .handle span {
-    font-size: 3vw !important;
+    font-size: 3.5vw !important;
   }
 }
 @media screen and (min-width: 851px) and (max-width: 950px) {
