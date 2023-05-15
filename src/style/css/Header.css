@@ -225,6 +225,9 @@ header .secondary-navigation .user-container:hover #profile-vector {
   }
 }
 @media screen and (max-width: 970px) {
+  header nav img {
+    height: 2.7em;
+  }
   header img {
     height: 1.8em;
     width: auto;
@@ -234,6 +237,11 @@ header .secondary-navigation .user-container:hover #profile-vector {
   }
   header #profile-vector {
     width: 0.9em !important;
+  }
+}
+@media screen and (min-width: 971px) and (max-width: 1200px) {
+  header nav img {
+    height: 3.2em;
   }
 }
 @media screen and (min-width: 1200px) {
