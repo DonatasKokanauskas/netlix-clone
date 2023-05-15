@@ -91,7 +91,7 @@ const Root = () => {
       >
         <nav>
           <Link className="logo-container" to="/" onClick={closeSearch}>
-            <img src={Logo} alt="Netflix logo" />
+            <img src={Logo} alt="CLONE logo" />
           </Link>
 
           {windowSize > 970 ? (
