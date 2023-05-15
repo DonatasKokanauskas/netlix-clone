@@ -254,6 +254,11 @@ header {
 
 @media screen and (max-width: 970px) {
   header {
+    nav {
+      img {
+        height: 2.7em;
+      }
+    }
     img {
       height: 1.8em;
       width: auto;
@@ -265,6 +270,16 @@ header {
 
     #profile-vector {
       width: 0.9em !important;
+    }
+  }
+}
+
+@media screen and (min-width: 971px) and (max-width: 1200px) {
+  header {
+    nav {
+      img {
+        height: 3.2em;
+      }
     }
   }
 }
