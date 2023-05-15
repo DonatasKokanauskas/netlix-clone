@@ -8,18 +8,18 @@ const Footer = () => {
   return (
     <div className="footer">
       <div>
-        <a href="https://www.facebook.com/netflix/">
+        <a href="">
           <GrFacebookOption />
         </a>
-        <a href="https://www.instagram.com/Netflix/">
+        <a href="">
           <AiOutlineInstagram />
         </a>
-        <a href="https://www.youtube.com/@Netflix">
+        <a href="">
           <AiFillYoutube />
         </a>
       </div>
 
-      <p>{new Date().getFullYear()} Netflix clone</p>
+      <p>{new Date().getFullYear()} CLONE</p>
     </div>
   );
 };

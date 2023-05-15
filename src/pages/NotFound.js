@@ -13,7 +13,7 @@ const NotFound = () => {
         page.
       </p>
       <Link to="/" onClick={() => setLoadingScreen(true)}>
-        <button>Netflix Home</button>
+        <button>CLONE Home</button>
       </Link>
     </div>
   );
