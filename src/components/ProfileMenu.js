@@ -46,7 +46,7 @@ export default function ProfileMenu() {
             </div>
 
             <div className="sign-out">
-              <a>Sign out of Netflix</a>
+              <a>Sign out of CLONE</a>
             </div>
           </div>
         </div>
