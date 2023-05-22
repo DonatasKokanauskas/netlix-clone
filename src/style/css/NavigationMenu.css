@@ -47,8 +47,75 @@
   margin-left: -7px;
 }
 
-@media screen and (max-width: 288px) {
+@media screen and (max-width: 119px) {
+  .navigation-menu {
+    top: 0px;
+    left: -15px;
+  }
+  .navigation-menu .menu {
+    font-size: 6px;
+    line-height: 20px;
+  }
+  .navigation-menu .menu ul {
+    width: 60px !important;
+  }
+}
+@media screen and (min-width: 120px) and (max-width: 149px) {
+  .navigation-menu {
+    top: 0px;
+    left: -25px;
+  }
+  .navigation-menu .menu {
+    font-size: 7px;
+    line-height: 22px;
+  }
+  .navigation-menu .menu ul {
+    width: 80px !important;
+  }
+}
+@media screen and (min-width: 150px) and (max-width: 199px) {
+  .navigation-menu {
+    top: 3px;
+    left: -30px;
+  }
+  .navigation-menu .menu {
+    font-size: 8px;
+    line-height: 28px;
+  }
+  .navigation-menu .menu ul {
+    width: 90px !important;
+  }
+}
+@media screen and (min-width: 200px) and (max-width: 249px) {
+  .navigation-menu {
+    top: 5px;
+    left: -38px;
+  }
+  .navigation-menu .menu {
+    font-size: 10px;
+    line-height: 30px;
+  }
+  .navigation-menu .menu ul {
+    width: 120px !important;
+  }
+}
+@media screen and (min-width: 250px) and (max-width: 310px) {
   .navigation-menu {
     top: 7px;
+    left: -48px;
+  }
+  .navigation-menu .menu {
+    font-size: 11px;
+  }
+  .navigation-menu .menu ul {
+    width: 140px !important;
+  }
+}
+@media screen and (min-width: 311px) and (max-width: 399px) {
+  .navigation-menu {
+    left: -58px;
+  }
+  .navigation-menu .menu ul {
+    width: 160px !important;
   }
 }
