@@ -1,0 +1,334 @@
+@mixin button {
+  height: 1.78vw;
+  width: 1.78vw;
+  border: 1px solid rgb(144, 144, 144);
+  border-radius: 50%;
+  background-color: rgba(42, 42, 42, 0.6);
+  cursor: pointer;
+}
+@mixin flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin button1000res {
+  height: 2.5vw;
+  width: 2.5vw;
+}
+
+@mixin button700res {
+  height: 3.5vw;
+  width: 3.5vw;
+}
+
+@mixin button500res {
+  height: 5vw;
+  width: 5vw;
+}
+
+@mixin button300res {
+  height: 6.6vw;
+  width: 6.6vw;
+}
+
+@mixin button220res {
+  height: 10vw;
+  width: 10vw;
+}
+.mini-modal {
+  position: absolute;
+  padding-left: 0.377rem;
+  padding-right: 0.377rem;
+  z-index: 2;
+
+  &__part {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: rgb(0 0 0 / 75%) 0px 3px 10px;
+    height: 3.67vw;
+    background-color: rgb(24, 24, 24);
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+
+    &__first-div {
+      display: flex;
+      gap: 5px;
+      margin-left: 8px;
+
+      .play {
+        @include flex;
+        height: 1.78vw;
+        width: 1.78vw;
+        border-radius: 50%;
+        background-color: #ffffff;
+        line-height: 0;
+        cursor: pointer;
+
+        span {
+          font-size: 1.4vw;
+          margin-left: 1px;
+        }
+      }
+
+      .add {
+        @include flex;
+        @include button;
+        line-height: 0;
+        cursor: pointer;
+        span {
+          color: #ffffff;
+          font-size: 1.5vw;
+        }
+      }
+
+      .thumb {
+        @include flex;
+        @include button;
+        line-height: 0.8;
+        span {
+          color: #ffffff;
+          font-size: 0.9vw;
+        }
+      }
+    }
+
+    &__second-div {
+      margin-right: 8px;
+
+      .arrow {
+        @include flex;
+        @include button;
+        line-height: 0;
+        margin-left: 3px;
+        span {
+          color: #ffffff;
+          font-size: 0.9vw;
+        }
+      }
+    }
+
+    .play:hover {
+      background-color: #c0bfc0;
+    }
+    .add:hover,
+    .thumb:hover,
+    .arrow:hover {
+      border: 1.4px solid rgb(255, 255, 255);
+    }
+
+    .play:active {
+      color: rgb(39, 39, 39);
+      border: 1px solid rgb(255, 255, 255);
+    }
+    .add:active,
+    .thumb:active,
+    .arrow:active {
+      border: 2px solid rgb(255, 255, 255);
+    }
+
+    .add-container,
+    .thumb-container,
+    .arrow-container {
+      display: flex;
+      justify-content: center;
+      .bubble {
+        position: absolute;
+        top: -35px;
+        background: whitesmoke;
+        color: black;
+        font-size: 1.5vh;
+        white-space: nowrap;
+        line-height: 10px;
+        text-align: center;
+        height: 30px;
+        border-radius: 5px;
+        padding: 10px;
+      }
+      .bubble:after {
+        content: "";
+        position: absolute;
+        display: block;
+        width: 0;
+        z-index: 1;
+        border-style: solid;
+        border-color: whitesmoke transparent;
+        border-width: 10px 9px 0;
+        bottom: -10px;
+        left: 50%;
+        margin-left: -9px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 220px) {
+  .mini-modal__part {
+    height: 20vw;
+
+    .play {
+      @include button220res;
+      span {
+        font-size: 7vw;
+      }
+    }
+
+    .add {
+      @include button220res;
+      span {
+        font-size: 7vw;
+      }
+    }
+
+    .thumb {
+      @include button220res;
+      span {
+        font-size: 4vw;
+      }
+    }
+
+    .arrow {
+      @include button220res;
+      span {
+        font-size: 4vw;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 221px) and (max-width: 400px) {
+  .mini-modal__part {
+    height: 16vw;
+
+    .play {
+      @include button300res;
+      span {
+        font-size: 5vw;
+      }
+    }
+
+    .add {
+      @include button300res;
+      span {
+        font-size: 5vw;
+      }
+    }
+
+    .thumb {
+      @include button300res;
+      span {
+        font-size: 3vw;
+      }
+    }
+
+    .arrow {
+      @include button300res;
+      span {
+        font-size: 3vw;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 401px) and (max-width: 600px) {
+  .mini-modal__part {
+    height: 10vw;
+
+    .play {
+      @include button500res;
+      span {
+        font-size: 4vw;
+      }
+    }
+
+    .add {
+      @include button500res;
+      span {
+        font-size: 4vw;
+      }
+    }
+
+    .thumb {
+      @include button500res;
+      span {
+        font-size: 2.5vw;
+      }
+    }
+
+    .arrow {
+      @include button500res;
+      span {
+        font-size: 2.5vw;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 601px) and (max-width: 800px) {
+  .mini-modal__part {
+    height: 8vw;
+
+    .play {
+      @include button700res;
+      span {
+        font-size: 3vw;
+      }
+    }
+
+    .add {
+      @include button700res;
+      span {
+        font-size: 3vw;
+      }
+    }
+
+    .thumb {
+      @include button700res;
+      span {
+        font-size: 2vw;
+      }
+    }
+
+    .arrow {
+      @include button700res;
+      span {
+        font-size: 2vw;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 801px) and (max-width: 1100px) {
+  .mini-modal__part {
+    height: 5vw;
+
+    .play {
+      @include button1000res;
+      span {
+        font-size: 2vw;
+      }
+    }
+
+    .add {
+      @include button1000res;
+      span {
+        font-size: 2vw;
+      }
+    }
+
+    .thumb {
+      @include button1000res;
+      span {
+        font-size: 1.5vw;
+      }
+    }
+
+    .arrow {
+      @include button1000res;
+      span {
+        font-size: 1.5vw;
+      }
+    }
+  }
+}

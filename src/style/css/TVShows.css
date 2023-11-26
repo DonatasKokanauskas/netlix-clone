@@ -1,0 +1,379 @@
+.tv-show-page {
+  background: #141414;
+  height: 100vh;
+}
+.tv-show-page .h1-select {
+  min-height: 15%;
+  display: flex;
+  padding-top: 85px;
+  padding-left: 4%;
+  padding-bottom: 10px;
+}
+.tv-show-page .h1-select h1 {
+  font-size: 1.8rem;
+  color: #666;
+  padding-top: 0 !important;
+}
+.tv-show-page .h1-select select {
+  margin-left: 2.1vw;
+  height: 1.8rem;
+  background-color: #000;
+  border: 1px solid hsla(0, 0%, 100%, 0.9);
+  color: #fff;
+  font-size: 1rem;
+  padding-left: 5px;
+  cursor: pointer;
+}
+.tv-show-page .h1-select select:focus {
+  outline: none;
+}
+.tv-show-page__container {
+  padding: 5.25vw 4%;
+  overflow: hidden;
+  background: inherit;
+}
+.tv-show-page__container h2 {
+  margin-left: 6px;
+  margin-bottom: 10px;
+  font-size: 1.4rem;
+  color: gray;
+}
+.tv-show-page__container .tv__cards {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  row-gap: 65px;
+}
+.tv-show-page__container .tv__cards img {
+  max-width: 11.1111111111%;
+  min-width: 11.1111111111%;
+  padding: 0.35rem;
+  border-radius: 15px;
+  z-index: 1;
+}
+.tv-show-page__container .tv__cards .hovered {
+  transform-origin: top;
+  transform: scale(1.19);
+  z-index: 2;
+}
+.tv-show-page .movies-container {
+  top: 0;
+  height: 35%;
+  min-height: 230px;
+  margin-top: 2.62vw;
+}
+.tv-show-page .movies-container h2 {
+  margin: 0 0 0.5em 4%;
+}
+.tv-show-page .footer {
+  position: relative !important;
+  bottom: 0 !important;
+  margin-top: 6.1em;
+  height: 10%;
+  padding: 2em !important;
+  display: flex;
+  justify-content: end;
+}
+
+@media screen and (max-width: 200px) {
+  .h1-select select {
+    width: 18rem;
+    height: 3.5rem !important;
+    font-size: 2.2rem !important;
+  }
+  .h1-select h1 {
+    font-size: 2.7rem !important;
+  }
+  select {
+    margin-left: 7vw !important;
+  }
+  .tv-show-page__container img {
+    max-width: 50% !important;
+    min-width: 50% !important;
+  }
+}
+@media screen and (min-width: 201px) and (max-width: 300px) {
+  .h1-select select {
+    width: 14rem;
+    height: 2.8rem !important;
+    font-size: 1.8rem !important;
+  }
+  select {
+    margin-left: 5vw !important;
+  }
+  .tv-show-page__container img {
+    max-width: 50% !important;
+    min-width: 50% !important;
+  }
+}
+@media screen and (min-width: 301px) and (max-width: 500px) {
+  .h1-select {
+    padding-top: 75px !important;
+  }
+  .h1-select select {
+    width: 11rem;
+    height: 2.2rem !important;
+    font-size: 1.3rem !important;
+  }
+  select {
+    margin-left: 5vw !important;
+  }
+  .tv-show-page__container img {
+    max-width: 33.3333333333% !important;
+    min-width: 33.3333333333% !important;
+  }
+}
+@media screen and (min-width: 501px) and (max-width: 620px) {
+  .tv-show-page__container img {
+    max-width: 25% !important;
+    min-width: 25% !important;
+  }
+}
+@media screen and (min-width: 621px) and (max-width: 850px) {
+  .tv-show-page__container img {
+    max-width: 20% !important;
+    min-width: 20% !important;
+  }
+}
+@media screen and (min-width: 851px) and (max-width: 950px) {
+  .tv-show-page__container img {
+    max-width: 16.6666666667% !important;
+    min-width: 16.6666666667% !important;
+  }
+}
+@media screen and (min-width: 951px) and (max-width: 1100px) {
+  .tv-show-page__container img {
+    max-width: 14.2857142857% !important;
+    min-width: 14.2857142857% !important;
+  }
+}
+@media screen and (min-width: 1101px) and (max-width: 1300px) {
+  .tv-show-page__container img {
+    max-width: 12.5% !important;
+    min-width: 12.5% !important;
+  }
+}
+@media screen and (max-width: 110px) {
+  .h1-select {
+    min-height: 12% !important;
+    padding-top: 60px !important;
+  }
+  .movies-container {
+    height: 20% !important;
+    min-height: 160px !important;
+    margin-top: 1.62vw !important;
+  }
+  .footer {
+    margin-top: 100% !important;
+    padding-top: 100%;
+    height: 50% !important;
+  }
+}
+@media screen and (min-width: 111px) and (max-width: 150px) {
+  .h1-select {
+    min-height: 12% !important;
+    padding-top: 60px !important;
+  }
+  .movies-container {
+    height: 30% !important;
+    min-height: 210px !important;
+    margin-top: 1.62vw !important;
+  }
+  .footer {
+    margin-top: 95% !important;
+    height: 15% !important;
+  }
+}
+@media screen and (min-width: 151px) and (max-width: 170px) {
+  .h1-select {
+    min-height: 13% !important;
+    padding-top: 70px !important;
+  }
+  .movies-container {
+    height: 22% !important;
+    min-height: 140px !important;
+    margin-top: 1.62vw !important;
+  }
+  .footer {
+    margin-top: 100% !important;
+    padding-top: 90%;
+    height: 15% !important;
+  }
+}
+@media screen and (min-width: 171px) and (max-width: 200px) {
+  .h1-select {
+    min-height: 13% !important;
+    padding-top: 70px !important;
+  }
+  .movies-container {
+    height: 25% !important;
+    min-height: 160px !important;
+    margin-top: 1.62vw !important;
+  }
+  .footer {
+    margin-top: 100% !important;
+    padding-top: 20%;
+    height: 15% !important;
+  }
+}
+@media screen and (min-width: 201px) and (max-width: 250px) {
+  .h1-select {
+    min-height: 13% !important;
+    padding-top: 70px !important;
+  }
+  .movies-container {
+    height: 25% !important;
+    min-height: 200px !important;
+    margin-top: 1.62vw !important;
+  }
+  .footer {
+    margin-top: 90% !important;
+    height: 15% !important;
+  }
+}
+@media screen and (min-width: 251px) and (max-width: 300px) {
+  .h1-select {
+    min-height: 14% !important;
+  }
+  .movies-container {
+    height: 28% !important;
+    min-height: 230px !important;
+    margin-top: 3vw !important;
+  }
+  .footer {
+    margin-top: 50% !important;
+    height: 15% !important;
+  }
+}
+@media screen and (min-width: 301px) and (max-width: 370px) {
+  .h1-select {
+    min-height: 14% !important;
+  }
+  .movies-container {
+    height: 25% !important;
+    min-height: 190px !important;
+    margin-top: 1.62vw !important;
+  }
+  .footer {
+    margin-top: 55% !important;
+    height: 15% !important;
+  }
+}
+@media screen and (min-width: 371px) and (max-width: 450px) {
+  .movies-container {
+    height: 30% !important;
+    min-height: 230px !important;
+    margin-top: 1.62vw !important;
+  }
+  .footer {
+    margin-top: 30% !important;
+    height: 10%;
+  }
+}
+@media screen and (min-width: 451px) and (max-width: 500px) {
+  .movies-container {
+    height: 30% !important;
+    min-height: 250px !important;
+    margin-top: 1.62vw !important;
+  }
+  .footer {
+    margin-top: 25% !important;
+    height: 10%;
+  }
+}
+@media screen and (min-width: 501px) and (max-width: 600px) {
+  .movies-container {
+    height: 30% !important;
+    min-height: 230px !important;
+    margin-top: 1.62vw !important;
+  }
+  .footer {
+    margin-top: 20% !important;
+    height: 10%;
+  }
+}
+@media screen and (min-width: 601px) and (max-width: 740px) {
+  .movies-container {
+    height: 30% !important;
+    min-height: 230px !important;
+    margin-top: 1.62vw !important;
+  }
+  .footer {
+    margin-top: 15% !important;
+    height: 10%;
+  }
+}
+@media screen and (min-width: 741px) and (max-width: 850px) {
+  .movies-container {
+    height: 30% !important;
+    min-height: 250px !important;
+    margin-top: 1.62vw !important;
+  }
+  .footer {
+    margin-top: 12% !important;
+    height: 10%;
+  }
+}
+@media screen and (min-width: 851px) and (max-width: 1000px) {
+  .movies-container {
+    height: 30% !important;
+    min-height: 220px !important;
+    margin-top: 1.62vw !important;
+  }
+  .footer {
+    margin-top: 12% !important;
+    height: 10%;
+  }
+}
+@media screen and (min-height: 1001px) and (max-height: 1200px) {
+  .h1-select {
+    min-height: 14% !important;
+  }
+  .movies-container {
+    height: 25% !important;
+    margin-top: 2.62vw !important;
+    margin-bottom: 5.62vw !important;
+  }
+  .footer {
+    height: 25% !important;
+  }
+}
+@media screen and (min-height: 1201px) and (max-height: 1400px) {
+  .h1-select {
+    min-height: 13% !important;
+  }
+  .movies-container {
+    height: 23% !important;
+    margin-top: 2.62vw !important;
+    margin-bottom: 6.62vw !important;
+  }
+  .footer {
+    height: 30% !important;
+  }
+}
+@media screen and (min-height: 1401px) and (max-height: 1800px) {
+  .h1-select {
+    min-height: 12% !important;
+  }
+  .movies-container {
+    height: 20% !important;
+    margin-top: 2.62vw !important;
+    margin-bottom: 8vw !important;
+  }
+  .footer {
+    height: 38% !important;
+  }
+}
+@media screen and (min-height: 1801px) {
+  .h1-select {
+    min-height: 10% !important;
+  }
+  .movies-container {
+    height: 18% !important;
+    margin-top: 2.62vw !important;
+    margin-bottom: 9.5vw !important;
+  }
+  .footer {
+    height: 45% !important;
+  }
+}

@@ -1,0 +1,41 @@
+.loading-screen {
+  background-color: rgb(20, 20, 20);
+  height: 300vh;
+  width: 100vw;
+  position: absolute;
+  top: 0;
+  z-index: 2;
+}
+.loading-screen img {
+  position: fixed;
+  top: 40vh;
+  left: 45vw;
+  height: 7vw;
+  animation: spinner 1.1s linear infinite;
+}
+
+@keyframes spinner {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@media screen and (min-width: 1px) and (max-width: 200px) {
+  .loading-screen img {
+    height: 20vw !important;
+  }
+}
+@media screen and (min-width: 201px) and (max-width: 450px) {
+  .loading-screen img {
+    height: 16vw !important;
+  }
+}
+@media screen and (min-width: 451px) and (max-width: 700px) {
+  .loading-screen img {
+    height: 12vw !important;
+  }
+}
+@media screen and (min-width: 701px) and (max-width: 1000px) {
+  .loading-screen img {
+    height: 9vw !important;
+  }
+}

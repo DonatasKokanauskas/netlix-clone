@@ -1,0 +1,134 @@
+.my-list-page {
+  height: 100vh;
+  width: 100vw;
+  background: #141414;
+}
+.my-list-page__container {
+  padding: 90px 4%;
+  overflow: hidden;
+  background: inherit;
+}
+.my-list-page__container h1 {
+  padding: 0 !important;
+  margin-bottom: 10px;
+  font-size: 1.8rem;
+  color: #ffffff;
+}
+.my-list-page__container h3 {
+  color: #666;
+  text-align: center;
+  margin: 200px auto;
+  white-space: nowrap;
+}
+.my-list-page__container .my-list__cards {
+  margin-top: 70px;
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  row-gap: 65px;
+}
+.my-list-page__container .my-list__cards img {
+  max-width: 11.1111111111%;
+  min-width: 11.1111111111%;
+  padding: 0.35rem;
+  border-radius: 15px;
+  z-index: 1;
+}
+.my-list-page__container .my-list__cards .hovered {
+  transform-origin: top;
+  transform: scale(1.19);
+  z-index: 2;
+}
+.my-list-page .footer {
+  padding: 2em !important;
+  display: flex;
+  justify-content: end;
+}
+
+@media screen and (max-width: 100px) {
+  .my-list-page__container {
+    padding: 50px 4%;
+  }
+  .my-list-page__container .my-list__cards {
+    margin-top: 20px !important;
+  }
+  .my-list-page__container .my-list__cards img {
+    max-width: 50% !important;
+    min-width: 50% !important;
+  }
+}
+@media screen and (min-width: 101px) and (max-width: 200px) {
+  .my-list-page__container {
+    padding: 60px 4%;
+  }
+  .my-list-page__container .my-list__cards {
+    margin-top: 30px !important;
+  }
+  .my-list-page__container .my-list__cards img {
+    max-width: 50% !important;
+    min-width: 50% !important;
+  }
+}
+@media screen and (min-width: 201px) and (max-width: 300px) {
+  .my-list-page__container {
+    padding: 70px 4%;
+  }
+  .my-list-page__container .my-list__cards {
+    margin-top: 40px !important;
+  }
+  .my-list-page__container .my-list__cards img {
+    max-width: 50% !important;
+    min-width: 50% !important;
+  }
+}
+@media screen and (min-width: 301px) and (max-width: 500px) {
+  .my-list-page__container {
+    padding: 80px 4%;
+  }
+  .my-list-page__container .my-list__cards {
+    margin-top: 50px !important;
+  }
+  .my-list-page__container .my-list__cards img {
+    max-width: 33.3333333333% !important;
+    min-width: 33.3333333333% !important;
+  }
+}
+@media screen and (min-width: 501px) and (max-width: 620px) {
+  .my-list__cards {
+    margin-top: 50px !important;
+  }
+  .my-list__cards img {
+    max-width: 25% !important;
+    min-width: 25% !important;
+  }
+}
+@media screen and (min-width: 621px) and (max-width: 850px) {
+  .my-list__cards {
+    margin-top: 60px !important;
+  }
+  .my-list__cards img {
+    max-width: 20% !important;
+    min-width: 20% !important;
+  }
+}
+@media screen and (min-width: 851px) and (max-width: 950px) {
+  .my-list__cards {
+    margin-top: 60px !important;
+  }
+  .my-list__cards img {
+    max-width: 16.6666666667% !important;
+    min-width: 16.6666666667% !important;
+  }
+}
+@media screen and (min-width: 951px) and (max-width: 1100px) {
+  .my-list__cards img {
+    max-width: 14.2857142857% !important;
+    min-width: 14.2857142857% !important;
+  }
+}
+@media screen and (min-width: 1101px) and (max-width: 1300px) {
+  .my-list__cards img {
+    max-width: 12.5% !important;
+    min-width: 12.5% !important;
+  }
+}

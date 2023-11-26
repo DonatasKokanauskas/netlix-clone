@@ -1,0 +1,208 @@
+.movie-info {
+  position: absolute;
+  top: 13vw;
+  width: 38%;
+  left: 4%;
+}
+.movie-info h1 {
+  color: #ffffff;
+  font-size: 3.4vw;
+  padding: 0 !important;
+  line-height: 1.1;
+}
+.movie-info p {
+  margin: 22px 0;
+  width: 90%;
+  color: #ffffff;
+  font-size: 1.2vw;
+}
+.movie-info div {
+  margin-top: 28px;
+  display: flex;
+  gap: 10px;
+}
+.movie-info div button:nth-of-type(1) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 0.8rem;
+  padding-bottom: 0.8rem;
+  background: #ffffff;
+  border-radius: 4px;
+  border: none;
+  font-size: 1.32rem;
+  cursor: pointer;
+  padding-left: 2rem;
+  padding-right: 2.4rem;
+  gap: 5px;
+}
+.movie-info div button:nth-of-type(2) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 0.8rem;
+  padding-bottom: 0.8rem;
+  background: #ffffff;
+  border-radius: 4px;
+  border: none;
+  font-size: 1.32rem;
+  cursor: pointer;
+  background: rgba(88, 84, 81, 0.6);
+  color: #ffffff;
+  padding-left: 1.6rem;
+  padding-right: 2rem;
+  gap: 7px;
+  white-space: nowrap;
+}
+.movie-info div button:nth-of-type(1):hover {
+  background-color: #c0bfc0;
+}
+.movie-info div button:nth-of-type(2):hover {
+  background: rgba(88, 84, 81, 0.45);
+}
+.movie-info div button:nth-of-type(1):active {
+  color: rgb(49, 49, 49);
+  border: 2px solid rgb(255, 255, 255);
+}
+.movie-info div button:nth-of-type(2):active {
+  color: #c5c5c5;
+  border: 2px solid rgb(255, 255, 255);
+}
+
+@media screen and (max-width: 200px) {
+  .movie-info {
+    width: 95%;
+    top: 16vw;
+  }
+  .movie-info h1 {
+    font-size: 6vw;
+    line-height: 1.2;
+  }
+  .movie-info p {
+    margin: 2px 0;
+    font-size: 4.1vw;
+  }
+  .movie-info div {
+    margin-top: 5px;
+  }
+}
+@media screen and (max-width: 150px) {
+  .movie-info {
+    width: 95%;
+    top: 16vw;
+  }
+  .movie-info h1 {
+    font-size: 6vw;
+    line-height: 1;
+  }
+  .movie-info p {
+    margin: 2px 0;
+    font-size: 4.1vw;
+    line-height: 1.2;
+  }
+  .movie-info .buttons-div {
+    margin-top: 5px;
+  }
+}
+@media screen and (min-width: 151px) and (max-width: 270px) {
+  .movie-info {
+    width: 95%;
+    top: 16vw;
+  }
+  .movie-info h1 {
+    font-size: 5.5vw;
+    line-height: 1.2;
+  }
+  .movie-info p {
+    margin: 3px 0;
+    font-size: 3.3vw;
+  }
+  .movie-info .buttons-div {
+    margin-top: 7px;
+  }
+}
+@media screen and (min-width: 271px) and (max-width: 330px) {
+  .movie-info {
+    width: 75%;
+  }
+  .movie-info h1 {
+    font-size: 5vw;
+  }
+  .movie-info p {
+    margin: 3px 0;
+    font-size: 2.8vw;
+  }
+  .movie-info .buttons-div {
+    margin-top: 7px;
+  }
+}
+@media screen and (min-width: 331px) and (max-width: 420px) {
+  .movie-info {
+    width: 70%;
+  }
+  .movie-info h1 {
+    font-size: 4.6vw;
+  }
+  .movie-info p {
+    margin: 5px 0;
+    font-size: 2.4vw;
+  }
+  .movie-info div {
+    margin-top: 10px;
+  }
+}
+@media screen and (min-width: 421px) and (max-width: 500px) {
+  .movie-info {
+    width: 62%;
+  }
+  .movie-info h1 {
+    font-size: 4.3vw;
+  }
+  .movie-info p {
+    margin: 8px 0;
+    font-size: 2.1vw;
+  }
+  .movie-info .buttons-div {
+    margin-top: 15px;
+  }
+}
+@media screen and (min-width: 501px) and (max-width: 600px) {
+  .movie-info {
+    width: 55%;
+  }
+  .movie-info h1 {
+    font-size: 4vw;
+  }
+  .movie-info p {
+    margin: 8px 0;
+    font-size: 1.8vw;
+  }
+  .movie-info .buttons-div {
+    margin-top: 15px;
+  }
+}
+@media screen and (min-width: 601px) and (max-width: 800px) {
+  .movie-info {
+    width: 45%;
+  }
+  .movie-info h1 {
+    font-size: 3.7vw;
+  }
+  .movie-info p {
+    font-size: 1.5vw;
+  }
+  .movie-info .buttons-div {
+    margin-top: 20px;
+  }
+}
+@media screen and (min-width: 801px) and (max-width: 960px) {
+  .movie-info {
+    width: 42%;
+  }
+  .movie-info h1 {
+    font-size: 3.5vw;
+  }
+  .movie-info p {
+    font-size: 1.3vw;
+  }
+}

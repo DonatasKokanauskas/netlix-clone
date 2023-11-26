@@ -1,0 +1,305 @@
+header {
+  position: fixed;
+  top: 0;
+  z-index: 3;
+  width: 100vw;
+  height: 68px;
+  padding: 0 4%;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+header nav {
+  display: flex;
+  align-items: center;
+}
+header nav .logo-container {
+  display: flex;
+  align-items: center;
+}
+header nav .logo-container img {
+  cursor: pointer;
+  margin-left: -7px;
+}
+header nav ul {
+  margin: 0 27px;
+}
+header nav li {
+  display: inline-block;
+  list-style: none;
+  margin: 0 6px;
+}
+header nav li a {
+  transition: color 0.4s;
+  text-decoration: none;
+}
+header nav li a:link {
+  color: #ffffff;
+}
+header nav li a:visited {
+  color: #ffffff;
+}
+header nav li a:hover {
+  color: #a9a8a8;
+}
+header nav .navigation-menu-container {
+  color: #ffffff;
+  margin: 0 27px;
+  position: relative;
+}
+header nav .navigation-menu-container span {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+header .secondary-navigation {
+  display: flex;
+  align-items: center;
+  display: flex;
+  gap: 18px;
+  margin-right: 15px;
+}
+header .secondary-navigation a {
+  transition: color 0.4s;
+  text-decoration: none;
+}
+header .secondary-navigation a:link {
+  color: #ffffff;
+}
+header .secondary-navigation a:visited {
+  color: #ffffff;
+}
+header .secondary-navigation a:hover {
+  color: #a9a8a8;
+}
+header .secondary-navigation .search {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+header .secondary-navigation .search div input {
+  height: 100%;
+  background-color: rgb(20, 20, 20);
+  border: none;
+  color: white;
+  margin: 0 12px;
+  font-size: inherit;
+}
+header .secondary-navigation .search div input:focus {
+  outline: none;
+}
+header .secondary-navigation .search div span {
+  position: absolute;
+  margin-top: 2px;
+  margin-right: 0.5vw;
+  right: 0;
+  color: white;
+  font-size: 1.2rem;
+  line-height: 0;
+  cursor: pointer;
+}
+header .secondary-navigation img {
+  cursor: pointer;
+}
+header .secondary-navigation .user-container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  position: relative;
+  cursor: pointer;
+}
+header .secondary-navigation .user-container #profile-vector {
+  width: 13px;
+  height: auto;
+}
+header .secondary-navigation .user-container:hover #profile-vector {
+  transform: rotate(180deg);
+  transition: transform 367ms ease;
+}
+
+.search--active {
+  display: flex;
+  align-items: center;
+  padding: 6px 8px;
+  background-color: rgb(20, 20, 20);
+  border: 1px solid white;
+}
+
+@media screen and (max-width: 249px) {
+  header {
+    font-size: 1.7rem;
+    height: 34px;
+  }
+  header .navigation-menu-container {
+    margin: 0 5px !important;
+  }
+  header .secondary-navigation {
+    gap: 5px;
+  }
+  header .secondary-navigation .search {
+    height: 16px;
+  }
+  header .secondary-navigation .search .search-img-active {
+    height: 2.5vw;
+  }
+  header .secondary-navigation .search div input {
+    width: 7vw;
+  }
+  header .secondary-navigation .search div span {
+    font-size: 3.5vw;
+  }
+  header .secondary-navigation .page-for-kids {
+    display: none !important;
+  }
+  header .secondary-navigation #profile-vector {
+    display: none !important;
+  }
+}
+@media screen and (min-width: 250px) and (max-width: 310px) {
+  header {
+    font-size: 1.5rem;
+    height: 42px;
+  }
+  header .navigation-menu-container {
+    margin: 0 10px !important;
+  }
+  header .secondary-navigation {
+    gap: 8px;
+  }
+  header .secondary-navigation .search {
+    height: 20px;
+  }
+  header .secondary-navigation .search .search-img-active {
+    height: 3vw;
+  }
+  header .secondary-navigation .search div input {
+    width: 10.2vw;
+  }
+  header .secondary-navigation .search div span {
+    font-size: 3vw;
+  }
+  header .secondary-navigation .page-for-kids {
+    display: none !important;
+  }
+  header .secondary-navigation #profile-vector {
+    display: none !important;
+  }
+}
+@media screen and (min-width: 311px) and (max-width: 399px) {
+  header {
+    font-size: 1.5rem;
+    height: 42px;
+  }
+  header .navigation-menu-container {
+    margin: 0 10px !important;
+  }
+  header .secondary-navigation {
+    gap: 12px;
+  }
+  header .secondary-navigation .search {
+    height: 20px;
+  }
+  header .secondary-navigation .search .search-img-active {
+    height: 1.7vw;
+  }
+  header .secondary-navigation .search input {
+    width: 10.2vw;
+  }
+  header .secondary-navigation #profile-vector {
+    display: none !important;
+  }
+}
+@media screen and (min-width: 400px) and (max-width: 430px) {
+  header {
+    height: 50px;
+  }
+  header #profile-vector {
+    display: none !important;
+  }
+}
+@media screen and (min-width: 431px) and (max-width: 970px) {
+  header {
+    height: 50px;
+  }
+}
+@media screen and (max-width: 970px) {
+  header nav img {
+    height: 2.7em;
+  }
+  header img {
+    height: 1.8em;
+    width: auto;
+  }
+  header .search-img {
+    height: 1.5em;
+  }
+  header #profile-vector {
+    width: 0.9em !important;
+  }
+}
+@media screen and (min-width: 971px) and (max-width: 1200px) {
+  header nav img {
+    height: 3.2em;
+  }
+}
+@media screen and (min-width: 1200px) {
+  header {
+    font-size: 14px;
+  }
+}
+@media screen and (min-width: 141px) and (max-width: 640px) {
+  .search {
+    height: 20px;
+  }
+  .search .search-img-active {
+    height: 1.7vw;
+  }
+  .search input {
+    width: 13.2vw;
+  }
+}
+@media screen and (min-width: 641px) and (max-width: 970px) {
+  .search {
+    height: 3vw;
+  }
+  .search .search-img-active {
+    height: 1.7vw;
+  }
+  .search input {
+    width: 13.2vw;
+  }
+}
+@media screen and (min-width: 971px) and (max-width: 997px) {
+  .search .search-img-active {
+    height: 1.7vw;
+  }
+  .search input {
+    width: 7.2vw;
+  }
+}
+@media screen and (min-width: 998px) and (max-width: 1034px) {
+  .search .search-img-active {
+    height: 1.7vw;
+  }
+  .search input {
+    width: 9.2vw;
+  }
+}
+@media screen and (min-width: 1035px) and (max-width: 1074px) {
+  .search .search-img-active {
+    height: 1.7vw;
+  }
+  .search input {
+    width: 11.2vw;
+  }
+}
+@media screen and (min-width: 1075px) and (max-width: 1200px) {
+  .search .search-img-active {
+    height: 1.7vw;
+  }
+  .search input {
+    width: 13.2vw;
+  }
+}

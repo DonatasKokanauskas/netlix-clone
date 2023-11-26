@@ -1,0 +1,308 @@
+.mini-modal {
+  position: absolute;
+  padding-left: 0.377rem;
+  padding-right: 0.377rem;
+  z-index: 2;
+}
+.mini-modal__part {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: rgba(0, 0, 0, 0.75) 0px 3px 10px;
+  height: 3.67vw;
+  background-color: rgb(24, 24, 24);
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+.mini-modal__part__first-div {
+  display: flex;
+  gap: 5px;
+  margin-left: 8px;
+}
+.mini-modal__part__first-div .play {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 1.78vw;
+  width: 1.78vw;
+  border-radius: 50%;
+  background-color: #ffffff;
+  line-height: 0;
+  cursor: pointer;
+}
+.mini-modal__part__first-div .play span {
+  font-size: 1.4vw;
+  margin-left: 1px;
+}
+.mini-modal__part__first-div .add {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 1.78vw;
+  width: 1.78vw;
+  border: 1px solid rgb(144, 144, 144);
+  border-radius: 50%;
+  background-color: rgba(42, 42, 42, 0.6);
+  cursor: pointer;
+  line-height: 0;
+  cursor: pointer;
+}
+.mini-modal__part__first-div .add span {
+  color: #ffffff;
+  font-size: 1.5vw;
+}
+.mini-modal__part__first-div .thumb {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 1.78vw;
+  width: 1.78vw;
+  border: 1px solid rgb(144, 144, 144);
+  border-radius: 50%;
+  background-color: rgba(42, 42, 42, 0.6);
+  cursor: pointer;
+  line-height: 0.8;
+}
+.mini-modal__part__first-div .thumb span {
+  color: #ffffff;
+  font-size: 0.9vw;
+}
+.mini-modal__part__second-div {
+  margin-right: 8px;
+}
+.mini-modal__part__second-div .arrow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 1.78vw;
+  width: 1.78vw;
+  border: 1px solid rgb(144, 144, 144);
+  border-radius: 50%;
+  background-color: rgba(42, 42, 42, 0.6);
+  cursor: pointer;
+  line-height: 0;
+  margin-left: 3px;
+}
+.mini-modal__part__second-div .arrow span {
+  color: #ffffff;
+  font-size: 0.9vw;
+}
+.mini-modal__part .play:hover {
+  background-color: #c0bfc0;
+}
+.mini-modal__part .add:hover,
+.mini-modal__part .thumb:hover,
+.mini-modal__part .arrow:hover {
+  border: 1.4px solid rgb(255, 255, 255);
+}
+.mini-modal__part .play:active {
+  color: rgb(39, 39, 39);
+  border: 1px solid rgb(255, 255, 255);
+}
+.mini-modal__part .add:active,
+.mini-modal__part .thumb:active,
+.mini-modal__part .arrow:active {
+  border: 2px solid rgb(255, 255, 255);
+}
+.mini-modal__part .add-container,
+.mini-modal__part .thumb-container,
+.mini-modal__part .arrow-container {
+  display: flex;
+  justify-content: center;
+}
+.mini-modal__part .add-container .bubble,
+.mini-modal__part .thumb-container .bubble,
+.mini-modal__part .arrow-container .bubble {
+  position: absolute;
+  top: -35px;
+  background: whitesmoke;
+  color: black;
+  font-size: 1.5vh;
+  white-space: nowrap;
+  line-height: 10px;
+  text-align: center;
+  height: 30px;
+  border-radius: 5px;
+  padding: 10px;
+}
+.mini-modal__part .add-container .bubble:after,
+.mini-modal__part .thumb-container .bubble:after,
+.mini-modal__part .arrow-container .bubble:after {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 0;
+  z-index: 1;
+  border-style: solid;
+  border-color: whitesmoke transparent;
+  border-width: 10px 9px 0;
+  bottom: -10px;
+  left: 50%;
+  margin-left: -9px;
+}
+
+@media screen and (max-width: 220px) {
+  .mini-modal__part {
+    height: 20vw;
+  }
+  .mini-modal__part .play {
+    height: 10vw;
+    width: 10vw;
+  }
+  .mini-modal__part .play span {
+    font-size: 7vw;
+  }
+  .mini-modal__part .add {
+    height: 10vw;
+    width: 10vw;
+  }
+  .mini-modal__part .add span {
+    font-size: 7vw;
+  }
+  .mini-modal__part .thumb {
+    height: 10vw;
+    width: 10vw;
+  }
+  .mini-modal__part .thumb span {
+    font-size: 4vw;
+  }
+  .mini-modal__part .arrow {
+    height: 10vw;
+    width: 10vw;
+  }
+  .mini-modal__part .arrow span {
+    font-size: 4vw;
+  }
+}
+@media screen and (min-width: 221px) and (max-width: 400px) {
+  .mini-modal__part {
+    height: 16vw;
+  }
+  .mini-modal__part .play {
+    height: 6.6vw;
+    width: 6.6vw;
+  }
+  .mini-modal__part .play span {
+    font-size: 5vw;
+  }
+  .mini-modal__part .add {
+    height: 6.6vw;
+    width: 6.6vw;
+  }
+  .mini-modal__part .add span {
+    font-size: 5vw;
+  }
+  .mini-modal__part .thumb {
+    height: 6.6vw;
+    width: 6.6vw;
+  }
+  .mini-modal__part .thumb span {
+    font-size: 3vw;
+  }
+  .mini-modal__part .arrow {
+    height: 6.6vw;
+    width: 6.6vw;
+  }
+  .mini-modal__part .arrow span {
+    font-size: 3vw;
+  }
+}
+@media screen and (min-width: 401px) and (max-width: 600px) {
+  .mini-modal__part {
+    height: 10vw;
+  }
+  .mini-modal__part .play {
+    height: 5vw;
+    width: 5vw;
+  }
+  .mini-modal__part .play span {
+    font-size: 4vw;
+  }
+  .mini-modal__part .add {
+    height: 5vw;
+    width: 5vw;
+  }
+  .mini-modal__part .add span {
+    font-size: 4vw;
+  }
+  .mini-modal__part .thumb {
+    height: 5vw;
+    width: 5vw;
+  }
+  .mini-modal__part .thumb span {
+    font-size: 2.5vw;
+  }
+  .mini-modal__part .arrow {
+    height: 5vw;
+    width: 5vw;
+  }
+  .mini-modal__part .arrow span {
+    font-size: 2.5vw;
+  }
+}
+@media screen and (min-width: 601px) and (max-width: 800px) {
+  .mini-modal__part {
+    height: 8vw;
+  }
+  .mini-modal__part .play {
+    height: 3.5vw;
+    width: 3.5vw;
+  }
+  .mini-modal__part .play span {
+    font-size: 3vw;
+  }
+  .mini-modal__part .add {
+    height: 3.5vw;
+    width: 3.5vw;
+  }
+  .mini-modal__part .add span {
+    font-size: 3vw;
+  }
+  .mini-modal__part .thumb {
+    height: 3.5vw;
+    width: 3.5vw;
+  }
+  .mini-modal__part .thumb span {
+    font-size: 2vw;
+  }
+  .mini-modal__part .arrow {
+    height: 3.5vw;
+    width: 3.5vw;
+  }
+  .mini-modal__part .arrow span {
+    font-size: 2vw;
+  }
+}
+@media screen and (min-width: 801px) and (max-width: 1100px) {
+  .mini-modal__part {
+    height: 5vw;
+  }
+  .mini-modal__part .play {
+    height: 2.5vw;
+    width: 2.5vw;
+  }
+  .mini-modal__part .play span {
+    font-size: 2vw;
+  }
+  .mini-modal__part .add {
+    height: 2.5vw;
+    width: 2.5vw;
+  }
+  .mini-modal__part .add span {
+    font-size: 2vw;
+  }
+  .mini-modal__part .thumb {
+    height: 2.5vw;
+    width: 2.5vw;
+  }
+  .mini-modal__part .thumb span {
+    font-size: 1.5vw;
+  }
+  .mini-modal__part .arrow {
+    height: 2.5vw;
+    width: 2.5vw;
+  }
+  .mini-modal__part .arrow span {
+    font-size: 1.5vw;
+  }
+}

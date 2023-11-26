@@ -1,0 +1,778 @@
+@mixin button {
+  height: 1.78vw;
+  width: 1.78vw;
+  border: 1px solid rgb(144, 144, 144);
+  border-radius: 50%;
+  background-color: rgba(42, 42, 42, 0.6);
+  cursor: pointer;
+}
+@mixin flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@mixin border {
+  border: 1px solid rgb(116, 116, 116);
+  padding: 0 4px;
+}
+.modal {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 100;
+  display: flex;
+  justify-content: center;
+  overflow-y: scroll;
+
+  &__container {
+    position: relative;
+    width: 39.41vw;
+    height: 100vh;
+    min-height: 700px;
+    margin-top: 28px;
+    border-radius: 6px;
+    background-color: rgb(20, 20, 20);
+
+    .trailer {
+      display: flex;
+      justify-content: center;
+      .youtube {
+        width: 100%;
+        height: 52vh;
+        padding: 0 50px 0 7%;
+        margin-top: 15px;
+      }
+      img {
+        width: 100%;
+        border-radius: 6px 6px 0 0;
+      }
+    }
+
+    .close {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      width: 2rem;
+      height: 2rem;
+      border-radius: 50%;
+      background-color: rgb(20, 20, 20);
+      @include flex;
+      span {
+        color: #ffffff;
+        font-size: 1.2rem;
+        line-height: 0.8;
+        cursor: pointer;
+      }
+    }
+
+    .close:active {
+      border: 1px solid rgb(255, 255, 255);
+    }
+    .modal-buttons {
+      margin-top: 20px;
+      margin-left: 7%;
+      display: flex;
+      gap: 8px;
+      .add {
+        @include flex;
+        @include button;
+        line-height: 0;
+        span {
+          color: #ffffff;
+          font-size: 1.5vw;
+        }
+      }
+      .thumb {
+        @include flex;
+        @include button;
+        line-height: 0.8;
+        span {
+          color: #ffffff;
+          font-size: 0.9vw;
+        }
+      }
+
+      .add:hover,
+      .thumb:hover {
+        border: 1.4px solid rgb(255, 255, 255);
+      }
+
+      .add:active,
+      .thumb:active {
+        border: 2px solid rgb(255, 255, 255);
+      }
+
+      .add-container,
+      .thumb-container,
+      .arrow-container {
+        display: flex;
+        justify-content: center;
+        position: relative;
+        .bubble {
+          position: absolute;
+          top: -50px;
+          background: whitesmoke;
+          color: black;
+          word-wrap: normal;
+          font-size: 1.5vh;
+          white-space: nowrap;
+          line-height: 10px;
+          text-align: center;
+
+          height: 30px;
+          border-radius: 5px;
+          padding: 10px;
+        }
+        .bubble:after {
+          content: "";
+          position: absolute;
+          display: block;
+          width: 0;
+          z-index: 1;
+          border-style: solid;
+          border-color: whitesmoke transparent;
+          border-width: 10px 9px 0;
+          bottom: -10px;
+          left: 50%;
+          margin-left: -9px;
+        }
+      }
+    }
+    &__info {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin: 50px 40px 0 7%;
+      p {
+        color: #ffffff;
+        font-size: 0.9rem;
+      }
+      .info {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        .date {
+          text-align: center;
+        }
+        label {
+          color: #ffffff;
+          font-size: 0.9rem;
+        }
+        .age-check {
+          @include border;
+        }
+        .vote {
+          @include border;
+          border-radius: 2px;
+        }
+        .media-type {
+          @include border;
+        }
+        span {
+          color: #ffffff;
+          line-height: 0;
+        }
+      }
+
+      .genres {
+        position: absolute;
+        // right: 40px;
+        right: 7%;
+        max-width: 200px;
+        display: flex;
+        flex-direction: column;
+
+        label:nth-of-type(1) {
+          color: #777777;
+          font-size: 0.9rem;
+        }
+        label {
+          color: #ffffff;
+          font-size: 0.9rem;
+          margin-right: 3px;
+        }
+      }
+    }
+
+    .overview {
+      color: #ffffff;
+      width: 65%;
+      margin-left: 7%;
+      margin-top: 30px;
+    }
+  }
+}
+
+@media screen and (max-width: 220px) {
+  .modal__container {
+    height: 100vh !important;
+  }
+
+  .close {
+    span {
+      font-size: 5vw !important;
+    }
+  }
+}
+
+@media screen and (max-width: 300px) {
+  .modal__container {
+    width: 100vw;
+    height: 110vh;
+
+    .trailer {
+      .youtube {
+        padding: 0 38px 0 7%;
+      }
+    }
+
+    .close {
+      span {
+        font-size: 4vw;
+      }
+    }
+
+    .info {
+      .date {
+        p {
+          font-size: 3.5vw;
+        }
+      }
+
+      .age-check {
+        label {
+          font-size: 3.5vw;
+        }
+      }
+
+      .vote {
+        p {
+          font-size: 3.5vw;
+        }
+      }
+
+      .media-type {
+        label {
+          font-size: 3.5vw;
+        }
+      }
+
+      span {
+        font-size: 3.5vw;
+      }
+    }
+
+    .genres {
+      label {
+        font-size: 3.5vw !important;
+      }
+    }
+
+    .overview {
+      width: 85%;
+      p {
+        font-size: 3.5vw !important;
+      }
+    }
+
+    .add {
+      height: 7vw !important;
+      width: 7vw !important;
+      span {
+        font-size: 5.5vw !important;
+      }
+    }
+    .thumb {
+      height: 7vw !important;
+      width: 7vw !important;
+      span {
+        font-size: 4.1vw !important;
+      }
+    }
+
+    .modal__container__info {
+      .info {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 301px) and (max-width: 400px) {
+  .modal__container {
+    width: 95vw;
+    height: 110vh;
+
+    .trailer {
+      .youtube {
+        padding: 0 40px 0 7%;
+      }
+    }
+
+    .close {
+      span {
+        font-size: 3.5vw;
+      }
+    }
+
+    .info {
+      .date {
+        p {
+          font-size: 3vw;
+        }
+      }
+
+      .age-check {
+        label {
+          font-size: 3vw;
+        }
+      }
+
+      .vote {
+        p {
+          font-size: 3vw;
+        }
+      }
+
+      .media-type {
+        label {
+          font-size: 3vw;
+        }
+      }
+
+      span {
+        font-size: 3vw;
+      }
+    }
+
+    .genres {
+      label {
+        font-size: 3vw !important;
+      }
+    }
+
+    .overview {
+      width: 87%;
+      p {
+        font-size: 3vw !important;
+      }
+    }
+
+    .add {
+      height: 6vw !important;
+      width: 6vw !important;
+      span {
+        font-size: 5vw !important;
+      }
+    }
+    .thumb {
+      height: 6vw !important;
+      width: 6vw !important;
+      span {
+        font-size: 3.6vw !important;
+      }
+    }
+
+    .modal__container__info {
+      .info {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 401px) and (max-width: 500px) {
+  .modal__container {
+    width: 92vw;
+    height: 110vh;
+
+    .trailer {
+      .youtube {
+        padding: 0 43px 0 7%;
+      }
+    }
+
+    .close {
+      span {
+        font-size: 3vw;
+      }
+    }
+
+    .info {
+      .date {
+        p {
+          font-size: 2.5vw;
+        }
+      }
+
+      .age-check {
+        label {
+          font-size: 2.5vw;
+        }
+      }
+
+      .vote {
+        p {
+          font-size: 2.5vw;
+        }
+      }
+
+      .media-type {
+        label {
+          font-size: 2.5vw;
+        }
+      }
+
+      span {
+        font-size: 2.5vw;
+      }
+    }
+
+    .genres {
+      label {
+        font-size: 2.5vw !important;
+      }
+    }
+
+    .overview {
+      width: 87%;
+      p {
+        font-size: 2.5vw !important;
+      }
+    }
+
+    .add {
+      height: 5.5vw !important;
+      width: 5.5vw !important;
+      span {
+        font-size: 4.2vw !important;
+      }
+    }
+    .thumb {
+      height: 5.5vw !important;
+      width: 5.5vw !important;
+      span {
+        font-size: 3.3vw !important;
+      }
+    }
+
+    .modal__container__info {
+      .info {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 501px) and (max-width: 550px) {
+  .modal__container {
+    width: 88vw;
+    height: 105vh;
+
+    .trailer {
+      .youtube {
+        padding: 0 45px 0 7%;
+      }
+    }
+
+    .close {
+      span {
+        font-size: 2.5vw;
+      }
+    }
+
+    .info {
+      .date {
+        p {
+          font-size: 2vw;
+        }
+      }
+
+      .age-check {
+        label {
+          font-size: 2vw;
+        }
+      }
+
+      .vote {
+        p {
+          font-size: 2vw;
+        }
+      }
+
+      .media-type {
+        label {
+          font-size: 2vw;
+        }
+      }
+
+      span {
+        font-size: 2vw;
+      }
+    }
+
+    .genres {
+      label {
+        font-size: 2vw !important;
+      }
+    }
+
+    .overview {
+      width: 87%;
+      p {
+        font-size: 2vw !important;
+      }
+    }
+
+    .add {
+      height: 4vw !important;
+      width: 4vw !important;
+      span {
+        font-size: 3.3vw !important;
+      }
+    }
+    .thumb {
+      height: 4vw !important;
+      width: 4vw !important;
+      span {
+        font-size: 2.4vw !important;
+      }
+    }
+
+    .modal__container__info {
+      .info {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 551px) and (max-width: 650px) {
+  .modal__container {
+    width: 80vw;
+
+    .trailer {
+      .youtube {
+        padding: 0 45px 0 7%;
+      }
+    }
+
+    .close {
+      span {
+        font-size: 2.2vw;
+      }
+    }
+
+    .info {
+      .date {
+        p {
+          font-size: 1.7vw;
+        }
+      }
+
+      .age-check {
+        label {
+          font-size: 1.7vw;
+        }
+      }
+
+      .vote {
+        p {
+          font-size: 1.7vw;
+        }
+      }
+
+      .media-type {
+        label {
+          font-size: 1.7vw;
+        }
+      }
+
+      span {
+        font-size: 1.7vw;
+      }
+    }
+
+    .genres {
+      label {
+        font-size: 1.7vw !important;
+      }
+    }
+
+    .overview {
+      p {
+        font-size: 1.7vw !important;
+      }
+    }
+
+    .add {
+      height: 4vw !important;
+      width: 4vw !important;
+      span {
+        font-size: 3.3vw !important;
+      }
+    }
+    .thumb {
+      height: 4vw !important;
+      width: 4vw !important;
+      span {
+        font-size: 2.4vw !important;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 651px) and (max-width: 850px) {
+  .modal__container {
+    width: 67vw;
+
+    .trailer {
+      .youtube {
+        padding: 0 45px 0 7%;
+      }
+    }
+
+    .close {
+      span {
+        font-size: 1.7vw;
+      }
+    }
+
+    .info {
+      .date {
+        p {
+          font-size: 1.4vw;
+        }
+      }
+
+      .age-check {
+        label {
+          font-size: 1.4vw;
+        }
+      }
+
+      .vote {
+        p {
+          font-size: 1.4vw;
+        }
+      }
+
+      .media-type {
+        label {
+          font-size: 1.4vw;
+        }
+      }
+
+      span {
+        font-size: 1.4vw;
+      }
+    }
+
+    .genres {
+      label {
+        font-size: 1.4vw !important;
+      }
+    }
+
+    .overview {
+      p {
+        font-size: 1.4vw !important;
+      }
+    }
+    .add {
+      height: 3vw !important;
+      width: 3vw !important;
+      span {
+        font-size: 2.8vw !important;
+      }
+    }
+    .thumb {
+      height: 3vw !important;
+      width: 3vw !important;
+      span {
+        font-size: 1.9vw !important;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 851px) and (max-width: 1100px) {
+  .modal__container {
+    width: 54vw;
+
+    .close {
+      span {
+        font-size: 1.5vw;
+      }
+    }
+
+    .info {
+      .date {
+        p {
+          font-size: 1.2vw;
+        }
+      }
+
+      .age-check {
+        label {
+          font-size: 1.2vw;
+        }
+      }
+
+      .vote {
+        p {
+          font-size: 1.2vw;
+        }
+      }
+
+      .media-type {
+        label {
+          font-size: 1.2vw;
+        }
+      }
+
+      span {
+        font-size: 1.2vw;
+      }
+    }
+
+    .genres {
+      label {
+        font-size: 1.2vw !important;
+      }
+    }
+
+    .overview {
+      p {
+        font-size: 1.2vw !important;
+      }
+    }
+
+    .add {
+      height: 2.5vw !important;
+      width: 2.5vw !important;
+      span {
+        font-size: 2.3vw !important;
+      }
+    }
+    .thumb {
+      height: 2.5vw !important;
+      width: 2.5vw !important;
+      span {
+        font-size: 1.5vw !important;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1101px) and (max-width: 1280px) {
+  .modal__container {
+    width: 45vw;
+  }
+}
